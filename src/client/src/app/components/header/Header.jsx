@@ -38,6 +38,7 @@ class Header extends Component {
             </div>
             <div className="row-2">
               <h4 className="menu-title">Social</h4>
+              <div className="menu-title-decoration"></div>
             </div>
             <div className="row-3">
               <div>
@@ -80,6 +81,7 @@ class Header extends Component {
             </div>
             <div className="row-4">
               <h4 className="menu-title">Contact</h4>
+              <div className="menu-title-decoration"></div>
             </div>
             <div className="row-5">
               <div>
