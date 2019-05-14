@@ -12,18 +12,18 @@ class PageLayout extends React.Component {
 
         return (
             <div className="page">
-                <header role="header">
+                {/* <header role="header">
                     HEADER
-                </header>
+                </header> */}
                 <main className="main" role="main">
                     { children }
                 </main>
-                <footer className="footer" role="footer">
+                {/* <footer className="footer" role="footer">
                     FOOTER
-                </footer>
+                </footer> */}
             </div>
         )
     }
 }
- 
+
 export default PageLayout;
