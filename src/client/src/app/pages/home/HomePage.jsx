@@ -2,8 +2,6 @@
 Import extenal libraries
 */
 import React, { Component } from 'react';
-import Header from '../../components/header'
-import MainNavigation from '../../components/main-navigation'
 
 /*
 Import internal libraries
@@ -40,9 +38,19 @@ class HomePage extends Component {
     render() {
         const { posts } = this.state;
         return (
-            
             <React.Fragment>
-                <Header/>
+                <h1 className="hidden">Overzicht Grafische en Digitale Media</h1>
+                <section className="section section--articles">
+                    <header className="section__header">
+                        <h2 className="section__title">Nieuws</h2>
+                    </header>
+                    <div className="section__content section__content--articles">
+                        <PostsList posts={posts} onReadMore={this.goToPostDetailPage} />
+                    </div>
+                    <footer className="section__footer">
+                        READ MORE
+                    </footer>
+                </section>
             </React.Fragment>
         )
     }
