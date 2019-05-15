@@ -1,0 +1,15 @@
+.overlay-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 85%;
+    height: 85vh;
+    margin: auto;
+    background-color: #fff;
+}
+
+.col-space-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
