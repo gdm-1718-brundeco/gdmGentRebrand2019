@@ -13,3 +13,17 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    background-color: #fff;
+    margin: auto;
+    min-height: 500px;
+}
+
+.text-align-right {
+    text-align: right;
+}

@@ -22,6 +22,7 @@ import StyledCircle from "../../components/styled-components/circle/StyledCircle
 import MainImageComponent from "../../components/image-components/main-image-component/MainImageComponent";
 import Title from "../../components/text-components/title/Title";
 import EasyFlexGrid from "../../components/structural-components/flexbox/easy-flex-grid/EasyFlexGrid";
+import FooterHomepage from "../../components/footer/footer-homepage/FooterHomepage";
 
 class HomePage extends Component {
   state = {
@@ -91,6 +92,7 @@ class HomePage extends Component {
             text="Grafische en digitale media"
           />
         </GridWrapper>
+        <FooterHomepage/>
       </React.Fragment>
     );
   }

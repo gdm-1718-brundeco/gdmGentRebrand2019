@@ -25,7 +25,7 @@ class OverlayMenu extends Component {
             text="Arteveldehogeschool"
           />
         </EasyFlexRow>
-        <EasyFlexRow style="row-space-between">
+        <EasyFlexRow style="row-align-right">
           <div className="overlay-menu-title-div">
             <Title style="overlay-menu-section-title" text="Social" />
             <StyledSquare style="overlay-menu-title-decoration" />
@@ -40,7 +40,7 @@ class OverlayMenu extends Component {
             <Link style="overlay-menu-link" text="Opendeurdag" />
             <Link style="overlay-menu-link" text="Arteveldehogeschool" />
           </EasyFlexCol>
-          <EasyFlexCol style="col-space-between">
+          <EasyFlexCol style="col-space-between text-align-right">
             <Link style="overlay-menu-link" text="Github" />
             <Link style="overlay-menu-link" text="Facebook" />
             <Link style="overlay-menu-link" text="Twitter" />
@@ -48,13 +48,13 @@ class OverlayMenu extends Component {
             <Link style="overlay-menu-link" text="Instagram" />
           </EasyFlexCol>
         </EasyFlexRow>
-        <EasyFlexRow style="row-space-between">
+        <EasyFlexRow style="row-align-right">
           <div className="overlay-menu-title-div">
             <Title style="overlay-menu-section-title" text="Contact" />
             <StyledSquare style="overlay-menu-title-decoration" />
           </div>
         </EasyFlexRow>
-        <EasyFlexRow style="row-space-between">
+        <EasyFlexRow style="row-align-right text-align-right">
           <div>
             <Paragraph text="Industrieweg 232, 9090 Mariakerke" />
             <Paragraph text="+32 9 234 86 00" />
