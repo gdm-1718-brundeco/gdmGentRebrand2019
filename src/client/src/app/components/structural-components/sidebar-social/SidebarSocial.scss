@@ -1,0 +1,20 @@
+.sidebar {
+    grid-row: 3 / span 4;
+    grid-column: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+    animation-delay: 1.5s;
+    animation-duration: 3s;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-social-links {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}

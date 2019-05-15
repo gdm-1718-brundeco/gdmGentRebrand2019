@@ -1,0 +1,8 @@
+.grid-wrapper {
+    height: 100vh;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 3fr 9fr 5fr 1fr 1.5fr;
+    grid-template-rows: 4fr 2fr 3fr 3fr 4fr 3fr 2fr 2fr;
+    margin: auto;
+}

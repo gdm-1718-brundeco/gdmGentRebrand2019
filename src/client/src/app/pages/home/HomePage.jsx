@@ -1,66 +1,100 @@
 /*
 Import extenal libraries
 */
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 /*
 Import internal libraries
 */
-import Api from '../../services';
-import PostsList from '../../components/posts-list';
+import Api from "../../services";
+import PostsList from "../../components/start-components/posts-list";
 
 /*
 Import components
 */
-import Header from '../../components/header/Header'
-
-
+import Header from "../../components/header/Header";
+import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
+import Nav from "../../components/structural-components/nav/Nav";
+import Link from "../../components/text-components/link/Link";
+import Sidebar from "../../components/structural-components/sidebar-social/SidebarSocial";
+import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
+import StyledSquare from "../../components/styled-components/square/StyledSquare";
+import StyledCircle from "../../components/styled-components/circle/StyledCircle";
+import MainImageComponent from "../../components/image-components/main-image-component/MainImageComponent";
+import Title from "../../components/text-components/title/Title";
 
 class HomePage extends Component {
-    state = {
-        posts: [],
-    };
+  state = {
+    posts: []
+  };
 
-    componentWillMount() {
-        this.loadPosts();
+  componentDidMount() {
+    const menuButton = document.getElementById("menuButton");
+
+    function clickCheck(e) {
+      e.preventDefault();
+      console.log("clicked");
     }
 
-    loadPosts = () => {
-        Api.findAllPosts()
-            .then((data) => {
-                this.setState(prevState => ({
-                    ...prevState,
-                    posts: data
-                }));
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+    menuButton.addEventListener("click", clickCheck);
+  }
 
-    goToPostDetailPage = (id) => {
-        this.props.history.push(`/news/${id}`);
-    }
+  triggerTranslate() {
+    this.refs.child.handleTranslate();
+  }
 
-    render() {
-        const { posts } = this.state;
-        return (
-            <React.Fragment>
-                <section className="section section--articles">
-                    {/* <header className="section__header">
-                        <h2 className="section__title">Nieuws</h2>
-                    </header> */}
-                    {/* <div className="section__content section__content--articles">
-                        <PostsList posts={posts} onReadMore={this.goToPostDetailPage} />
-                    </div> */}
-                    {/* <footer className="section__footer">
-                        READ MORE
-                    </footer> */}
-                    <Header/>
-                </section>
-            </React.Fragment>
-        )
-    }
+  
+  
+
+  componentWillMount() {
+    this.loadPosts();
+  }
+
+  loadPosts = () => {
+    Api.findAllPosts()
+      .then(data => {
+        this.setState(prevState => ({
+          ...prevState,
+          posts: data
+        }));
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  goToPostDetailPage = id => {
+    this.props.history.push(`/news/${id}`);
+  };
+
+  render() {
+    const { posts } = this.state;
+    return (
+      <React.Fragment>
+        <OverlayMenu />
+        <GridWrapper>
+          <Nav>
+            <Link text="Menu" id="menuButton" ref="child"/>
+          </Nav>
+          <Sidebar>
+            <Link text="Github" />
+            <Link text="Facebook" />
+            <Link text="Vimeo" />
+            <Link text="Twitter" />
+            <Link text="Instagram" />
+          </Sidebar>
+          <StyledSquare style="styled-square-header" />
+          <StyledCircle style="styled-circle-header-left" />
+          <MainImageComponent style="header-main-image" />
+          <Title style="header-company-title" text="Arteveldehogeschool" />
+          <Title
+            style="header-company-baseline"
+            text="Grafische en digitale media"
+          />
+        </GridWrapper>
+      </React.Fragment>
+    );
+  }
 }
 
-export default (HomePage);
+export default HomePage;

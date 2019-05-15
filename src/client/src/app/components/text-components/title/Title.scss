@@ -1,0 +1,22 @@
+.header-company-title {
+    color: #ff4303;
+    font-size: 120%;
+    text-transform: uppercase;
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+}
+
+.header-company-baseline {
+    grid-row: 7 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    align-items: flex-end;
+    font-size: 120%;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-weight: 500;
+}
