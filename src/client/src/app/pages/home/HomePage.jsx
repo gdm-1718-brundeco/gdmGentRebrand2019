@@ -23,9 +23,11 @@ import MainImageComponent from "../../components/image-components/main-image-com
 import Title from "../../components/text-components/title/Title";
 import EasyFlexGrid from "../../components/structural-components/flexbox/easy-flex-grid/EasyFlexGrid";
 import FooterHomepage from "../../components/footer/footer-homepage/FooterHomepage";
-import EventBlockHeader from "../../components/structural-components/event-block-header/EventBlockHeader";
+import EventBlockHeader from "../../components/card-components/event-block-header/EventBlockHeader";
 import Featured from "../../components/card-components/featured/Featured";
+import ProjectInfoDetailpage from "../../components/card-components/project-info-detailpage/ProjectInfoDetailpage";
 import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
+import FooterGeneral from "../../components/footer/footer-general/FooterGeneral";
 
 class HomePage extends Component {
   state = {
@@ -63,11 +65,11 @@ class HomePage extends Component {
             <Link text="Menu" style="overlay-menu-link" />
           </Nav>
           <Sidebar>
-            <Link style="oml oml-1" />
-            <Link style="oml oml-2" />
-            <Link style="oml oml-3" />
-            <Link style="oml oml-4" />
-            <Link style="oml oml-5" />
+            <Link style="social-icon-base social-icon-twit" />
+            <Link style="social-icon-base social-icon-face" />
+            <Link style="social-icon-base social-icon-inst" />
+            <Link style="social-icon-base social-icon-gith" />
+            <Link style="social-icon-base social-icon-vime" />
           </Sidebar>
           <StyledSquare style="styled-square-header" />
           <EasyFlexGrid style="header-left-bottom">
@@ -87,7 +89,13 @@ class HomePage extends Component {
           <Featured />
           <Featured />
         </EasyFlexCol>
-        <FooterHomepage />
+        <EasyFlexCol style="row-general-page-wrapper">
+          <ProjectInfoDetailpage />
+        </EasyFlexCol>
+        <EasyFlexCol style="col-general-page-wrapper">
+          <FooterHomepage />
+          <FooterGeneral />
+        </EasyFlexCol>
       </React.Fragment>
     );
   }

@@ -10,7 +10,6 @@ import StyledSquare from "../../styled-components/square/StyledSquare";
 const FooterHomepage = () => {
   return (
     <EasyFlexCol style="footer-wrapper">
-      <EasyFlexRow style="" />
       <EasyFlexRow style="row-space-between">
         <EasyFlexCol style="col-space-between">
           <Title text="Alles over gdm" style="footer-section-title" />
@@ -50,12 +49,12 @@ const FooterHomepage = () => {
         </EasyFlexCol>
         <EasyFlexCol style="col-space-between">
           <Title text="Social" style="footer-section-title" />
-          <EasyFlexRow style="row-space-between">
-            <Paragraph text="T" />
-            <Paragraph text="F" />
-            <Paragraph text="I" />
-            <Paragraph text="G" />
-            <Paragraph text="V" />
+          <EasyFlexRow style="row-space-between align-items-center">
+            <Link style="social-icon-base social-icon-twit left-right-margin" />
+            <Link style="social-icon-base social-icon-face left-right-margin" />
+            <Link style="social-icon-base social-icon-inst left-right-margin" />
+            <Link style="social-icon-base social-icon-gith left-right-margin" />
+            <Link style="social-icon-base social-icon-vime left-right-margin" />
           </EasyFlexRow>
         </EasyFlexCol>
       </EasyFlexRow>

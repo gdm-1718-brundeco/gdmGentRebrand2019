@@ -8,7 +8,7 @@ class EventBlockHeader extends Component {
     render() { 
         return ( 
             <div className="event-block-container">
-                <Title text="22 Juni - 3D modelling" style="event-block-maintitle"/>
+                <Title text="22 Juni - 3D modelling" style="card-maintitle"/>
                 <p>Het event word afgetrapt door een korte voorstelling van de professionals.</p>
                 <Link style="hea"/>
             </div>

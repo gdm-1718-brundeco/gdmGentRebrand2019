@@ -12,7 +12,7 @@ const Featured = ({image}) => {
             <StyledSquare style="featured-square"/>
             <MainImageComponent style="featured-bg-image" image={image}/>
             <EasyFlexCol style="featured-text-wrapper ">
-                <Title style="featured-card-maintitle" text="Did someone say bootcamp"></Title>
+                <Title style="card-maintitle medium-bottom-margin" text="Did someone say bootcamp"></Title>
                 <Paragraph style="standard-text-paragraph" text="Het event werd afgetrapt door een korte voorstelling van de professionals. Hierdoor konden de studenten al een keuze maken qua professionals"/>
             </EasyFlexCol>
         </div>

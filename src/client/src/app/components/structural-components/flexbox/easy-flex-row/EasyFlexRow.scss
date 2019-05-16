@@ -1,6 +1,17 @@
+.row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .row-space-between {
     display: flex;
     justify-content: space-between;
+}
+
+.row-flex-start {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .row-align-right {

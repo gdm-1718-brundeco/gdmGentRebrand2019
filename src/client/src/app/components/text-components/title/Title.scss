@@ -1,3 +1,27 @@
+.small-bottom-margin {
+    margin-bottom: 10px;
+}
+
+.medium-bottom-margin {
+    margin-bottom: 20px;
+}
+
+.medium-top-margin {
+    margin-top: 20px;
+}
+
+.small-left-margin {
+    margin-left: 10px;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.primary-color {
+    color: #ff4303;
+}
+
 .header-company-title {
     color: #ff4303;
     font-size: 120%;
@@ -42,15 +66,8 @@
     margin-top: 40px;
 }
 
-.event-block-maintitle {
+.card-maintitle {
     font-weight: 700;
     font-size: 130%;
     text-transform: uppercase;
-}
-
-.featured-card-maintitle {
-    font-weight: 700;
-    font-size: 130%;
-    text-transform: uppercase;
-    margin-bottom: 15px;
 }

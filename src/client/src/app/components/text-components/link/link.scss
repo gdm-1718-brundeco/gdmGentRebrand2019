@@ -1,3 +1,12 @@
+// g e n e r a l
+.left-right-margin {
+    margin: 0px 15px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
 // o v e r l a y m e n u . l i n k s
 .overlay-menu-link {
     text-transform: uppercase;
@@ -13,7 +22,7 @@
 }
 
 // h e a d e r . s o c i a l . l i n k s
-.oml {
+.social-icon-base {
     width: 20px;
     height: 20px;
     background-size: contain;
@@ -21,31 +30,31 @@
     transition: 0.2s ease-in-out;
 }
 
-.oml:hover {
+.social-icon-base:hover {
     transform: scale(1.2);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
-.oml-1 {
+.social-icon-twit {
     background-image: url(../../../assets/icons/social/twitter.svg);
 }
 
-.oml-2 {
+.social-icon-face {
     background-image: url(../../../assets/icons/social/facebook.svg);
     width: 35px;
     height: 35px;
 }
 
-.oml-3 {
+.social-icon-inst {
     background-image: url(../../../assets/icons/social/instagram.svg);
 }
 
-.oml-4 {
+.social-icon-gith {
     background-image: url(../../../assets/icons/social/github.svg);
 }
 
-.oml-5 {
+.social-icon-vime {
     background-image: url(../../../assets/icons/social/vimeo.svg);
 }
 
