@@ -1,5 +1,59 @@
+// o v e r l a y m e n u . l i n k s
 .overlay-menu-link {
     text-transform: uppercase;
     margin: 5px 0px;
-    font-weight: 400;
+    font-size: 80%;
+    transition: 0.2s ease-in-out;
+}
+
+.overlay-menu-link:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+
+// h e a d e r . s o c i a l . l i n k s
+.oml {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.2s ease-in-out;
+}
+
+.oml:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.oml-1 {
+    background-image: url(../../../assets/icons/social/twitter.svg);
+}
+
+.oml-2 {
+    background-image: url(../../../assets/icons/social/facebook.svg);
+    width: 35px;
+    height: 35px;
+}
+
+.oml-3 {
+    background-image: url(../../../assets/icons/social/instagram.svg);
+}
+
+.oml-4 {
+    background-image: url(../../../assets/icons/social/github.svg);
+}
+
+.oml-5 {
+    background-image: url(../../../assets/icons/social/vimeo.svg);
+}
+
+// h e a d e r . e v e n t b l o c k . a r r o w
+.hea {
+    width: auto;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/icons/general/event-arrow.svg);
 }

@@ -27,3 +27,20 @@
 .text-align-right {
     text-align: right;
 }
+
+.featured-text-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    width: 70%;
+    background-color: #fff;
+    margin: auto;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    padding: 30px;
+    box-shadow: 0px 3px 50px rgba(0, 0, 0, 0.28);
+}

@@ -23,26 +23,14 @@ import MainImageComponent from "../../components/image-components/main-image-com
 import Title from "../../components/text-components/title/Title";
 import EasyFlexGrid from "../../components/structural-components/flexbox/easy-flex-grid/EasyFlexGrid";
 import FooterHomepage from "../../components/footer/footer-homepage/FooterHomepage";
+import EventBlockHeader from "../../components/structural-components/event-block-header/EventBlockHeader";
+import Featured from "../../components/card-components/featured/Featured";
+import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 
 class HomePage extends Component {
   state = {
     posts: []
   };
-
-  componentDidMount() {
-    const menuButton = document.getElementById("menuButton");
-
-    function clickCheck(e) {
-      e.preventDefault();
-      console.log("clicked");
-    }
-
-    menuButton.addEventListener("click", clickCheck);
-  }
-
-  triggerTranslate() {
-    this.refs.child.handleTranslate();
-  }
 
   componentWillMount() {
     this.loadPosts();
@@ -69,22 +57,23 @@ class HomePage extends Component {
     const { posts } = this.state;
     return (
       <React.Fragment>
-        <OverlayMenu />
+        {/* <OverlayMenu /> */}
         <GridWrapper>
           <Nav>
-            <Link text="Menu" id="menuButton" ref="child" />
+            <Link text="Menu" style="overlay-menu-link" />
           </Nav>
           <Sidebar>
-            <Link text="Github" />
-            <Link text="Facebook" />
-            <Link text="Vimeo" />
-            <Link text="Twitter" />
-            <Link text="Instagram" />
+            <Link style="oml oml-1" />
+            <Link style="oml oml-2" />
+            <Link style="oml oml-3" />
+            <Link style="oml oml-4" />
+            <Link style="oml oml-5" />
           </Sidebar>
           <StyledSquare style="styled-square-header" />
           <EasyFlexGrid style="header-left-bottom">
             <StyledCircle style="styled-circle-header-left" />
           </EasyFlexGrid>
+          <EventBlockHeader />
           <MainImageComponent style="header-main-image" />
           <Title style="header-company-title" text="Arteveldehogeschool" />
           <Title
@@ -92,7 +81,13 @@ class HomePage extends Component {
             text="Grafische en digitale media"
           />
         </GridWrapper>
-        <FooterHomepage/>
+        <EasyFlexCol style="row-general-page-wrapper">
+          <Featured />
+          <Featured />
+          <Featured />
+          <Featured />
+        </EasyFlexCol>
+        <FooterHomepage />
       </React.Fragment>
     );
   }
