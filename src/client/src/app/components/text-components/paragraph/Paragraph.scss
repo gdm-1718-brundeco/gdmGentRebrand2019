@@ -1,6 +1,38 @@
 .standard-text-paragraph {
-    line-height: 23px;
-    font-size: 15px;
+    line-height: 30px;
+    font-size: 20px;
     font-weight: 100;
     text-align: left;
+    width: 75%;
+}
+
+.paragraph-mb-med {
+    margin-bottom: 35px
+}
+
+.paragraph-bottomline {
+    width: 75%;
+    margin-bottom: 35px;
+    height: 1px;
+    background: #CECECE;
+}
+
+.par-pos-1 {
+    margin-left: auto;
+}
+
+.card-text-pos {
+    position: absolute;
+    bottom: 0;
+    right: 4%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .standard-text-paragraph {
+        width: 80%;
+    }
+    .paragraph-bottomline {
+        width: 80%;
+    }
 }

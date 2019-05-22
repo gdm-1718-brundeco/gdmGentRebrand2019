@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './MainImageComponent.scss'
 
-const MainImageComponent = ({text, style}) => {
+const MainImageComponent = ({text, style, children}) => {
     return(
-        <div className={style}></div>
+        <div className={style}>{children}</div>
     )
 }
 

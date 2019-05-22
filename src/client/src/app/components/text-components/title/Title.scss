@@ -1,73 +1,56 @@
-.small-bottom-margin {
-    margin-bottom: 10px;
-}
-
-.medium-bottom-margin {
-    margin-bottom: 20px;
-}
-
-.medium-top-margin {
-    margin-top: 20px;
-}
-
-.small-left-margin {
-    margin-left: 10px;
-}
-
-.text-bold {
+.header-maintitle-style {
+    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-size: 80px;
+    color: #fff;
+    min-height: 0;
     font-weight: 500;
+    white-space: pre-line;
 }
 
-.primary-color {
-    color: #ff4303;
+.header-maintitle-pos {
+    grid-column-start: 3; 
+    grid-row-start: 4; 
 }
 
-.header-company-title {
-    color: #ff4303;
-    font-size: 120%;
-    text-transform: uppercase;
-    grid-column: 3 / span 1;
-    grid-row: 2 / span 1;
-    display: flex;
-    justify-content: flex-end;
-    font-weight: 600;
-}
-
-.header-company-baseline {
-    grid-row: 7 / span 1;
-    grid-column: 2 / span 1;
-    display: flex;
-    align-items: flex-end;
-    font-size: 120%;
+.small-uppercase-title-style {
+    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-size: 80%;
     font-weight: 300;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    font-weight: 600;
+    letter-spacing: 2px;
 }
 
-.overlay-menu-company-title {
-    font-size: 300%;
-    font-weight: 400;
-    margin-bottom: -20px;
+.wh {
+    color: #fff;
 }
 
-.overlay-menu-section-title {
-    color: #ff4303;
-    font-weight: 700;
-    font-size: 90%;
+.bl {
+    color: #000;
 }
 
-.footer-section-title {
-    font-weight: 600;
-    text-transform: uppercase;
+.small-uppercase-title-pos-1 {
+    grid-column-start: 4; 
+    grid-row-start: 3; 
 }
 
-.title-margin {
-    margin-top: 40px;
+.small-uppercase-title-pos-2 {
+    grid-column-start: 3; 
+    grid-row-start: 5;
+    margin-top: 10px;
 }
 
-.card-maintitle {
-    font-weight: 700;
-    font-size: 130%;
-    text-transform: uppercase;
+.rotate {
+    transform: rotate(-90deg);
+}
+
+.section-title {
+    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    max-width: 70%;
+    margin-bottom: 60px;
+}
+
+.card-title-pos {
+    position: absolute;
+    top: 0;
 }

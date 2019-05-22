@@ -12,22 +12,13 @@ import Api from "../../services";
 /*
 Import components
 */
+import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
-import Nav from "../../components/structural-components/nav/Nav";
-import Link from "../../components/text-components/link/Link";
-import Sidebar from "../../components/structural-components/sidebar-social/SidebarSocial";
-import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import StyledSquare from "../../components/styled-components/square/StyledSquare";
-import StyledCircle from "../../components/styled-components/circle/StyledCircle";
-import MainImageComponent from "../../components/image-components/main-image-component/MainImageComponent";
 import Title from "../../components/text-components/title/Title";
-import EasyFlexGrid from "../../components/structural-components/flexbox/easy-flex-grid/EasyFlexGrid";
-import FooterHomepage from "../../components/footer/footer-homepage/FooterHomepage";
-import EventBlockHeader from "../../components/card-components/event-block-header/EventBlockHeader";
+import Paragraph from "../../components/text-components/paragraph/Paragraph";
+import Quote from "../../components/text-components/quote";
+import GeneralNav from "../../components/header/general-nav/GeneralNav";
 import Featured from "../../components/card-components/featured/Featured";
-import ProjectInfoDetailpage from "../../components/card-components/project-info-detailpage/ProjectInfoDetailpage";
-import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
-import FooterGeneral from "../../components/footer/footer-general/FooterGeneral";
 
 class HomePage extends Component {
   state = {
@@ -59,43 +50,28 @@ class HomePage extends Component {
     const { posts } = this.state;
     return (
       <React.Fragment>
-        {/* <OverlayMenu /> */}
-        <GridWrapper>
-          <Nav>
-            <Link text="Menu" style="overlay-menu-link" />
-          </Nav>
-          <Sidebar>
-            <Link style="social-icon-base social-icon-twit" />
-            <Link style="social-icon-base social-icon-face" />
-            <Link style="social-icon-base social-icon-inst" />
-            <Link style="social-icon-base social-icon-gith" />
-            <Link style="social-icon-base social-icon-vime" />
-          </Sidebar>
-          <StyledSquare style="styled-square-header" />
-          <EasyFlexGrid style="header-left-bottom">
-            <StyledCircle style="styled-circle-header-left" />
-          </EasyFlexGrid>
-          <EventBlockHeader />
-          <MainImageComponent style="header-main-image" />
-          <Title style="header-company-title" text="Arteveldehogeschool" />
+        <HeaderFullscreen />
+        <GridWrapper style="main-page-wrapper">
+          <GeneralNav />
           <Title
-            style="header-company-baseline"
-            text="Grafische en digitale media"
+            style="section-title"
+            text="Wat je kan verwachten van onze gdm opleidingen"
           />
+          <Paragraph
+            text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+            style="standard-text-paragraph par-pos-1 paragraph-mb-med"
+          />
+          <Quote
+            text="“Wij stomen toekomstige talenten klaar voor een bruisende toekomst als audiovisual artist, graphic designer of developer” - Luk 
+Bouters, opleidingsdirecteur"
+            style="primary-quote quote-pos-1"
+          />
+          <Paragraph style="paragraph-bottomline par-pos-1" />
+          <div className="row-space-between">
+            <Featured style="featured-bg-image" />
+            <Featured style="featured-bg-image" />
+          </div>
         </GridWrapper>
-        <EasyFlexCol style="row-general-page-wrapper">
-          <Featured />
-          <Featured />
-          <Featured />
-          <Featured />
-        </EasyFlexCol>
-        <EasyFlexCol style="row-general-page-wrapper">
-          <ProjectInfoDetailpage />
-        </EasyFlexCol>
-        <EasyFlexCol style="col-general-page-wrapper">
-          <FooterHomepage />
-          <FooterGeneral />
-        </EasyFlexCol>
       </React.Fragment>
     );
   }
