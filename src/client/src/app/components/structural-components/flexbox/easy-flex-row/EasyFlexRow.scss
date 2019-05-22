@@ -20,6 +20,11 @@
     margin-bottom: auto;
 }
 
+.row-space-between-no-margin {
+    display: flex;
+    justify-content: space-between;
+}
+
 .header-nav-justify-content {
     grid-column-start: 2;
     grid-row-start: 1;
@@ -36,9 +41,29 @@
     justify-content: flex-end;
 }
 
+.row-margin-sm {
+    margin: 20px 0px;
+}
+
 .row-general-page-wrapper {
     margin: 100px 0px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.row-width-xsm {
+    width: 50%;
+}
+
+.row-width-sm {
+    width: 60%;
+}
+
+.row-width-md {
+    width: 70%;
+}
+
+.row-width-lg {
+    width: 80%;
 }

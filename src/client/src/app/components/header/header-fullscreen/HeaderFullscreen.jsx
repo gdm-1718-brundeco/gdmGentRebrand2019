@@ -18,16 +18,16 @@ class HeaderFullscreen extends Component {
           <GridWrapper style="header-dynamic-grid">
             <HeaderNav />
             <Title
-              style="header-maintitle-style wh header-maintitle-pos"
+              style="header-maintitle-style header-maintitle-pos"
               text={this.state.headertitle}
             />
             <Title
-              style="small-uppercase-title-style wh small-uppercase-title-pos-2"
+              style="small-uppercase-title-style color-wh small-uppercase-title-pos-2"
               text="arteveldehogeschool, mariakerke"
             />
             <EasyFlexRow style="flex-row small-uppercase-title-pos-1">
               <Title
-                style="small-uppercase-title-style rotate wh"
+                style="small-uppercase-title-style rotate color-wh"
                 text="scroll down"
               />
             </EasyFlexRow>
