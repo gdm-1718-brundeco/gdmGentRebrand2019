@@ -1,0 +1,12 @@
+.secondary-button {
+    height: 30px;
+    width: 120px;
+    border: 1px solid #000;
+    transition: 0.2s ease-in-out;
+    &:hover{
+        border: 1px solid #FF4202;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        color: #FF4202;
+    }
+}

@@ -1,2 +1,2 @@
-import GridWrapper from './Header';
+import GridWrapper from './GridWrapper';
 export default GridWrapper;

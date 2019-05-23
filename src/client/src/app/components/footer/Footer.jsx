@@ -10,20 +10,20 @@ const Footer = () => {
   return (
     <EasyFlexCol style="col-medium-height">
       <EasyFlexRow style="row-space-between row-margin-sm row-width-md">
-        <Link text="Getuigenissen" />
-        <Link text="Events" />
-        <Link text="Nieuws" />
-        <Link text="Diensten" />
-        <Link text="Contact" />
-        <Link text="Team" />
-        <Link text="Work" />
+        <Link text="Getuigenissen" style="footer-link"/>
+        <Link text="Events" style="footer-link"/>
+        <Link text="Nieuws" style="footer-link"/>
+        <Link text="Diensten" style="footer-link"/>
+        <Link text="Contact" style="footer-link"/>
+        <Link text="Team" style="footer-link"/>
+        <Link text="Work" style="footer-link"/>
       </EasyFlexRow>
       <EasyFlexRow style="row-space-between row-margin-sm row-width-xsm">
-        <Link text="Facebook" style="color-lightgrey"/>
-        <Link text="Github" style="color-lightgrey"/>
-        <Link text="Instagram" style="color-lightgrey"/>
-        <Link text="Vimeo" style="color-lightgrey"/>
-        <Link text="Twitter" style="color-lightgrey"/>
+        <Link text="Facebook" style="color-lightgrey footer-link"/>
+        <Link text="Github" style="color-lightgrey footer-link"/>
+        <Link text="Instagram" style="color-lightgrey footer-link"/>
+        <Link text="Vimeo" style="color-lightgrey footer-link"/>
+        <Link text="Twitter" style="color-lightgrey footer-link"/>
       </EasyFlexRow>
       <EasyFlexRow style="row-space-between row-margin-sm">
         <Title style="paragraph-bottomline" />

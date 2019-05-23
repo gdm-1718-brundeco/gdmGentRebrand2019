@@ -1,0 +1,18 @@
+.primary-button {
+    height: 50px;
+    width: 230px;
+    border: 1px solid #FF4202;
+    transition: 0.2s ease-in-out;
+    color: #FF4202;
+    &:hover{
+        border: 1px solid #FF4202;
+        background: #FF4202;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        color: #fff;
+    }
+}
+
+.auto-left-margin {
+    margin-left: auto;
+}

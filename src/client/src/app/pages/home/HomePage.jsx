@@ -29,6 +29,7 @@ import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
+import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 
 class HomePage extends Component {
   state = {
@@ -63,9 +64,9 @@ class HomePage extends Component {
       <React.Fragment>
         {/* <OverlayMenu/> */}
         <ParallaxProvider>
-          {/* <Parallax className="custom-class" y={[-30, 30]} tagOuter="figure"> */}
+          <Parallax className="custom-class" y={[50, -50]} tagOuter="figure">
             <HeaderFullscreen />
-          {/* </Parallax> */}
+          </Parallax>
           <GridWrapper style="main-page-wrapper">
             <GeneralNav />
             <BlankDiv style="blank-div-md" />
@@ -85,6 +86,7 @@ Bouters, opleidingsdirecteur"
               style="primary-quote quote-pos-1"
             />
             <Paragraph style="paragraph-bottomline par-pos-1" />
+            <PrimaryButton text="Bekijk onze richtingen"/>
             <BlankDiv style="blank-div-md" />
               <div className="row-space-between">
                 <Title style="section-title" text="Work" />

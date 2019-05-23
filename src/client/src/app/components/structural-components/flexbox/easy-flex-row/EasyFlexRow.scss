@@ -13,6 +13,11 @@
     align-items: center;
 }
 
+.row-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .row-space-between {
     display: flex;
     justify-content: space-between;
@@ -86,10 +91,4 @@
 
 .row-height-lg {
     height: 300px;
-}
-
-.secondary-button {
-    height: 30px;
-    width: 120px;
-    border: 1px solid #000;
 }

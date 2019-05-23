@@ -9,7 +9,7 @@ class GeneralNav extends Component {
     render() { 
         return ( 
             <EasyFlexRow style="row-space-between header-nav-justify-content nav-fixed">
-                <Title text="arteveldehogeschool" style="small-uppercase-title-style bl small-uppercase-title-pos-3"/>
+                <Title text="arteveldehogeschool" style="header-link-to-home bl small-uppercase-title-pos-3"/>
                 <div className="nav-burger-box">
                     <div className="nav-burger-top"></div>
                     <div className="nav-burger-bottom"></div>
