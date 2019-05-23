@@ -45,6 +45,10 @@
     margin: 20px 0px;
 }
 
+.row-margin-lg {
+    margin: 60px 0px;
+}
+
 .row-general-page-wrapper {
     margin: 100px 0px;
     display: flex;
@@ -66,4 +70,26 @@
 
 .row-width-lg {
     width: 80%;
+}
+
+.row-height-xsm {
+    height: 50px;
+}
+
+.row-height-sm {
+    height: 80px;
+}
+
+.row-height-md {
+    height: 110px;
+}
+
+.row-height-lg {
+    height: 300px;
+}
+
+.secondary-button {
+    height: 30px;
+    width: 120px;
+    border: 1px solid #000;
 }
