@@ -5,59 +5,79 @@ import EasyFlexRow from "../flexbox/easy-flex-row/EasyFlexRow";
 import Title from "../../text-components/title/Title";
 import Link from "../../text-components/link/Link";
 import Paragraph from "../../text-components/paragraph/Paragraph";
+import BlankDiv from "../../styled-components/blank-div/BlankDiv";
 
 class OverlayMenu extends Component {
-  state = {
-    translateY: 0
-  };
-
-  handleTranslate = e => {
-    this.setState({ translateY: this.state.translate + 130 });
-  };
-
   render() {
+    const showHide = {
+      // Assuming that strings below are valid CSS class names
+      showMenu: "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper",
+      hideMenu:
+        "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper display-none"
+    };
+    let menuState = this.props.menuState;
+    console.log(menuState);
+
     return (
-      <EasyFlexCol style="overlay-menu-wrapper bg-color-dark overlay-menu-wrapper">
-        <EasyFlexRow style="row-space-between-no-margin">
+      <EasyFlexCol style={menuState ? showHide.showMenu : showHide.hideMenu}>
+        <EasyFlexRow style="row-space-between">
           <Title
-            style="small-uppercase-title-style color-wh"
-            text="Arteveldehogeschool"
+            text="Menu sluiten"
+            style="color-wh footer-link"
+            handleClick={showHide.hideMenu}
           />
-          <Title style="small-uppercase-title-style" text="Sluiten" style="small-uppercase-title-style color-wh"/>
         </EasyFlexRow>
-        <EasyFlexRow style="row-align-right">
-          <div className="overlay-menu-title-div">
-            <Title style="overlay-menu-section-title" text="Social" style="color-wh"/>
-          </div>
-        </EasyFlexRow>
-        <EasyFlexRow style="row-space-between-no-margin">
+        <BlankDiv style="blank-div-md" />
+        <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
-            <Link style="overlay-menu-link" text="Nieuws" style="overlay-menu-links"/>
-            <Link style="overlay-menu-link" text="Work" style="overlay-menu-links"/>
-            <Link style="overlay-menu-link" text="Events" style="overlay-menu-links"/>
-            <Link style="overlay-menu-link" text="Diensten" style="overlay-menu-links"/>
-            <Link style="overlay-menu-link" text="Team" style="overlay-menu-links"/>
-            <Link style="overlay-menu-link" text="Getuigenissen" style="overlay-menu-links"/>
-            <Link style="overlay-menu-link" text="Contact" style="overlay-menu-links"/>
+            <Link text="Nieuws" style="overlay-menu-links" />
+            <Link text="Work" style="overlay-menu-links" />
+            <Link text="Events" style="overlay-menu-links" />
+            <Link text="Diensten" style="overlay-menu-links" />
+            <Link text="Team" style="overlay-menu-links" />
+            <Link text="Getuigenissen" style="overlay-menu-links" />
+            <Link text="Contact" style="overlay-menu-links" />
           </EasyFlexCol>
-          <EasyFlexCol style="col-space-between text-align-right">
-            <Link style="overlay-menu-link" text="Github" style="overlay-menu-links-social"/>
-            <Link style="overlay-menu-link" text="Facebook" style="overlay-menu-links-social"/>
-            <Link style="overlay-menu-link" text="Twitter" style="overlay-menu-links-social"/>
-            <Link style="overlay-menu-link" text="Vimeo" style="overlay-menu-links-social"/>
-            <Link style="overlay-menu-link" text="Instagram" style="overlay-menu-links-social"/>
+          <EasyFlexCol style="col-flex-start text-align-right">
+            <Link
+              style="overlay-menu-link"
+              text="Github"
+              style="overlay-menu-links-social"
+            />
+            <Link
+              style="overlay-menu-link"
+              text="Facebook"
+              style="overlay-menu-links-social"
+            />
+            <Link
+              style="overlay-menu-link"
+              text="Twitter"
+              style="overlay-menu-links-social"
+            />
+            <Link
+              style="overlay-menu-link"
+              text="Vimeo"
+              style="overlay-menu-links-social"
+            />
+            <Link
+              style="overlay-menu-link"
+              text="Instagram"
+              style="overlay-menu-links-social"
+            />
           </EasyFlexCol>
         </EasyFlexRow>
-        <EasyFlexRow style="row-align-right">
-          <div className="overlay-menu-title-div">
-            <Title style="overlay-menu-section-title" text="Contact" style="overlay-menu-links"/>
-          </div>
-        </EasyFlexRow>
-        <EasyFlexRow style="row-align-right text-align-right">
+        <BlankDiv style="blank-div-sm" />
+        <EasyFlexRow style="row-flex-start">
           <div>
-            <Paragraph text="Industrieweg 232, 9090 Mariakerke" style="color-wh"/>
-            <Paragraph text="+32 9 234 86 00" style="overlay-menu-links-social"/>
-            <Paragraph text="Info.grafische.digitalemedia@arteveldehs.be" style="overlay-menu-links-social"/>
+            <Paragraph
+              text="Industrieweg 232, 9090 Mariakerke"
+              style="overlay-menu-text"
+            />
+            <Paragraph text="+32 9 234 86 00" style="overlay-menu-text" />
+            <Paragraph
+              text="Info.grafische.digitalemedia@arteveldehs.be"
+              style="overlay-menu-text"
+            />
           </div>
         </EasyFlexRow>
       </EasyFlexCol>

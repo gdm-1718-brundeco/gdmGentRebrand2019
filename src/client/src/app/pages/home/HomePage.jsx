@@ -33,7 +33,7 @@ import PrimaryButton from "../../components/button-components/primary-button/Pri
 
 class HomePage extends Component {
   state = {
-    posts: []
+    showMenu: false
   };
 
   componentWillMount() {
@@ -57,25 +57,27 @@ class HomePage extends Component {
     this.props.history.push(`/news/${id}`);
   };
 
+  toggleMenu = e => {
+    e.preventDefault();
+    this.setState(state => ({ showMenu: !state.showMenu }));
+  };
+
   render() {
-    const { posts } = this.state;
 
     return (
       <React.Fragment>
-        {/* <OverlayMenu/> */}
         <ParallaxProvider>
-          <Parallax className="custom-class" y={[50, -50]} tagOuter="figure">
-            <HeaderFullscreen />
-          </Parallax>
+          <OverlayMenu menuState={this.state.showMenu}/>
+          <HeaderFullscreen />
           <GridWrapper style="main-page-wrapper">
-            <GeneralNav />
+            <GeneralNav
+              toggleMenu={this.toggleMenu}
+            />
             <BlankDiv style="blank-div-md" />
-            {/* <Parallax className="custom-class" y={[70, -40]} tagOuter="figure"> */}
             <Title
               style="section-title"
               text="Wat je kan verwachten van onze gdm opleidingen"
             />
-            {/* </Parallax> */}
             <Paragraph
               text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
               style="standard-text-paragraph par-pos-1 paragraph-mb-med"
@@ -86,11 +88,11 @@ Bouters, opleidingsdirecteur"
               style="primary-quote quote-pos-1"
             />
             <Paragraph style="paragraph-bottomline par-pos-1" />
-            <PrimaryButton text="Bekijk onze richtingen"/>
+            <PrimaryButton text="Bekijk onze richtingen" />
             <BlankDiv style="blank-div-md" />
-              <div className="row-space-between">
-                <Title style="section-title" text="Work" />
-              </div>
+            <div className="row-space-between">
+              <Title style="section-title" text="Work" />
+            </div>
             <div className="row-space-between">
               <Featured style="featured-bg-image" />
               <Featured style="featured-bg-image" />

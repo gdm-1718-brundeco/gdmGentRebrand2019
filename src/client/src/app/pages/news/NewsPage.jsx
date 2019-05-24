@@ -14,6 +14,8 @@ import Footer from "../../components/footer";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Link from "../../components/text-components/link/Link";
 import Title from "../../components/text-components/title/Title";
+import Overlay from "../../components/styled-components/overlay/Overlay";
+import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 
 class NewsPage extends Component {
   state = {
@@ -60,30 +62,26 @@ class NewsPage extends Component {
     const { pagination, posts } = this.state;
     return (
       <React.Fragment>
+        <OverlayMenu />
+
         {/* <h1 className="hidden">Nieuws</h1>
                 <section className="section section--articles">
                     <PostsListPaged posts={posts} pagination={pagination} onReadMore={this.goToPostDetailPage} onLoadMore={this.loadPosts} />
                 </section> */}
         <GridWrapper style="main-page-wrapper">
-          <GeneralNav />
+          {/* <GeneralNav /> */}
           <BlankDiv style="blank-div-lg" />
-          <Title style="section-title" text="Nieuws"/>
+          <Title style="section-title" text="Nieuws" />
           <Link
             style="news-list-item"
             text="Erasmus project: exchange knowledge for future innovation"
           />
-          <Link
-            style="news-list-item"
-            text="Did someone say bootcamp?"
-          />
+          <Link style="news-list-item" text="Did someone say bootcamp?" />
           <Link
             style="news-list-item"
             text="Is ondernemerschap iets dat je kan aanleren?"
           />
-          <Link
-            style="news-list-item"
-            text="Aftermovie GMB cafe"
-          />
+          <Link style="news-list-item" text="Aftermovie GMB cafe" />
           <Link
             style="news-list-item"
             text="Parkspot pitch bij In The Pocket"

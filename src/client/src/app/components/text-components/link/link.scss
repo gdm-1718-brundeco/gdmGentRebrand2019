@@ -12,13 +12,27 @@
 }
 
 .overlay-menu-links {
-    font-size: 23px;
+    font-size: 40px;
     color: #fff;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        padding-left: 2px;
+        color: #707070;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
 }
 
 .overlay-menu-links-social {
-    font-size: 14px;
+    font-size: 25px;
     color: #707070;
+
+    &:hover {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        color: #fff;
+    }
 }
 
 .news-list-item {
@@ -46,6 +60,7 @@
     max-width: 70%;
     margin-bottom: 60px;
     transition: 0.2s ease-in-out;
+
     &:hover {
         color: rgba($color: #FF4202, $alpha: 0.6);
         cursor: pointer;
@@ -61,6 +76,7 @@
     max-width: 70%;
     margin-bottom: 60px;
     transition: 0.2s ease-in-out;
+
     &:hover {
         color: rgba($color: #FF4202, $alpha: 0.6);
         cursor: pointer;

@@ -10,6 +10,10 @@
     background: #000;
 }
 
+.menu-action:hover {
+    cursor: pointer;
+}
+
 .nav-burger-box {
     display: flex;
     flex-direction: column;
@@ -20,7 +24,7 @@
 
 .nav-fixed {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     position: fixed;
     width: 100%;
     padding: 0px 10%;
@@ -28,7 +32,7 @@
     right: 0;
     top: 0;
     z-index: 9994;
-    height: 160px;
+    height: 80px;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     box-sizing: border-box;
