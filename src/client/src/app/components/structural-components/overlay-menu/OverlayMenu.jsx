@@ -10,22 +10,16 @@ import BlankDiv from "../../styled-components/blank-div/BlankDiv";
 class OverlayMenu extends Component {
   render() {
     const showHide = {
-      // Assuming that strings below are valid CSS class names
       showMenu: "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper",
       hideMenu:
         "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper display-none"
     };
     let menuState = this.props.menuState;
-    console.log(menuState);
+    // console.log(menuState);
 
     return (
       <EasyFlexCol style={menuState ? showHide.showMenu : showHide.hideMenu}>
         <EasyFlexRow style="row-space-between">
-          <Title
-            text="Menu sluiten"
-            style="color-wh footer-link"
-            handleClick={showHide.hideMenu}
-          />
         </EasyFlexRow>
         <BlankDiv style="blank-div-md" />
         <EasyFlexRow style="row-space-between">

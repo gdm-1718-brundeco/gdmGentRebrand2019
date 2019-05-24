@@ -58,18 +58,31 @@ class NewsPage extends Component {
     this.props.history.push(`/news/${id}`);
   };
 
+  toggleMenu = e => {
+    e.preventDefault();
+    this.setState(state => ({ showMenu: !state.showMenu }));
+  };
+
+  getParentState = e => {
+    let parentState = this.state.showMenu
+    return(parentState)
+  }
+
   render() {
     const { pagination, posts } = this.state;
     return (
       <React.Fragment>
-        <OverlayMenu />
+      <OverlayMenu menuState={this.state.showMenu}/>
 
         {/* <h1 className="hidden">Nieuws</h1>
                 <section className="section section--articles">
                     <PostsListPaged posts={posts} pagination={pagination} onReadMore={this.goToPostDetailPage} onLoadMore={this.loadPosts} />
                 </section> */}
         <GridWrapper style="main-page-wrapper">
-          {/* <GeneralNav /> */}
+          <GeneralNav
+            toggleMenu={this.toggleMenu}
+            menustate={this.getParentState()}
+          />
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Nieuws" />
           <Link

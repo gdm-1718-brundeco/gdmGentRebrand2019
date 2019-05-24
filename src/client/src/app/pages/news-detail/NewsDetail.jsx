@@ -20,6 +20,7 @@ import EasyFlexRow from "../../components/structural-components/flexbox/easy-fle
 import MainImageComponent from "../../components/image-components/main-image-component/MainImageComponent";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
+import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 
 class NewsPage extends Component {
   state = {
@@ -62,53 +63,63 @@ class NewsPage extends Component {
     this.props.history.push(`/news/${id}`);
   };
 
+  toggleMenu = e => {
+    e.preventDefault();
+    this.setState(state => ({ showMenu: !state.showMenu }));
+  };
+
+  getParentState = e => {
+    let parentState = this.state.showMenu;
+    return parentState;
+  };
+
   render() {
     const { pagination, posts } = this.state;
     return (
       <React.Fragment>
-          {/* <h1 className="hidden">Nieuws</h1>
+        {/* <h1 className="hidden">Nieuws</h1>
                 <section className="section section--articles">
                     <PostsListPaged posts={posts} pagination={pagination} onReadMore={this.goToPostDetailPage} onLoadMore={this.loadPosts} />
                 </section> */}
-          <GridWrapper style="main-page-wrapper">
-            <GeneralNav />
-            <BlankDiv style="blank-div-lg" />
-            <EasyFlexCol style="col-space-between">
-              <Parallax
-                className="custom-class"
-                y={[-70, 50]}
-                tagOuter="figure"
-              >
-                <Title
-                  style="news-title"
-                  text="Erasmus project: exchange knowledge for future innovation"
-                />
-              </Parallax>
+        <OverlayMenu menuState={this.state.showMenu} />
+        <GridWrapper style="main-page-wrapper">
+          <GeneralNav
+            toggleMenu={this.toggleMenu}
+            menustate={this.getParentState()}
+          />
+          <BlankDiv style="blank-div-lg" />
+          <EasyFlexCol style="col-space-between">
+            <Parallax className="custom-class" y={[-70, 50]} tagOuter="figure">
+              <Title
+                style="news-title"
+                text="Erasmus project: exchange knowledge for future innovation"
+              />
+            </Parallax>
 
-              <Paragraph
-                style="news-intro"
-                text="De creatieve en crossmediale sector veranderd voortdurend. Lesmateriaal wordt daarom ook constant bijgespijkerd. Het EKFI-project bouwt aan een platform om innovatief lesmateriaal te kunnen uitwisselen tussen organisaties in deze sector."
-              />
-              <Paragraph
-                style="news-standard-paragraph"
-                text="Gedurende 3 jaar zal de opleiding ‘Grafische en Digitale Media’ van de Arteveldehogeschool samen werken met 5 buitenlandse partners in het kader van Erasmus+ aan het project ‘EKFI’ (Exchange Knowledge for Future Innovation). Dit project heeft als doel om een platform te ontwikkelen om vooral innovatief lesmateriaal uit te wisselen tussen verschillende organisaties in de creatieve en crossmediale sector, zoals bv. secundaire en hogescholen, bedrijven & sectororganisaties. Het EKFI-project is gestart met een kick off meeting begin december 2018 in Schiphol in Nederland. Meer info over dit project is te vinden op EFKI-project.
+            <Paragraph
+              style="news-intro"
+              text="De creatieve en crossmediale sector veranderd voortdurend. Lesmateriaal wordt daarom ook constant bijgespijkerd. Het EKFI-project bouwt aan een platform om innovatief lesmateriaal te kunnen uitwisselen tussen organisaties in deze sector."
+            />
+            <Paragraph
+              style="news-standard-paragraph"
+              text="Gedurende 3 jaar zal de opleiding ‘Grafische en Digitale Media’ van de Arteveldehogeschool samen werken met 5 buitenlandse partners in het kader van Erasmus+ aan het project ‘EKFI’ (Exchange Knowledge for Future Innovation). Dit project heeft als doel om een platform te ontwikkelen om vooral innovatief lesmateriaal uit te wisselen tussen verschillende organisaties in de creatieve en crossmediale sector, zoals bv. secundaire en hogescholen, bedrijven & sectororganisaties. Het EKFI-project is gestart met een kick off meeting begin december 2018 in Schiphol in Nederland. Meer info over dit project is te vinden op EFKI-project.
 Het onderzoeksteam is op zoek naar Vlaamse bedrijven en onderwijsinstellingen die interesse hebben in het uitwisselen van digitaal lesmateriaal in het domein van crossmedia (print & multimedia), marketing en design. Heb je interesse, neem dan snel contact met Inge Sintobin mail us."
-              />
-            </EasyFlexCol>
-            <BlankDiv style="blank-div-lg" />
-            <EasyFlexRow style="row-space-between">
-              <MainImageComponent style="news-detail-image-1" />
-              <MainImageComponent style="news-detail-image-2" />
-              <MainImageComponent style="news-detail-image-3" />
-            </EasyFlexRow>
-            <BlankDiv style="blank-div-md" />
-            <EasyFlexRow style="row-space-between">
-              <Link text="Vorige" style="link-previous-article" />
-              <Link text="Volgende" style="link-next-article" />
-            </EasyFlexRow>
-            <BlankDiv style="blank-div-md" />
-            <Footer />
-          </GridWrapper>
+            />
+          </EasyFlexCol>
+          <BlankDiv style="blank-div-lg" />
+          <EasyFlexRow style="row-space-between">
+            <MainImageComponent style="news-detail-image-1" />
+            <MainImageComponent style="news-detail-image-2" />
+            <MainImageComponent style="news-detail-image-3" />
+          </EasyFlexRow>
+          <BlankDiv style="blank-div-md" />
+          <EasyFlexRow style="row-space-between">
+            <Link text="Vorige" style="link-previous-article" />
+            <Link text="Volgende" style="link-next-article" />
+          </EasyFlexRow>
+          <BlankDiv style="blank-div-md" />
+          <Footer />
+        </GridWrapper>
       </React.Fragment>
     );
   }

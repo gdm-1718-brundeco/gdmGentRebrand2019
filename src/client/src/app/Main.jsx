@@ -40,7 +40,7 @@ class Main extends Component {
             exact
             path="/"
             layout={PageLayout}
-            component={HomePage}
+            component={TeamPage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout

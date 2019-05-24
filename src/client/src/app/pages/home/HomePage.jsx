@@ -62,8 +62,12 @@ class HomePage extends Component {
     this.setState(state => ({ showMenu: !state.showMenu }));
   };
 
-  render() {
+  getParentState = e => {
+    let parentState = this.state.showMenu
+    return(parentState)
+  }
 
+  render() {
     return (
       <React.Fragment>
         <ParallaxProvider>
@@ -72,6 +76,7 @@ class HomePage extends Component {
           <GridWrapper style="main-page-wrapper">
             <GeneralNav
               toggleMenu={this.toggleMenu}
+              menustate={this.getParentState()}
             />
             <BlankDiv style="blank-div-md" />
             <Title

@@ -35,14 +35,28 @@ class TeamPage extends Component {
     post: null
   };
 
+  toggleMenu = e => {
+    e.preventDefault();
+    this.setState(state => ({ showMenu: !state.showMenu }));
+  };
+
+  getParentState = e => {
+    let parentState = this.state.showMenu;
+    return parentState;
+  };
+
   render() {
     const { post } = this.state;
     console.log(post);
     return (
       <React.Fragment>
+        <OverlayMenu menuState={this.state.showMenu} />
         <GridWrapper style="main-page-wrapper">
           <BlankDiv style="blank-div-lg" />
-          <GeneralNav />
+          <GeneralNav
+            toggleMenu={this.toggleMenu}
+            menustate={this.getParentState()}
+          />
           <Title style="section-title" text="Team" />
           <Paragraph
             text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
