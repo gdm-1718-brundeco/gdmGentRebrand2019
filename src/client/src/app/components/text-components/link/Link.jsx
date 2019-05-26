@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import './Link.scss'
+import "./Link.scss";
 
-const Link = ({ style, text}) => <a className={style}>{text}</a>;
+const Link = ({ style, text, handleClick }) => (
+  <a className={style} onClick={handleClick}>
+    {text}
+  </a>
+);
 
 export default Link;

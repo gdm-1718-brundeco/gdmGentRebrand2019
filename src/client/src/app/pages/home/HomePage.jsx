@@ -63,20 +63,24 @@ class HomePage extends Component {
   };
 
   getParentState = e => {
-    let parentState = this.state.showMenu
-    return(parentState)
-  }
+    let parentState = this.state.showMenu;
+    return parentState;
+  };
 
   render() {
     return (
       <React.Fragment>
         <ParallaxProvider>
-          <OverlayMenu menuState={this.state.showMenu}/>
-          <HeaderFullscreen />
+          <OverlayMenu menuState={this.state.showMenu} />
+          <HeaderFullscreen
+            toggleMenu={this.toggleMenu}
+            menustate={this.getParentState()}
+          />
           <GridWrapper style="main-page-wrapper">
             <GeneralNav
               toggleMenu={this.toggleMenu}
-              menustate={this.getParentState()}
+              menustate={this.getParentState()
+              }
             />
             <BlankDiv style="blank-div-md" />
             <Title

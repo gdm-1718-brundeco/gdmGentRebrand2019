@@ -5,6 +5,35 @@ import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyF
 import "./GeneralNav.scss";
 
 class GeneralNav extends Component {
+  state = {
+    childElState: "fade-out-menutitle",
+    parentElState: "nav-burger-box menu-action",
+  };
+
+  constructor(props) {
+    super(props);
+    this.parentEl = React.createRef();
+    this.childEl = React.createRef();
+  }
+
+  addClass = () => {
+    this.setState({
+      childElState: "fade-in-menutitle",
+    })
+  };
+
+  removeClass = () => {
+    this.setState({
+      childElState: "fade-out-menutitle"
+    })
+  };
+
+  fadeInCross = () => {
+    this.setState({
+      parentElState: "nav-burger-box menu-action fade-in-cross"
+    })
+  }
+
   render() {
     const editOverlayButton = {
       overlayTrueTopBorder: "nav-burger-top-wh",
@@ -12,6 +41,7 @@ class GeneralNav extends Component {
       overlayFalseTopBorder: "nav-burger-top",
       overlayFalseBottomBorder: "nav-burger-bottom"
     };
+
     let menuState = this.props.menustate;
     console.log(menuState);
 
@@ -22,10 +52,16 @@ class GeneralNav extends Component {
           style="header-link-to-home bl small-uppercase-title-pos-3"
         />
         <div
-          className="nav-burger-box menu-action"
+          className={this.state.parentElState}
           onClick={this.props.toggleMenu}
           menustate={this.props.menustate}
+          ref={this.parentEl}
+          onMouseOver={this.addClass}
+          onMouseOut={this.removeClass}
         >
+          <p ref={this.childEl} className={this.state.childElState}>
+            menu
+          </p>
           <div
             className={
               menuState

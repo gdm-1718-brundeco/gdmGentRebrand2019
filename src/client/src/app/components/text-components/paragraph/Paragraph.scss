@@ -1,3 +1,5 @@
+@import '../../../_sass/abstracts/variables';
+
 .standard-text-paragraph {
     line-height: 30px;
     font-size: 20px;
@@ -22,14 +24,14 @@
     width: 75%;
     margin-bottom: 35px;
     height: 1px;
-    background: #eaeaea;
+    background: $color-light-grey;
 }
 
 .team-card-bottomline {
     width: 100%;
     margin-bottom: 35px;
     height: 1px;
-    background: #eaeaea; 
+    background: $color-light-grey; 
 }
 
 .par-pos-1 {
@@ -63,5 +65,5 @@
 .overlay-menu-text {
     font-size: 20px;
     line-height: 30px;
-    color: #707070;
+    color: $color-dark-grey;
 }

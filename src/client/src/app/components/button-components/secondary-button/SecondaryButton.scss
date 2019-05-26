@@ -1,12 +1,14 @@
+@import '../../../_sass/abstracts/variables';
+
 .secondary-button {
     height: 30px;
     width: 120px;
     border: 1px solid #000;
     transition: 0.2s ease-in-out;
     &:hover{
-        border: 1px solid #FF4202;
+        border: 1px solid $primary-color;
         cursor: pointer;
         transition: 0.2s ease-in-out;
-        color: #FF4202;
+        color: $primary-color;
     }
 }

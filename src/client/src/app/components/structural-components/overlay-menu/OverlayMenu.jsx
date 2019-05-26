@@ -7,24 +7,47 @@ import Link from "../../text-components/link/Link";
 import Paragraph from "../../text-components/paragraph/Paragraph";
 import BlankDiv from "../../styled-components/blank-div/BlankDiv";
 
+/*
+Layout
+*/
+import { LoginLayout, PageLayout } from "../../../layouts";
+import { AdminLayout } from "../../../admin/layouts";
+
+/*
+Page components
+*/
+import HomePage from "../../../pages/home";
+import NewsPage from "../../../pages/news";
+import TeamPage from "../../../pages/team";
+import NewsDetail from "../../../pages/news-detail";
+
 class OverlayMenu extends Component {
+  showAction = e => {
+    console.log("link clicked");
+  };
+
   render() {
     const showHide = {
       showMenu: "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper",
       hideMenu:
-        "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper display-none"
+        "overlay-menu-wrapper overlay-menu-wrapper display-none"
     };
     let menuState = this.props.menuState;
-    // console.log(menuState);
 
     return (
       <EasyFlexCol style={menuState ? showHide.showMenu : showHide.hideMenu}>
-        <EasyFlexRow style="row-space-between">
-        </EasyFlexRow>
+        <EasyFlexRow style="row-space-between" />
         <BlankDiv style="blank-div-md" />
         <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
-            <Link text="Nieuws" style="overlay-menu-links" />
+            <Link
+              text="Nieuws"
+              style="overlay-menu-links"
+              path="/news"
+              layout={PageLayout}
+              component={NewsPage}
+              handleClick={this.showAction}
+            />
             <Link text="Work" style="overlay-menu-links" />
             <Link text="Events" style="overlay-menu-links" />
             <Link text="Diensten" style="overlay-menu-links" />

@@ -1,3 +1,5 @@
+@import '../../../_sass/abstracts/variables';
+
 .header-maintitle-style {
     font-family: 'Gill Sans Std', 'Lato', sans-serif;
     font-size: 80px;
@@ -27,7 +29,7 @@
     letter-spacing: 2px;
     transition: 0.2s ease-in-out;
     &:hover {
-        color: rgba($color: #FF4202, $alpha: 0.6);
+        color: rgba($color: $primary-color, $alpha: 0.6);
         transform: scale(1.04);
         transition: 0.2s ease-in-out;
         cursor: pointer;
@@ -71,9 +73,9 @@
     font-weight: 500;
     width: 100%;
     margin-bottom: 60px;
-    color: #D8D8D8;
+    color: $color-medium-grey;
     padding-bottom: 40px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid $color-light-grey;
 }
 
 .prof-card-title {

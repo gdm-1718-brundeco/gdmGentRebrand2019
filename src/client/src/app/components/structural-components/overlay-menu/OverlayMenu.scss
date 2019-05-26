@@ -1,3 +1,16 @@
+.overlay-menu-wrapper {
+    padding: 5% 10%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 20%;
+    height: 100vh;
+    background: white;
+    z-index: 5;
+    transition: width 0.3s;
+    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
+    opacity: 0;
+}
+
 .overlay-menu-title-div {
     display: flex;
     justify-content: center;
@@ -5,9 +18,15 @@
 }
 
 .bg-color-dark {
-    background: #000;
+    background: black;
+    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
+    transition: width 0.3s;
+    width: 100%;
+    opacity: 1;
 }
 
 .display-none {
-    display: none;
+    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
+    transition: width 0.3s;
+    opacity: 0;
 }

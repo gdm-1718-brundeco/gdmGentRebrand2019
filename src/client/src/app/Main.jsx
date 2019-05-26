@@ -30,6 +30,7 @@ import NewsDetail from "./pages/news-detail";
 Import styling
 */
 import "./Main.css";
+import { homedir } from "os";
 
 class Main extends Component {
   render() {
@@ -40,7 +41,7 @@ class Main extends Component {
             exact
             path="/"
             layout={PageLayout}
-            component={TeamPage}
+            component={HomePage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout
