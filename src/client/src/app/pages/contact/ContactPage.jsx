@@ -1,44 +1,38 @@
-
 /*
 Import extenal libraries
 */
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 /*
 Import internal libraries
 */
-import Api from '../../services';
+import Api from "../../services";
 
 class ContactPage extends Component {
-    state = {
-        post: null,
-    };
+  state = {
+    post: null
+  };
 
-    componentWillMount() {
-        this.loadPost(this.props.match.params.id);
-    }
+  componentWillMount() {
+    this.loadPost(this.props.match.params.id);
+  }
 
-    loadPost = (id) => {
-        Api.findOnePost(id)
-            .then((data) => {
-                this.setState(prevState => ({
-                    ...prevState,
-                    post: data
-                }));
-            })
-            .catch((error) => {
+  loadPost = id => {
+    Api.findOnePost(id)
+      .then(data => {
+        this.setState(prevState => ({
+          ...prevState,
+          post: data
+        }));
+      })
+      .catch(error => {});
+  };
 
-            });
-    }
-
-    render() {
-        const { post } = this.state;
-        console.log(post);
-        return (
-            <React.Fragment>
-            </React.Fragment>
-        )
-    }
+  render() {
+    const { post } = this.state;
+    console.log(post);
+    return <React.Fragment />;
+  }
 }
 
-export default (ContactPage);
+export default ContactPage;

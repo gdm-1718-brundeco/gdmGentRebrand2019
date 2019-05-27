@@ -24,6 +24,9 @@ import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import TeamPage from "./pages/team";
 import NewsDetail from "./pages/news-detail";
+import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
+import ProjectsPage from './pages/projects/ProjectsPage';
+
 
 
 /*
@@ -31,7 +34,6 @@ Import styling
 */
 import "./Main.css";
 import { homedir } from "os";
-import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
 
 class Main extends Component {
   render() {
@@ -42,7 +44,7 @@ class Main extends Component {
             exact
             path="/"
             layout={PageLayout}
-            component={ProjectDetailPage}
+            component={ProjectsPage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout
@@ -61,7 +63,7 @@ class Main extends Component {
             exact
             path="/projects"
             layout={PageLayout}
-            component={ProjectsPage}
+            component={TeamPage}
           />
            <RouteWithLayout
             exact
