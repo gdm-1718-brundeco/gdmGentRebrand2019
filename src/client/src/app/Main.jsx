@@ -25,6 +25,7 @@ import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import TeamPage from "./pages/team";
 import NewsDetail from "./pages/news-detail";
+import ProjectDetailPage from "./pages/project-detail";
 
 /*
 Import styling
@@ -40,21 +41,33 @@ class Main extends Component {
           <RouteWithLayout
             exact
             path="/"
-            layout={PageLayout}
-            component={HomePage}
+            layout={TeamPage}
+            component={NewsPage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout
             exact
-            path="/news"
+            path="/team"
             layout={PageLayout}
             component={TeamPage}
           />
-          <RouteWithLayout
+            <RouteWithLayout
+            exact
+            path="/news"
+            layout={PageLayout}
+            component={NewsPage}
+          />
+           <RouteWithLayout
             exact
             path="/news/:id"
             layout={PageLayout}
-            component={PostDetailPage}
+            component={NewsDetail}
+          />
+          <RouteWithLayout
+            exact
+            path="/projects/:id"
+            layout={PageLayout}
+            component={ProjectDetailPage}
           />
           <RouteWithLayout
             path="/login"

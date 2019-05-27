@@ -1,3 +1,5 @@
+@import '../../../_sass/abstracts/variables';
+
 .nav-burger-box {
     display: flex;
     flex-direction: column;
@@ -13,6 +15,7 @@
 .fade-in-menutitle {
     opacity: 1;
     transition: 0.2s ease-in-out;
+    color: $color-dark-grey;
 }
 
 .fade-out-menutitle {
@@ -44,21 +47,21 @@
 .nav-burger-top {
     width: 60px;
     height: 1px;
-    background: #000;
+    background: $color-dark-grey;
     transition: 0.2s ease-in-out;
 }
 
 .nav-burger-bottom {
     width: 30px;
     height: 1px;
-    background: #000;
+    background: $color-dark-grey;
     transition: 0.2s ease-in-out;
     margin-top: 10px;
 }
 
 .nav-burger-top-wh {
     height: 1px;
-    background: #fff;
+    background: $color-medium-grey;
     transform: rotate(45deg);
     width: 20px;
     margin-top: 19px;
@@ -67,7 +70,7 @@
 
 .nav-burger-bottom-wh {
     height: 1px;
-    background: #fff;
+    background: $color-medium-grey;
     transform: rotate(-45deg);
     width: 20px;
     transition: 0.2s ease-in-out;

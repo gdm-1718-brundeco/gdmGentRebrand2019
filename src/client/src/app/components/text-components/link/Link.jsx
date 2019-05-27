@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Link.scss";
+import "./link.scss";
 
 const Link = ({ style, text, handleClick }) => (
   <a className={style} onClick={handleClick}>

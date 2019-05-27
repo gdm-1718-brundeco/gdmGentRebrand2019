@@ -36,6 +36,7 @@ class NewsPage extends Component {
     console.log(pageIndex);
     Api.findAllPosts({ limit: 3, skip: pageIndex })
       .then(data => {
+        console.log(data.docs);
         const prevPosts = this.state.posts;
         const newPosts = [...prevPosts, ...data.docs];
         this.setState(prevState => ({
@@ -70,6 +71,16 @@ class NewsPage extends Component {
 
   render() {
     const { pagination, posts } = this.state;
+    this.items = this.state.posts.map( (item,key) =>
+      <div>
+        <h1>{item.title}</h1>
+        <p>{item.synopsis}</p>
+
+        <br></br>
+        <a key={item.id} href={'/news/' + item.id}> Detail</a>
+      </div>
+    );
+
     return (
       <React.Fragment>
       <OverlayMenu menuState={this.state.showMenu}/>
@@ -85,20 +96,8 @@ class NewsPage extends Component {
           />
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Nieuws" />
-          <Link
-            style="news-list-item"
-            text="Erasmus project: exchange knowledge for future innovation"
-          />
-          <Link style="news-list-item" text="Did someone say bootcamp?" />
-          <Link
-            style="news-list-item"
-            text="Is ondernemerschap iets dat je kan aanleren?"
-          />
-          <Link style="news-list-item" text="Aftermovie GMB cafe" />
-          <Link
-            style="news-list-item"
-            text="Parkspot pitch bij In The Pocket"
-          />
+          <Link></Link> 
+            {this.items}
           <BlankDiv style="blank-div-lg" />
           <Footer />
         </GridWrapper>
