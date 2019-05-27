@@ -3,7 +3,8 @@
 ## Collections
 
 * [x] Projects
-* [ ] Events
+* [x] ProjectImages
+* [x] Events
 * [x] Blog (Posts)
 * [ ] Diensten (opleidingen)
 * [ ] Team

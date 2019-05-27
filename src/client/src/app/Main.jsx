@@ -26,6 +26,8 @@ import TeamPage from "./pages/team";
 import NewsDetail from "./pages/news-detail";
 import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
 import ProjectsPage from './pages/projects/ProjectsPage';
+import EventsPage from './pages/events/EventsPage';
+import EventDetailPage from './pages/event-detail/EventDetailPage';
 
 
 
@@ -70,6 +72,18 @@ class Main extends Component {
             path="/projects/:id"
             layout={PageLayout}
             component={ProjectDetailPage}
+          />
+          <RouteWithLayout
+            exact
+            path="/events"
+            layout={PageLayout}
+            component={EventsPage}
+          />
+          <RouteWithLayout
+            exact
+            path="/events/:id"
+            layout={PageLayout}
+            component={EventDetailPage}
           />
            <RouteWithLayout
             exact
