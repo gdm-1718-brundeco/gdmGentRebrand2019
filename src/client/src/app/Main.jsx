@@ -20,18 +20,18 @@ Page components
 */
 import AdminPage from './admin/pages/admin';
 import LoginPage from './pages/login';
-import PostDetailPage from './pages/post-detail';
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import TeamPage from "./pages/team";
 import NewsDetail from "./pages/news-detail";
+import ProjectsPage from './pages/projects/ProjectsPage';
+
 
 /*
 Import styling
 */
 import "./Main.css";
 import { homedir } from "os";
-import ProjectsPage from './pages/projects/ProjectsPage';
 
 class Main extends Component {
   render() {
@@ -42,7 +42,7 @@ class Main extends Component {
             exact
             path="/"
             layout={PageLayout}
-            component={ProjectsPage}
+            component={HomePage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout
@@ -56,6 +56,18 @@ class Main extends Component {
             path="/news/:id"
             layout={PageLayout}
             component={NewsDetail}
+          />
+          <RouteWithLayout
+            exact
+            path="/projects"
+            layout={PageLayout}
+            component={ProjectsPage}
+          />
+           <RouteWithLayout
+            exact
+            path="/team"
+            layout={PageLayout}
+            component={TeamPage}
           />
           <RouteWithLayout
             path="/login"
