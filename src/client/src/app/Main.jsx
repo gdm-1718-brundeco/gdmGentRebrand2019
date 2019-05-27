@@ -31,7 +31,7 @@ Import styling
 */
 import "./Main.css";
 import { homedir } from "os";
-import ProjectsPage from './pages/projects/ProjectsPage';
+import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
 
 class Main extends Component {
   render() {
@@ -42,7 +42,7 @@ class Main extends Component {
             exact
             path="/"
             layout={PageLayout}
-            component={ProjectsPage}
+            component={ProjectDetailPage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout

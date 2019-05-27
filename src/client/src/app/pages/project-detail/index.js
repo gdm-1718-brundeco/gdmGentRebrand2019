@@ -1,2 +1,2 @@
-import ProjectDetailPage from './ProjectDetailPage';
-export default ProjectDetailPage;
+import ProjectPage from './ProjectPage';
+export default ProjectPage;
