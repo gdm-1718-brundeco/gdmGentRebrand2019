@@ -28,6 +28,10 @@ class Api {
         const response = await fetch(`${url}`);
         return await response.json();
     }
+    static findOneProject = async (id) => {
+        const response = await fetch(`${this.URL}/projects/${id}`);
+        return await response.json();
+    }
 }
 
 export default Api;
