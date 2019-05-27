@@ -6,6 +6,8 @@ import Title from "../../text-components/title/Title";
 import Link from "../../text-components/link/Link";
 import Paragraph from "../../text-components/paragraph/Paragraph";
 import BlankDiv from "../../styled-components/blank-div/BlankDiv";
+import { Route } from 'react-router-dom';
+
 
 /*
 Layout
@@ -22,9 +24,10 @@ import TeamPage from "../../../pages/team";
 import NewsDetail from "../../../pages/news-detail";
 
 class OverlayMenu extends Component {
-  showAction = e => {
-    console.log("link clicked");
-  };
+
+  goToLink = () => {
+    
+  }
 
   render() {
     const showHide = {
@@ -40,20 +43,13 @@ class OverlayMenu extends Component {
         <BlankDiv style="blank-div-md" />
         <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
-            <Link
-              text="Nieuws"
-              style="overlay-menu-links"
-              path="/news"
-              layout={PageLayout}
-              component={NewsPage}
-              handleClick={this.showAction}
-            />
-            <Link text="Work" style="overlay-menu-links" />
-            <Link text="Events" style="overlay-menu-links" />
-            <Link text="Diensten" style="overlay-menu-links" />
-            <Link text="Team" style="overlay-menu-links" />
-            <Link text="Getuigenissen" style="overlay-menu-links" />
-            <Link text="Contact" style="overlay-menu-links" />
+            <a href="/" className="overlay-menu-links">Home</a>
+            <a href="/projects" className="overlay-menu-links">Work</a>
+            <a href="/diensten" className="overlay-menu-links">Diensten</a>
+            <a href="/team" className="overlay-menu-links">Team</a>
+            <a href="/etuigenissen" className="overlay-menu-links">Getuigenissen</a>
+            <a href="/news" className="overlay-menu-links">Nieuws & events</a>
+            <a href="/contact" className="overlay-menu-links">Contact</a>
           </EasyFlexCol>
           <EasyFlexCol style="col-flex-start text-align-right">
             <Link

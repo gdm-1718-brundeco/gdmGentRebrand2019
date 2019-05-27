@@ -106,6 +106,8 @@ Bouters, opleidingsdirecteur"
               <Featured style="featured-bg-image" />
               <Featured style="featured-bg-image" />
             </div>
+            <BlankDiv style="blank-div-md" />
+            <PrimaryButton text="Bekijk alle projecten" />
             <BlankDiv style="blank-div-lg" />
             <Footer />
           </GridWrapper>

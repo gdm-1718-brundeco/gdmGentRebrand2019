@@ -36,7 +36,7 @@ class NewsPage extends Component {
     console.log(pageIndex);
     Api.findAllPosts({ limit: 3, skip: pageIndex })
       .then(data => {
-        console.log(data.docs)
+        console.log(data.docs);
         const prevPosts = this.state.posts;
         const newPosts = [...prevPosts, ...data.docs];
         this.setState(prevState => ({
@@ -65,28 +65,35 @@ class NewsPage extends Component {
   };
 
   getParentState = e => {
-    let parentState = this.state.showMenu
-    return(parentState)
-  }
+    let parentState = this.state.showMenu;
+    return parentState;
+  };
 
   render() {
     const { pagination, posts } = this.state;
-    this.items = this.state.posts.map( (item,key) =>
-    <div key={item.id}>
-      <h1>{item.title}</h1>
-      <p>{item.synopsis}</p>
-      <br></br>
-      <a href={'/news/' + item.id}> Detail</a>
-    </div>
-  );
-    return (
-     /*  <React.Fragment>
-      <OverlayMenu menuState={this.state.showMenu}/>
 
-        {<h1 className="hidden">Nieuws</h1>
-                <section className="section section--articles">
-                    <PostsListPaged posts={posts} pagination={pagination} onReadMore={this.goToPostDetailPage} onLoadMore={this.loadPosts} />
-                </section>}
+    // console.log(this.state.posts.map( (item) => item.title) )
+
+    this.items = this.state.posts.map((item, key) => (
+      <div key={item.id}>
+        <h1>{item.title}</h1>
+        <p>{item.synopsis}</p>
+        <br />
+        <a href={"/news/" + item.id}> Detail</a>
+      </div>
+    ));
+    return (
+      <React.Fragment>
+        <OverlayMenu menuState={this.state.showMenu} />
+        <h1 className="hidden">Nieuws</h1>
+        <section className="section section--articles">
+          <PostsListPaged
+            posts={posts}
+            pagination={pagination}
+            onReadMore={this.goToPostDetailPage}
+            onLoadMore={this.loadPosts}
+          />
+        </section>
         <GridWrapper style="main-page-wrapper">
           <GeneralNav
             toggleMenu={this.toggleMenu}
@@ -111,12 +118,7 @@ class NewsPage extends Component {
           <BlankDiv style="blank-div-lg" />
           <Footer />
         </GridWrapper>
-      </React.Fragment>
-       */
-      <React.Fragment>
-        <Title style="section-title" text="Nieuws" />
-           {this.items}
-      </React.Fragment>
+      </React.Fragment> 
     );
   }
 }

@@ -8,7 +8,8 @@ import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyF
 
 class HeaderFullscreen extends Component {
   state = {
-    headertitle: `Grafische \n en digitale media`
+    headertitle: `Grafische \n en digitale media`,
+    headerImage: ''
   };
 
   render() {
