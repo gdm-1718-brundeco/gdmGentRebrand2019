@@ -2,13 +2,12 @@
 
 ## Collections
 
-* Projects
-* Events
-* Blog
-* Diensten (opleidingen)
-* Team
-* Getuigenissen
-* Contact (pagina?)
+* [x] Projects
+* [ ] Events
+* [x] Blog (Posts)
+* [ ] Diensten (opleidingen)
+* [ ] Team
+* [ ] Getuigenissen
 
 * User (dashboard)
 
