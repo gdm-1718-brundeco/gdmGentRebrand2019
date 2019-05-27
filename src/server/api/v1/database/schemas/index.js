@@ -4,6 +4,7 @@ import Category from './category.schema';
 import Post from './post.schema';
 import User from './user.schema';
 import Project from './project.schema';
+import Event from './event.schema';
 
 export {
     Blog,
@@ -11,4 +12,5 @@ export {
     Post,
 		User,
 		Project,
+		Event,
 };
