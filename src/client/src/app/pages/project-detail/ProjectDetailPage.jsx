@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 Import internal libraries
 */
 import Api from '../../services';
-import ProjectDetail from '../../components/project-detail';
 
 class ProjectDetailPage extends Component {
     state = {

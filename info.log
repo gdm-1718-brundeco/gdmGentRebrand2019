@@ -84,3 +84,13 @@
 2019-05-27 08:51:10 [[32minfo[39m]: 	MongoDb connected 
 2019-05-27 08:51:19 [[31merror[39m]: 	Cast to ObjectId failed for value "1" at path "_id" for model "Post" 
 2019-05-27 08:52:54 [[31merror[39m]: 	Cast to ObjectId failed for value "1" at path "_id" for model "Post" 
+2019-05-27 09:14:03 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 09:14:03 [[32minfo[39m]: 	MongoDb connected 
+2019-05-27 09:14:09 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 09:14:10 [[32minfo[39m]: 	MongoDb connected 
+2019-05-27 09:14:16 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 09:14:16 [[32minfo[39m]: 	MongoDb connected 
+2019-05-27 09:14:27 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 09:14:27 [[32minfo[39m]: 	MongoDb connected 
+2019-05-27 09:14:49 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 09:14:49 [[32minfo[39m]: 	MongoDb connected 
