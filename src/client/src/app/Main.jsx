@@ -44,7 +44,7 @@ class Main extends Component {
             exact
             path="/"
             layout={PageLayout}
-            component={ProjectsPage}
+            component={HomePage}
           />
           <Redirect from="/home" to="/" />
           <RouteWithLayout
@@ -63,7 +63,13 @@ class Main extends Component {
             exact
             path="/projects"
             layout={PageLayout}
-            component={TeamPage}
+            component={ProjectsPage}
+          />
+          <RouteWithLayout
+            exact
+            path="/projects/:id"
+            layout={PageLayout}
+            component={ProjectDetailPage}
           />
            <RouteWithLayout
             exact
