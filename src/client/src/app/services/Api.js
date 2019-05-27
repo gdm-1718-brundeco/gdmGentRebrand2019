@@ -8,13 +8,11 @@ class Api {
         }   
         const response = await fetch(`${url}`);
         return await response.json();
-    }
-
+    }   
     static findOnePost = async (id) => {
         const response = await fetch(`${this.URL}/posts/${id}`);
         return await response.json();
     }
-
     static queryParams = (params) => {
         return Object.keys(params)
             .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))

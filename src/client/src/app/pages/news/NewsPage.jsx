@@ -75,8 +75,9 @@ class NewsPage extends Component {
       <div>
         <h1>{item.title}</h1>
         <p>{item.synopsis}</p>
+
         <br></br>
-        <a key={item.id} href={'/news/' + item.slug}> Detail</a>
+        <a key={item.id} href={'/news/' + item.id}> Detail</a>
       </div>
     );
 
@@ -95,6 +96,7 @@ class NewsPage extends Component {
           />
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Nieuws" />
+          <Link></Link> 
             {this.items}
           <BlankDiv style="blank-div-lg" />
           <Footer />
