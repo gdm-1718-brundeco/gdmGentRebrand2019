@@ -6,6 +6,7 @@ import PostController from './post.controller';
 import UserController from './user.controller';
 import ProjectController from './project.controller';
 import EventController from './event.controller';
+import ProjectImageController from './projectImage.controller';
 
 export {
     AuthController,
@@ -14,5 +15,6 @@ export {
     PostController,
 		UserController,
 		ProjectController,
+		ProjectImageController,
 		EventController,
 };

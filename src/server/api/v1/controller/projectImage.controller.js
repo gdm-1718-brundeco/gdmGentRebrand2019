@@ -8,30 +8,30 @@ Import the internal libraries:
 - * from database
 - errorHandler
 */
-import { Event } from '../database';
+import { ProjectImage } from '../database';
 import { APIError, handleAPIError } from '../../../utilities';
 
-class EventController {
+class ProjectImageController {
     // List all the models
     index = async (req, res, next) => {
         try {
             const { limit, skip } = req.query;
-            let events = null;
+            let projectImages = null;
             if (limit && skip) {
                 const options = {
                     page: parseInt(skip, 10) || 1,
                     limit: parseInt(limit, 10) || 10,
-                    sort: { event_date: -1 },
+                    sort: { created_at: -1 },
                 };
-                events = await Event.paginate({}, options);
+                projectImages = await ProjectImage.paginate({}, options);
             } else {
-                events = await Event.find().sort({ event_date: -1 }).exec();
+                projectImages = await ProjectImage.find().sort({ created_at: -1 }).exec();
             }
 
-            if (events === undefined || events === null) {
+            if (projectImages === undefined || projectImages === null) {
                 throw new APIError(404, 'Collection for events not found!');
             }
-            return res.status(200).json(events);
+            return res.status(200).json(projectImages);
         } catch (err) {
             return handleAPIError(500, err.message || 'Some error occurred while retrieving events', next);
         }
@@ -41,7 +41,7 @@ class EventController {
     show = async (req, res, next) => {
         try {
             const { id } = req.params;
-            const item = await Event.findById(id).exec();
+            const item = await ProjectImage.findById(id).exec();
             if (item === undefined || item === null) {
                 throw new APIError(404, `Event with id: ${id} not found!`);
             }
@@ -54,7 +54,7 @@ class EventController {
     // ViewModel for Insert / Create
     create = (req, res) => {
         const vm = {
-            categories: [],
+            projects: [],
         };
         return res.status(200).json(vm);
     }
@@ -62,12 +62,12 @@ class EventController {
     // Store / Create the new model
     store = async (req, res, next) => {
         try {
-            const eventCreate = new Event({
-                title: req.body.title,
-                body: req.body.body,
-                event_date: req.body.event_date,
+            const projectImageCreate = new ProjectImage({
+								title: req.body.title,
+								path: req.body.path,
+								projectId: req.body.projectId,
             });
-            const event = await eventCreate.save();
+            const event = await projectImageCreate.save();
             return res.status(201).json(event);
         } catch (err) {
             return handleAPIError(err.status || 500, err.message || 'Some error occurred while saving the Event!', next);
@@ -79,14 +79,14 @@ class EventController {
         const { id } = req.params;
 
         try {
-            const event = await Event.findById(id).exec();
+            const projectImage = await ProjectImage.findById(id).exec();
 
-            if (!event) {
+            if (!projectImage) {
                 throw new APIError(404, `Event with id: ${id} not found!`);
             } else {
                 const vm = {
-                    event,
-                    categories: [],
+                    projectImage,
+                    projects: [],
                 };
                 return res.status(200).json(vm);
             }
@@ -100,13 +100,13 @@ class EventController {
         const { id } = req.params;
 
         try {
-            const eventUpdate = req.body;
-            const event = await Event.findOneAndUpdate({ _id: id }, eventUpdate, { new: true }).exec();
+            const projectImageUpdate = req.body;
+            const projectImage = await ProjectImage.findOneAndUpdate({ _id: id }, projectImageUpdate, { new: true }).exec();
 
-            if (!event) {
+            if (!projectImage) {
                 throw new APIError(404, `Event with id: ${id} not found!`);
             }
-            return res.status(200).json(event);
+            return res.status(200).json(projectImage);
         } catch (err) {
             return handleAPIError(err.status || 500, err.message || `Some error occurred while deleting the Event with id: ${id}!`, next);
         }
@@ -117,20 +117,20 @@ class EventController {
         const { id } = req.params;
 
         try {
-            let event = null;
+            let projectImage = null;
 
             let { mode } = req.query;
             if (mode) {
-                event = await Event.findByIdAndUpdate({ _id: id }, { deleted_at: (mode === 'softdelete' ? Date.now() : null) }, { new: true });
+                projectImage = await ProjectImage.findByIdAndUpdate({ _id: id }, { deleted_at: (mode === 'softdelete' ? Date.now() : null) }, { new: true });
             } else {
                 mode = 'delete';
-                event = await Event.findOneAndRemove({ _id: id });
+                projectImage = await ProjectImage.findOneAndRemove({ _id: id });
             }
 
-            if (!event) {
+            if (!projectImage) {
                 throw new APIError(404, `Event with id: ${id} not found!`);
             } else {
-                return res.status(200).json({ message: `Successful deleted the Event with id: ${id}!`, post: event, mode });
+                return res.status(200).json({ message: `Successful deleted the Event with id: ${id}!`, post: projectImage, mode });
             }
         } catch (err) {
             return handleAPIError(err.status || 500, err.message || `Some error occurred while deleting the Event with id: ${id}!`, next);
@@ -138,4 +138,4 @@ class EventController {
     }
 }
 
-export default EventController;
+export default ProjectImageController;
