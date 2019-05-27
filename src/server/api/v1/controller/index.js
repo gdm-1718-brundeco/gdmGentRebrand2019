@@ -4,11 +4,13 @@ import BlogController from './blog.controller';
 import CategoryController from './category.controller';
 import PostController from './post.controller';
 import UserController from './user.controller';
+import ProjectController from './project.controller';
 
 export {
     AuthController,
     BlogController,
     CategoryController,
     PostController,
-    UserController,
+		UserController,
+		ProjectController,
 };
