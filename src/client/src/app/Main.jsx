@@ -48,13 +48,13 @@ class Main extends Component {
             exact
             path="/news"
             layout={PageLayout}
-            component={TeamPage}
+            component={NewsPage}
           />
           <RouteWithLayout
             exact
             path="/news/:id"
             layout={PageLayout}
-            component={PostDetailPage}
+            component={NewsDetail}
           />
           <RouteWithLayout
             path="/login"
