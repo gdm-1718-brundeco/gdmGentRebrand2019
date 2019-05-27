@@ -44,6 +44,17 @@
 2019-05-21 21:10:47 [[31merror[39m]: 	MongoDb connection error 
 2019-05-22 17:35:04 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
 2019-05-22 17:35:05 [[32minfo[39m]: 	MongoDb connected 
+<<<<<<< HEAD
+2019-05-27 10:25:34 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 10:25:35 [[32minfo[39m]: 	MongoDb connected 
+2019-05-27 11:16:38 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 11:16:39 [[32minfo[39m]: 	MongoDb connected 
+2019-05-27 11:19:48 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 11:19:49 [[32minfo[39m]: 	MongoDb connected 
+=======
 2019-05-27 10:31:25 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
 2019-05-27 10:31:25 [[32minfo[39m]: 	MongoDb connected 
 2019-05-27 11:31:24 [[32minfo[39m]: 	MongoDb connected 
+>>>>>>> 7b025e344dab096afb72c160d6cf0dbfc26f8b33
+2019-05-27 11:33:41 [[32minfo[39m]: 	Server is running at http://127.0.0.1:8080 ! 
+2019-05-27 11:33:41 [[32minfo[39m]: 	MongoDb connected 
