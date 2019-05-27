@@ -20,6 +20,14 @@ class Api {
             .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
             .join('&');
     }
+    static findAllProjects = async (queryParams=null) => {
+        let url = `${this.URL}/projects`;
+        if (queryParams !== null) {
+            url += (url.indexOf('?') === -1 ? '?' : '&') + this.queryParams(queryParams);
+        }   
+        const response = await fetch(`${url}`);
+        return await response.json();
+    }
 }
 
 export default Api;
