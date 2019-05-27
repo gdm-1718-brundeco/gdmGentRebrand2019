@@ -10,19 +10,18 @@ import Api from '../../services';
 
 class EventDetailPage extends Component {
     state = {
-        post: null,
+        event: null,
     };
 
     componentWillMount() {
-        this.loadPost(this.props.match.params.id);
+        this.Event(this.props.match.params.id);
     }
-
-    loadPost = (id) => {
-        Api.findOnePost(id)
+    Event = (id) => {
+        Api.findOneEvent(id)
             .then((data) => {
                 this.setState(prevState => ({
                     ...prevState,
-                    post: data
+                    event: data
                 }));
             })
             .catch((error) => {
@@ -31,12 +30,22 @@ class EventDetailPage extends Component {
     }
 
     render() {
-        const { post } = this.state;
-        console.log(post);
-        return (
+        const { event } = this.state;
+        if(event != null){
+          return (
             <React.Fragment>
+              <h1>{event.title}</h1>
+              <h3>{event.slug}</h3>
+              <p>{event.body}</p>
             </React.Fragment>
         )
+        }
+        else{
+          return(
+            <React.Fragment></React.Fragment>
+          )
+        }
+        
     }
 }
 
