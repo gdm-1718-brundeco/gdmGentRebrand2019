@@ -46,13 +46,25 @@ class Main extends Component {
           <Redirect from="/home" to="/" />
           <RouteWithLayout
             exact
-            path="/news"
+            path="/team"  
             layout={PageLayout}
             component={TeamPage}
           />
-          <RouteWithLayout
+            <RouteWithLayout
+            exact
+            path="/news"
+            layout={PageLayout}
+            component={NewsPage}
+          />
+           <RouteWithLayout
             exact
             path="/news/:id"
+            layout={PageLayout}
+            component={NewsDetail}
+          />
+          <RouteWithLayout
+            exact
+            path="/post/:id"
             layout={PageLayout}
             component={PostDetailPage}
           />
