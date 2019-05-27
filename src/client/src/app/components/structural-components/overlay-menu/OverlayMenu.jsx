@@ -6,6 +6,8 @@ import Title from "../../text-components/title/Title";
 import Link from "../../text-components/link/Link";
 import Paragraph from "../../text-components/paragraph/Paragraph";
 import BlankDiv from "../../styled-components/blank-div/BlankDiv";
+import ListItem from '@material-ui/core/ListItem';
+
 
 /*
 Layout
@@ -40,7 +42,7 @@ class OverlayMenu extends Component {
         <BlankDiv style="blank-div-md" />
         <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
-            <Link
+            <ListItem
               text="Nieuws"
               style="overlay-menu-links"
               path="/news"
@@ -48,35 +50,35 @@ class OverlayMenu extends Component {
               component={NewsPage}
               handleClick={this.showAction}
             />
-            <Link text="Work" style="overlay-menu-links" />
-            <Link text="Events" style="overlay-menu-links" />
-            <Link text="Diensten" style="overlay-menu-links" />
-            <Link text="Team" style="overlay-menu-links" />
-            <Link text="Getuigenissen" style="overlay-menu-links" />
-            <Link text="Contact" style="overlay-menu-links" />
+            <ListItem text="Work" style="overlay-menu-links" />
+            <ListItem text="Events" style="overlay-menu-links" />
+            <ListItem text="Diensten" style="overlay-menu-links" />
+            <ListItem text="Team" style="overlay-menu-links" />
+            <ListItem text="Getuigenissen" style="overlay-menu-links" />
+            <ListItem text="Contact" style="overlay-menu-links" />
           </EasyFlexCol>
           <EasyFlexCol style="col-flex-start text-align-right">
-            <Link
+            <ListItem
               style="overlay-menu-link"
               text="Github"
               style="overlay-menu-links-social"
             />
-            <Link
+            <ListItem
               style="overlay-menu-link"
               text="Facebook"
               style="overlay-menu-links-social"
             />
-            <Link
+            <ListItem
               style="overlay-menu-link"
               text="Twitter"
               style="overlay-menu-links-social"
             />
-            <Link
+            <ListItem
               style="overlay-menu-link"
               text="Vimeo"
               style="overlay-menu-links-social"
             />
-            <Link
+            <ListItem
               style="overlay-menu-link"
               text="Instagram"
               style="overlay-menu-links-social"

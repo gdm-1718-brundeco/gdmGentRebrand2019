@@ -29,4 +29,6 @@
     transition-timing-function: cubic-bezier(.2, .88, .85, .35);
     transition: width 0.3s;
     opacity: 0;
+    display: none;
+    width: 10%;
 }
