@@ -8,7 +8,8 @@ import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyF
 
 class HeaderFullscreen extends Component {
   state = {
-    headertitle: `Grafische \n en digitale media`
+    headerProjectTitle: 'Cesar',
+    headerProjectMaker: 'Victor Gouhie'
   };
 
   render() {
@@ -16,23 +17,13 @@ class HeaderFullscreen extends Component {
       <MainImageComponent style="project-fullscreen-image">
         <Overlay style="header-overlay">
           <GridWrapper style="header-dynamic-grid">
-            {/* <EasyFlexRow style="row-space-between header-nav-justify-content">
-              <div
-                className="nav-burger-box"
-                onClick={this.props.toggleMenu}
-                menustate={this.props.menustate}
-              >
-                <div className="nav-burger-top-wh" />
-                <div className="nav-burger-bottom-wh" />
-              </div>
-            </EasyFlexRow> */}
             <Title
               style="header-maintitle-style header-maintitle-pos"
-              text={this.state.headertitle}
+              text={this.state.headerProjectTitle}
             />
             <Title
               style="small-uppercase-title-style color-wh small-uppercase-title-pos-2"
-              text="arteveldehogeschool, mariakerke"
+              text={this.state.headerProjectMaker}
             />
             <EasyFlexRow style="flex-row small-uppercase-title-pos-1">
               <Title
