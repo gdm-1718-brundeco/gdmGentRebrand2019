@@ -17,6 +17,7 @@ import categoryRouter from './category.routes';
 import postRouter from './post.routes';
 import userRouter from './user.routes';
 import projectRouter from './project.routes';
+import projectImageRouter from './projectImage.routes';
 import eventRouter from './event.routes';
 
 // Initialize the AuthService
@@ -30,6 +31,7 @@ categoryRouter(apiV1Router, authService);
 postRouter(apiV1Router, authService);
 userRouter(apiV1Router, authService);
 projectRouter(apiV1Router, authService);
+projectImageRouter(apiV1Router, authService);
 eventRouter(apiV1Router, authService);
 
 export default apiV1Router;
