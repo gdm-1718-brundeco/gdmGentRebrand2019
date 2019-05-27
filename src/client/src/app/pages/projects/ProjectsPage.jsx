@@ -30,31 +30,40 @@ import EasyFlexRow from "../../components/structural-components/flexbox/easy-fle
 
 class ProjectsPage extends Component {
   state = {
-    post: null,
-    pageProjectTitle:
-      "Maak een one minute video door gebruik te maken van vormator elementen",
-    pageProjectContent:
-      "Vorminator bestaat uit acht vectorvormen, die ‘the elements’ genoemd worden. Deze mogen door de ontwerpers gebruikt worden om composities te maken, maar je moet je hierbij wel aan een aantal regels houden.",
-    pageProjectQuote:
-      "“Ik wou kleine elementen gebruiken die samenkomen tot een groot geheel of een groot wezen. De vorminator elementen waren perfect voor dit soort animatie en zo is uiteindelijk de video met het samengestelde skelet tot stand gekomen.” - Victor Gouhie"
-  };
+    posts: [],
+    pagination: {
+      limit: 5,
+      page: 1,
+      pages: 1,
+      total: 1
+    }};
 
   componentWillMount() {
-    this.loadPost(this.props.match.params.id);
+    this.loadProjects(this.props.match.params.id);
   }
-
-  loadPost = id => {
-    Api.findOnePost(id)
+  loadProjects = pageIndex => {
+    console.log(pageIndex);
+    Api.findAllProjects({ limit: 3, skip: pageIndex })
       .then(data => {
+        console.log(data.docs)
+        const prevPosts = this.state.posts;
+        const newPosts = [...prevPosts, ...data.docs];
         this.setState(prevState => ({
           ...prevState,
-          post: data
+          posts: newPosts,
+          pagination: {
+            limit: data.limit,
+            page: data.page,
+            pages: data.pages,
+            total: data.total
+          }
         }));
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
   };
-
-  toggleMenu = e => {
+   toggleMenu = e => {
     e.preventDefault();
     this.setState(state => ({ showMenu: !state.showMenu }));
   };
