@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./PrimaryButton.scss";
+import "./SwitchArticlesButton.scss";
 import Title from "../../text-components/title/Title";
 import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
-const PrimaryButton = ({ text }) => {
+const SwitchArticlesButton = ({ text }) => {
   return (
-    <EasyFlexRow style="row-center primary-button">
+    <EasyFlexRow style="row-center switch-articles-button">
       <Title
         style="small-uppercase-title-style"
         text={text}
@@ -14,4 +14,4 @@ const PrimaryButton = ({ text }) => {
   );
 };
 
-export default PrimaryButton;
+export default SwitchArticlesButton;

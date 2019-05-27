@@ -1,3 +1,5 @@
+@import '../../../_sass/abstracts/variables';
+
 a {
     text-decoration: none;
     color: #000;
@@ -23,7 +25,7 @@ a {
 }
 
 .bg-color-dark {
-    background: black;
+    background: #000;
     transition-timing-function: cubic-bezier(.2, .88, .85, .35);
     transition: width 0.3s;
     width: 100%;

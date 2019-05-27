@@ -12,9 +12,7 @@ import GeneralNav from "../../components/header/general-nav/GeneralNav";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Footer from "../../components/footer";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
-import Link from "../../components/text-components/link/Link";
 import Title from "../../components/text-components/title/Title";
-import Overlay from "../../components/styled-components/overlay/Overlay";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 
 class NewsPage extends Component {
@@ -71,29 +69,20 @@ class NewsPage extends Component {
 
   render() {
     const { pagination, posts } = this.state;
+    console.log(posts[0]);
 
-    // console.log(this.state.posts.map( (item) => item.title) )
+    // this.items = this.state.posts.map((item, key) => (
+    //   <div key={item.id}>
+    //     <h1 className="news-list-item">{item.title}</h1>
+    //     <p>{item.synopsis}</p>
+    //     <br />
+    //     <a href={"/news/" + item.id}> Detail</a>
+    //   </div>
+    // ));
 
-    this.items = this.state.posts.map((item, key) => (
-      <div key={item.id}>
-        <h1>{item.title}</h1>
-        <p>{item.synopsis}</p>
-        <br />
-        <a href={"/news/" + item.id}> Detail</a>
-      </div>
-    ));
     return (
       <React.Fragment>
         <OverlayMenu menuState={this.state.showMenu} />
-        <h1 className="hidden">Nieuws</h1>
-        <section className="section section--articles">
-          <PostsListPaged
-            posts={posts}
-            pagination={pagination}
-            onReadMore={this.goToPostDetailPage}
-            onLoadMore={this.loadPosts}
-          />
-        </section>
         <GridWrapper style="main-page-wrapper">
           <GeneralNav
             toggleMenu={this.toggleMenu}
@@ -101,24 +90,16 @@ class NewsPage extends Component {
           />
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Nieuws" />
-          <Link
-            style="news-list-item"
-            text="Erasmus project: exchange knowledge for future innovation"
-          />
-          <Link style="news-list-item" text="Did someone say bootcamp?" />
-          <Link
-            style="news-list-item"
-            text="Is ondernemerschap iets dat je kan aanleren?"
-          />
-          <Link style="news-list-item" text="Aftermovie GMB cafe" />
-          <Link
-            style="news-list-item"
-            text="Parkspot pitch bij In The Pocket"
+          <PostsListPaged
+            posts={posts}
+            pagination={pagination}
+            onReadMore={this.goToPostDetailPage}
+            onLoadMore={this.loadPosts}
           />
           <BlankDiv style="blank-div-lg" />
           <Footer />
         </GridWrapper>
-      </React.Fragment> 
+      </React.Fragment>
     );
   }
 }

@@ -30,6 +30,7 @@ import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
+import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
 class HomePage extends Component {
   state = {
@@ -79,8 +80,7 @@ class HomePage extends Component {
           <GridWrapper style="main-page-wrapper">
             <GeneralNav
               toggleMenu={this.toggleMenu}
-              menustate={this.getParentState()
-              }
+              menustate={this.getParentState()}
             />
             <BlankDiv style="blank-div-md" />
             <Title
@@ -97,7 +97,9 @@ Bouters, opleidingsdirecteur"
               style="primary-quote quote-pos-1"
             />
             <Paragraph style="paragraph-bottomline par-pos-1" />
-            <PrimaryButton text="Bekijk onze richtingen" />
+            <EasyFlexRow style="row-end">
+              <PrimaryButton text="Bekijk onze richtingen" />
+            </EasyFlexRow>
             <BlankDiv style="blank-div-md" />
             <div className="row-space-between">
               <Title style="section-title" text="Work" />
@@ -107,7 +109,9 @@ Bouters, opleidingsdirecteur"
               <Featured style="featured-bg-image" />
             </div>
             <BlankDiv style="blank-div-md" />
-            <PrimaryButton text="Bekijk alle projecten" />
+            <EasyFlexRow style="row-center">
+              <PrimaryButton text="Bekijk alle projecten" />
+            </EasyFlexRow>
             <BlankDiv style="blank-div-lg" />
             <Footer />
           </GridWrapper>

@@ -29,12 +29,12 @@ class PostsListsPaged extends Component {
             <React.Fragment>
                 {posts && posts.map( (post, index) => (
                     <article key={ post.id } className={classNames("post--small")}>
-                        <h1 className="post__title">{ post.title }</h1>
-                        <div className="post__synopsis">{ post.synopsis }</div>
-                        <button onClick={(ev) => this.readMoreHandler(ev, post.id)}>More</button>
+                        <h1 className="news-list-item" onClick={(ev) => this.readMoreHandler(ev, post.id)}>{ post.title }</h1>
+                        {/* <div className="post__synopsis">{ post.synopsis }</div>
+                        <button onClick={(ev) => this.readMoreHandler(ev, post.id)}>More</button> */}
                     </article>
                 ))}
-                {posts && pagination.page < pagination.pages ? <button onClick={(ev) => this.loadMoreHandler(ev, pagination.page + 1)}>Meer laden</button>: ''}
+                {posts && pagination.page < pagination.pages ? <button className="primary-button" onClick={(ev) => this.loadMoreHandler(ev, pagination.page + 1)}>Meer laden</button>: ''}
             </React.Fragment>
         );
     }
