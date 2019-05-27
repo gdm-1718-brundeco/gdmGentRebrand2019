@@ -46,11 +46,11 @@ class ProjectsPage extends Component {
     Api.findAllProjects({ limit: 3, skip: pageIndex })
       .then(data => {
         console.log(data.docs)
-        const prevPosts = this.state.projects;
-        const newPosts = [...prevPosts, ...data.docs];
+        const prevProjects = this.state.projects;
+        const newProjects = [...prevProjects, ...data.docs];
         this.setState(prevState => ({
           ...prevState,
-          projects: newPosts,
+          projects: newProjects,
           pagination: {
             limit: data.limit,
             page: data.page,
