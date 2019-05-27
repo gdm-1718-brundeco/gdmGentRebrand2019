@@ -123,7 +123,7 @@ class ProjectsPage extends Component {
       </React.Fragment>
        */
       <React.Fragment>
-        <Title style="section-title" text="Nieuws" />
+        <Title style="section-title" text="Projects" />
            {this.items}
       </React.Fragment>
     );
