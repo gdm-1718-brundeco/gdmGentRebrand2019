@@ -14,5 +14,13 @@ const tabs = [
 class ProjectsOverviewPage extends Component {
 	render() {
 		const { children } = this.props;
+
+		return (
+			<ContentLayout title='Projects Overview' tabs={tabs}>
+				{ children }
+			</ContentLayout>
+		)
 	}
 }
+
+export default (ProjectsOverviewPage);
