@@ -1,7 +1,7 @@
 @import '../../../_sass/abstracts/variables';
 
 .switch-articles-button {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 50px;
     font-weight: 900;
     transition: 0.2s ease-in-out;

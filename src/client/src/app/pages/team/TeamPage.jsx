@@ -50,7 +50,7 @@ class TeamPage extends Component {
     console.log(post);
     return (
       <React.Fragment>
-        <OverlayMenu menuState={this.state.showMenu} />
+        <OverlayMenu menustate={this.state.showMenu} />
         <GridWrapper style="main-page-wrapper">
           <BlankDiv style="blank-div-lg" />
           <GeneralNav

@@ -43,7 +43,7 @@ class ProjectImageController {
             const { id } = req.params;
             const item = await ProjectImage.find({ 'projectId': id }).exec();
             if (item === undefined || item === null) {
-                throw new APIError(404, `Event with id: ${id} not found!`);
+                throw new APIError(404, `Images from Project: ${id} not found!`);
             }
             return res.status(200).json(item);
         } catch (err) {

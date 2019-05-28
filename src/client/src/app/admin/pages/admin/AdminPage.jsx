@@ -17,7 +17,7 @@ class AdminPage extends Component {
       <div className="Admin">
         <Route path="/admin/categories" component={ CategoriesOverviewPage }></Route>
         <Route path="/admin/posts" component={ PostsOverviewPage }></Route>
-				<Route path="/admin/projects" component={ ProjectsOverviewPage }></Route>
+				{/* <Route path="/admin/projects" component={ ProjectsOverviewPage }></Route> */}
       </div>
     )
   }

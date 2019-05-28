@@ -11,8 +11,17 @@
 // 	{ id: 'Create new Project', 'link': '/admin/projects/create' },
 // ];
 
-// class ProjectsOverviewPage extends Component {
-// 	render() {
-// 		const { children } = this.props;
-// 	}
-// }
+
+class ProjectsOverviewPage extends Component {
+	render() {
+		const { children } = this.props;
+
+		return (
+			<ContentLayout title='Projects Overview' tabs={tabs}>
+				{ children }
+			</ContentLayout>
+		)
+	}
+}
+
+export default (ProjectsOverviewPage);
