@@ -6,27 +6,21 @@ import GridWrapper from "../../structural-components/grid-wrapper/GridWrapper";
 import Title from "../../text-components/title/Title";
 import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
+import './HeaderFullscreen.scss'
+
 class HeaderFullscreen extends Component {
   state = {
     headertitle: `Grafische \n en digitale media`,
-    headerImage: ''
   };
 
   render() {
-    return (
+    let imageState = this.props.imagestate
+  return (
       <MainImageComponent style="project-fullscreen-image">
         <Overlay style="header-overlay">
           <GridWrapper style="header-dynamic-grid">
-            {/* <EasyFlexRow style="row-space-between header-nav-justify-content">
-              <div
-                className="nav-burger-box"
-                onClick={this.props.toggleMenu}
-                menustate={this.props.menustate}
-              >
-                <div className="nav-burger-top-wh" />
-                <div className="nav-burger-bottom-wh" />
-              </div>
-            </EasyFlexRow> */}
+            <img src={this.props.src} className="fullscreen-header-image" />
+            <Overlay style="header-overlay"/>
             <Title
               style="header-maintitle-style header-maintitle-pos"
               text={this.state.headertitle}

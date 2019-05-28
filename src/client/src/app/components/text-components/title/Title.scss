@@ -1,33 +1,67 @@
 @import '../../../_sass/abstracts/variables';
 
 .header-maintitle-style {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 80px;
     color: #fff;
     min-height: 0;
     font-weight: 600;
     white-space: pre-line;
-    mix-blend-mode: color-dodge;
+    z-index: 10;
+    animation: fadeinOpacity 3s;
 }
 
+@keyframes fadeinOpacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// @keyframes fadeinPosition {
+//     0% {
+//         position: absolute;
+//         top: 30%;
+//         opacity: 0;
+//     }
+
+//     75% {
+//         position: absolute;
+//         top: 15%;
+//         opacity: 1;
+//     }
+
+//     100% {
+//         position: absolute;
+//         top: 0%;
+//     }
+// }
+
 .header-maintitle-pos {
-    grid-column-start: 3; 
-    grid-row-start: 4; 
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    margin-top: 40%;
 }
 
 .small-uppercase-title-style {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 80%;
     font-weight: 300;
     letter-spacing: 2px;
 }
 
 .header-link-to-home {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 80%;
     font-weight: 300;
     letter-spacing: 2px;
     transition: 0.2s ease-in-out;
+    color: $color-dark-grey;
+
     &:hover {
         color: rgba($color: $primary-color, $alpha: 0.6);
         transform: scale(1.04);
@@ -45,22 +79,26 @@
 }
 
 .small-uppercase-title-pos-1 {
-    grid-column-start: 4; 
-    grid-row-start: 3; 
+    grid-column-start: 4;
+    grid-row-start: 3;
 }
 
 .small-uppercase-title-pos-2 {
-    grid-column-start: 3; 
-    grid-row-start: 5;
-    margin-top: 10px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    z-index: 10;
 }
 
 .rotate {
     transform: rotate(-90deg);
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-title {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 50px;
     font-weight: 500;
     max-width: 70%;
@@ -68,7 +106,7 @@
 }
 
 .news-title {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 50px;
     font-weight: 500;
     width: 100%;
@@ -79,7 +117,7 @@
 }
 
 .prof-card-title {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 20px;

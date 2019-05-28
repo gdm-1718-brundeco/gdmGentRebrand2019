@@ -25,9 +25,6 @@ import NewsDetail from "../../../pages/news-detail";
 
 class OverlayMenu extends Component {
 
-  goToLink = () => {
-    
-  }
 
   render() {
     const showHide = {
@@ -35,7 +32,7 @@ class OverlayMenu extends Component {
       hideMenu:
         "overlay-menu-wrapper overlay-menu-wrapper display-none"
     };
-    let menuState = this.props.menuState;
+    let menuState = this.props.menustate;
 
     return (
       <EasyFlexCol style={menuState ? showHide.showMenu : showHide.hideMenu}>
@@ -43,7 +40,6 @@ class OverlayMenu extends Component {
         <BlankDiv style="blank-div-md" />
         <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
-            <a href="/" className="overlay-menu-links">Home</a>
             <a href="/projects" className="overlay-menu-links">Work</a>
             <a href="/diensten" className="overlay-menu-links">Diensten</a>
             <a href="/team" className="overlay-menu-links">Team</a>

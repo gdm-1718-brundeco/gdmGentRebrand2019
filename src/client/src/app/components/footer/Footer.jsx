@@ -10,20 +10,20 @@ const Footer = () => {
   return (
     <EasyFlexCol style="col-medium-height">
       <EasyFlexRow style="row-space-between row-margin-sm row-width-md">
-        <Link text="Getuigenissen" style="footer-link"/>
-        <Link text="Events" style="footer-link"/>
-        <Link text="Nieuws" style="footer-link"/>
-        <Link text="Diensten" style="footer-link"/>
-        <Link text="Contact" style="footer-link"/>
-        <Link text="Team" style="footer-link"/>
-        <Link text="Work" style="footer-link"/>
+        <a href="" className="footer-link">Getuigenissen</a>
+        <a href="" className="footer-link">Events</a>
+        <a href="" className="footer-link">Nieuws</a>
+        <a href="" className="footer-link">Diensten</a>
+        <a href="" className="footer-link">Contact</a>
+        <a href="" className="footer-link">Team</a>
+        <a href="" className="footer-link">Work</a>
       </EasyFlexRow>
       <EasyFlexRow style="row-space-between row-margin-sm row-width-xsm">
-        <Link text="Facebook" style="color-lightgrey footer-link"/>
-        <Link text="Github" style="color-lightgrey footer-link"/>
-        <Link text="Instagram" style="color-lightgrey footer-link"/>
-        <Link text="Vimeo" style="color-lightgrey footer-link"/>
-        <Link text="Twitter" style="color-lightgrey footer-link"/>
+        <a href="https://www.facebook.com/GrafischeendigitalemediaArteveldehogeschool/" target='_blank' className="color-lightgrey footer-link">Facebook</a>
+        <a href="https://github.com/gdmgent" target='_blank' className="color-lightgrey footer-link">Github</a>
+        <a href="https://www.instagram.com/madebygdm/" target='_blank' className="color-lightgrey footer-link">Instagram</a>
+        <a href="https://vimeo.com/bachelorgdm" target='_blank' className="color-lightgrey footer-link">Vimeo</a>
+        <a href="https://twitter.com/arteveldegdm" target='_blank' className="color-lightgrey footer-link">Twitter</a>
       </EasyFlexRow>
       <EasyFlexRow style="row-space-between row-margin-sm">
         <Title style="paragraph-bottomline" />

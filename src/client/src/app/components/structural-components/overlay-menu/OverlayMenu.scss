@@ -25,11 +25,12 @@ a {
 }
 
 .bg-color-dark {
-    background: #000;
+    background: rgb(0, 0, 158);
     transition-timing-function: cubic-bezier(.2, .88, .85, .35);
     transition: width 0.3s;
     width: 100%;
     opacity: 1;
+    z-index: 100;
 }
 
 .display-none {
