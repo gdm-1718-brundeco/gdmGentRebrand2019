@@ -15,9 +15,9 @@ class AdminPage extends Component {
   render() {
     return (
       <div className="Admin">
-        <Route path="/admin/blogs" component={ BlogsOverviewPage }></Route>
         <Route path="/admin/categories" component={ CategoriesOverviewPage }></Route>
         <Route path="/admin/posts" component={ PostsOverviewPage }></Route>
+				<Route path="/admin/projects" component={ ProjectsOverviewPage }></Route>
       </div>
     )
   }
