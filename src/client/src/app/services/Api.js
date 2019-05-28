@@ -32,6 +32,12 @@ class Api {
         const response = await fetch(`${this.URL}/projects/${id}`);
         return await response.json();
     }
+
+    static findProjectImage = async (projectId) => {
+        const response = await fetch(`${this.URL}/projectimages/${projectId}`);
+        return await response.json();
+    }
+    
     static findAllEvents = async (queryParams=null) => {
         let url = `${this.URL}/events`;
         if (queryParams !== null) {
