@@ -100,7 +100,7 @@ Bouters, opleidingsdirecteur"
             <EasyFlexRow style="row-end">
               <a
                 href="/"
-                className="small-uppercase-title-style row-center primary-button"
+                className="primary-subtitle row-center primary-button"
               >
                 Bekijk onze richtingen
               </a>
@@ -109,15 +109,11 @@ Bouters, opleidingsdirecteur"
             <div className="row-space-between">
               <Title style="section-title" text="Work" />
             </div>
-            <div className="row-space-between">
-              <Featured style="featured-bg-image" />
-              <Featured style="featured-bg-image" />
-            </div>
             <BlankDiv style="blank-div-md" />
             <EasyFlexRow style="row-center">
               <a
                 href="/projects"
-                className="small-uppercase-title-style row-center primary-button"
+                className="primary-subtitle row-center primary-button"
               >
                 Bekijk alle projecten
               </a>

@@ -9,7 +9,7 @@ const Featured = ({ image, path }) => {
   return (
     <div className="featured-wrapper">
       <EasyFlexCol style="col-space-between col-card-width-1 ">
-        <EasyFlexCol style="col-space-between col-card-width-full">
+        <EasyFlexCol style="col-space-between card-wrapper">
           <Title text="Thrive" style="small-uppercase-title-style card-title-pos bl" />
           <MainImageComponent style="card-bg-image card-image-pos" href={path}/>
           <Paragraph

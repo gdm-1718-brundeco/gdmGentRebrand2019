@@ -17,21 +17,22 @@ class HeaderFullscreen extends Component {
     let imageState = this.props.imagestate;
     return (
       <MainImageComponent style="project-fullscreen-image">
+        <img src={this.props.src} className="fullscreen-header-image" />
+
         <Overlay style="header-overlay">
           <GridWrapper style="header-dynamic-grid">
-            <img src={this.props.src} className="fullscreen-header-image" />
             <Overlay style="header-overlay" />
-              <Title
-                style="header-maintitle-style"
-                text={this.state.headertitle}
-              />
             <Title
-              style="small-uppercase-title-style color-wh small-uppercase-title-pos-2"
+              style="header-maintitle-style"
+              text={this.state.headertitle}
+            />
+            <Title
+              style="primary-subtitle color-wh primary-subtitle-pos-1"
               text="arteveldehogeschool, mariakerke"
             />
             <EasyFlexRow style="flex-row small-uppercase-title-pos-1">
               <Title
-                style="small-uppercase-title-style rotate color-wh"
+                style="primary-subtitle primary-subtitle-pos-2 rotate color-wh"
                 text="scroll down"
               />
             </EasyFlexRow>
