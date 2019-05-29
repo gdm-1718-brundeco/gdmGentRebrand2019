@@ -11,12 +11,12 @@ class ProjectController {
 				const options = {
 					page: parseInt(skip, 10) || 1,
 					limit: parseInt(limit, 10) || 10,
-					populate: 'category',
+					populate: ['images', 'category'],
 					sort: { created_at: -1 },
 				};
 				projects = await Project.paginate({}, options);
 			} else {
-				projects = await Project.find().populate('category').sort({ created_at: -1 }).exec();
+				projects = await Project.find().populate(['category', 'images']).sort({ created_at: -1 }).exec();
 			}
 
 			if( projects === undefined || projects === null) {
@@ -32,7 +32,7 @@ class ProjectController {
 	show = async (req, res, next) => {
 		try {
 			const { id } = req.params;
-			const item = await Project.findById(id).populate('category').exec();
+			const item = await Project.findById(id).populate(['category', 'images']).exec();
 
 			if (item === undefined || item === null) {
 				throw new APIError(404, `Project with id ${id} not found`);

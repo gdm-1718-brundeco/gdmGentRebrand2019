@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import mongoossePaginate from 'mongoose-paginate';
 import slug from 'slug';
-import postSchema from './post.schema';
 
 const { Schema } = mongoose;
 
@@ -16,6 +15,7 @@ const ProjectSchema = new Schema(
 		published_at: { type: Date, required: false },
 		deleted_at: { type: Date, required: false },
 		categoryId: { type: Schema.Types.ObjectId, ref: 'Category', required: false },
+		images: [{ type: Schema.Types.ObjectId, ref: 'ProjectImage', required: true }]
 	},
 	{
 		toJSON: { virtuals: true },

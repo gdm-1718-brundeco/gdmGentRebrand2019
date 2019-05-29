@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router-dom';
 
 import { ContentLayout } from '../../layouts';
 
-import ProjectTablePage from '../project-table';
+import ProjectsTablePage from '../project-table';
 import ProjectFormPage from '../project-form';
 
 const tabs = [
@@ -18,6 +18,7 @@ class ProjectsOverviewPage extends Component {
 		return (
 			<ContentLayout title='Projects Overview' tabs={tabs}>
 				{ children }
+				<Route exact path="/admin/projects" component={ProjectsTablePage}></Route>
 			</ContentLayout>
 		)
 	}
