@@ -55,7 +55,7 @@ class NewsDetailPage extends Component {
     if (post != null) {
       return (
         <React.Fragment>
-          <OverlayMenu menuState={this.state.showMenu} />
+          <OverlayMenu menustate={this.state.showMenu} />
           <GridWrapper style="main-page-wrapper">
             <GeneralNav
               toggleMenu={this.toggleMenu}

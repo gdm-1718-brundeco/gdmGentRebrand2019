@@ -34,7 +34,8 @@ import EasyFlexRow from "../../components/structural-components/flexbox/easy-fle
 
 class HomePage extends Component {
   state = {
-    showMenu: false
+    showMenu: false,
+    headerImage: require("../../assets/images/robot.jpeg")
   };
 
   componentWillMount() {
@@ -72,10 +73,9 @@ class HomePage extends Component {
     return (
       <React.Fragment>
         <ParallaxProvider>
-          <OverlayMenu menuState={this.state.showMenu} />
+          <OverlayMenu menustate={this.state.showMenu} />
           <HeaderFullscreen
-            toggleMenu={this.toggleMenu}
-            menustate={this.getParentState()}
+            src={require("../../assets/images/bg-image-homepage-3.jpg")}
           />
           <GridWrapper style="main-page-wrapper">
             <GeneralNav
@@ -98,7 +98,12 @@ Bouters, opleidingsdirecteur"
             />
             <Paragraph style="paragraph-bottomline par-pos-1" />
             <EasyFlexRow style="row-end">
-              <PrimaryButton text="Bekijk onze richtingen" />
+              <a
+                href="/"
+                className="small-uppercase-title-style row-center primary-button"
+              >
+                Bekijk onze richtingen
+              </a>
             </EasyFlexRow>
             <BlankDiv style="blank-div-md" />
             <div className="row-space-between">
@@ -110,7 +115,12 @@ Bouters, opleidingsdirecteur"
             </div>
             <BlankDiv style="blank-div-md" />
             <EasyFlexRow style="row-center">
-              <PrimaryButton text="Bekijk alle projecten" />
+              <a
+                href="/projects"
+                className="small-uppercase-title-style row-center primary-button"
+              >
+                Bekijk alle projecten
+              </a>
             </EasyFlexRow>
             <BlankDiv style="blank-div-lg" />
             <Footer />

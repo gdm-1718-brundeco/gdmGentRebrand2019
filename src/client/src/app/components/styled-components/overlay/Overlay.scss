@@ -2,4 +2,10 @@
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+
+html {
+    cursor: crosshair !important;
+    transition: 0.2s ease-in-out;
 }

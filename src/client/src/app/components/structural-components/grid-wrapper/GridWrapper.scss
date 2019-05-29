@@ -1,21 +1,29 @@
 .header-dynamic-grid {
-    display: grid;
-    grid-template-columns: 0.4fr 0.4fr 1.4fr 0.4fr;
-    grid-template-rows: 1.3fr 0.5fr 0.7fr 1.2fr 1.3fr;
-    grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . .";
-    height: 100vh;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .main-page-wrapper {
     width: 90%;
-    // background-color: blue;
     min-height: 100px;
     margin: 0 auto;
 }
 
 @media only screen and (min-width: 1224px) {
     .main-page-wrapper {
-      // background-color: lightblue;
       width: 1050px;
+    }
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    .header-dynamic-grid  {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .header-maintitle-pos {
+      grid-column-end: 4;
     }
   }

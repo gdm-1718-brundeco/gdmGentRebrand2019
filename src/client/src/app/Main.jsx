@@ -36,6 +36,7 @@ Import styling
 */
 import "./Main.css";
 import { homedir } from "os";
+import ContactPage from "./pages/contact/ContactPage";
 
 class Main extends Component {
   render() {
@@ -100,6 +101,11 @@ class Main extends Component {
             path="/admin"
             layout={AdminLayout}
             component={AdminPage}
+          />
+          <RouteWithLayout
+            path="/contact"
+            layout={PageLayout}
+            component={ContactPage}
           />
         </Switch>
       </div>

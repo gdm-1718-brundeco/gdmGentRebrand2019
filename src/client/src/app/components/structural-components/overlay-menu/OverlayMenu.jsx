@@ -6,8 +6,7 @@ import Title from "../../text-components/title/Title";
 import Link from "../../text-components/link/Link";
 import Paragraph from "../../text-components/paragraph/Paragraph";
 import BlankDiv from "../../styled-components/blank-div/BlankDiv";
-import { Route } from 'react-router-dom';
-
+import { Route } from "react-router-dom";
 
 /*
 Layout
@@ -15,27 +14,13 @@ Layout
 import { LoginLayout, PageLayout } from "../../../layouts";
 import { AdminLayout } from "../../../admin/layouts";
 
-/*
-Page components
-*/
-import HomePage from "../../../pages/home";
-import NewsPage from "../../../pages/news";
-import TeamPage from "../../../pages/team";
-import NewsDetail from "../../../pages/news-detail";
-
 class OverlayMenu extends Component {
-
-  goToLink = () => {
-    
-  }
-
   render() {
     const showHide = {
       showMenu: "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper",
-      hideMenu:
-        "overlay-menu-wrapper overlay-menu-wrapper display-none"
+      hideMenu: "overlay-menu-wrapper overlay-menu-wrapper display-none"
     };
-    let menuState = this.props.menuState;
+    let menuState = this.props.menustate;
 
     return (
       <EasyFlexCol style={menuState ? showHide.showMenu : showHide.hideMenu}>
@@ -43,13 +28,24 @@ class OverlayMenu extends Component {
         <BlankDiv style="blank-div-md" />
         <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
-            <a href="/" className="overlay-menu-links">Home</a>
-            <a href="/projects" className="overlay-menu-links">Work</a>
-            <a href="/diensten" className="overlay-menu-links">Diensten</a>
-            <a href="/team" className="overlay-menu-links">Team</a>
-            <a href="/etuigenissen" className="overlay-menu-links">Getuigenissen</a>
-            <a href="/news" className="overlay-menu-links">Nieuws & events</a>
-            <a href="/contact" className="overlay-menu-links">Contact</a>
+            <a href="/projects" className="overlay-menu-links">
+              Work
+            </a>
+            <a href="/services" className="overlay-menu-links">
+              Diensten
+            </a>
+            <a href="/team" className="overlay-menu-links">
+              Team
+            </a>
+            <a href="/statement" className="overlay-menu-links">
+              Getuigenissen
+            </a>
+            <a href="/news" className="overlay-menu-links">
+              Nieuws & events
+            </a>
+            <a href="/contact" className="overlay-menu-links">
+              Contact
+            </a>
           </EasyFlexCol>
           <EasyFlexCol style="col-flex-start text-align-right">
             <Link

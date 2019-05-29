@@ -6,15 +6,18 @@
     height: auto;
     justify-content: space-around;
     align-items: center;
+    height: 45px;
 
     &:hover {
         cursor: pointer;
+        transition: 0.2s ease-in-out;
     }
 }
 
 .fade-in-menutitle {
     opacity: 1;
     transition: 0.2s ease-in-out;
+    color: $color-dark-grey;
 }
 
 .fade-out-menutitle {
@@ -44,14 +47,14 @@
 }
 
 .nav-burger-top {
-    width: 60px;
+    width: 45px;
     height: 1px;
     background: $color-dark-grey;
     transition: 0.2s ease-in-out;
 }
 
 .nav-burger-bottom {
-    width: 30px;
+    width: 45px;
     height: 1px;
     background: $color-dark-grey;
     transition: 0.2s ease-in-out;

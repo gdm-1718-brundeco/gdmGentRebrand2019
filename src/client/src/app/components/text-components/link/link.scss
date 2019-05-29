@@ -16,10 +16,11 @@
     font-size: 40px;
     color: #fff;
     transition: 0.2s ease-in-out;
+    font-weight: 200;
 
     &:hover {
         padding-left: 2px;
-        color: $color-dark-grey;;
+        color: $color-dark-grey;
         transition: 0.2s ease-in-out;
         cursor: pointer;
     }
@@ -27,7 +28,8 @@
 
 .overlay-menu-links-social {
     font-size: 25px;
-    color: $color-dark-grey;;
+    color: $color-dark-grey;
+    font-weight: 300;
 
     &:hover {
         transition: 0.2s ease-in-out;
@@ -37,7 +39,7 @@
 }
 
 .news-list-item {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 35px;
     font-weight: 500;
     max-width: 70%;
@@ -55,7 +57,7 @@
 }
 
 .link-previous-article {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 40px;
     font-weight: 500;
     max-width: 70%;
@@ -71,7 +73,7 @@
 }
 
 .link-next-article {
-    font-family: 'Gill Sans Std', 'Lato', sans-serif;
+    font-family: $font-family-roboto;
     font-size: 40px;
     font-weight: 500;
     max-width: 70%;

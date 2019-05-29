@@ -69,7 +69,7 @@ class NewsPage extends Component {
 
   render() {
     const { pagination, posts } = this.state;
-    console.log(posts[0]);
+    console.log(posts);
 
     // this.items = this.state.posts.map((item, key) => (
     //   <div key={item.id}>
@@ -82,7 +82,7 @@ class NewsPage extends Component {
 
     return (
       <React.Fragment>
-        <OverlayMenu menuState={this.state.showMenu} />
+        <OverlayMenu menustate={this.state.showMenu} />
         <GridWrapper style="main-page-wrapper">
           <GeneralNav
             toggleMenu={this.toggleMenu}
