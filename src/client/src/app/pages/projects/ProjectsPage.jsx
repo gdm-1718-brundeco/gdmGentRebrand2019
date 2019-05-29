@@ -41,15 +41,15 @@ class ProjectsPage extends Component {
     }
   };
 
-  componentWillMount() {
-    this.loadPosts(1);
+  async componentWillMount() {
+    await this.loadPosts(1);
   }
 
   loadPosts = pageIndex => {
-    console.log(pageIndex);
+    // console.log(pageIndex);
     Api.findAllProjects({ limit: 4, skip: pageIndex })
       .then(data => {
-        console.log(data.docs);
+        // console.log(data.docs[0].images);
         const prevProjects = this.state.projects;
         const newProjects = [...prevProjects, ...data.docs];
         this.setState(prevState => ({
@@ -62,7 +62,8 @@ class ProjectsPage extends Component {
             total: data.total
           }
         }));
-      }).catch(error => {
+      })
+      .catch(error => {
         console.log(error);
       });
   };
@@ -89,14 +90,13 @@ class ProjectsPage extends Component {
         <h2 className="primary-subtitle">{item.title}</h2>
         <div className="card-zoom">
           <img
-            src={require("../../assets/images/bg-image-homepage.jpg")}
+            src={item.images[0].path}
             className="placeholder"
             href={"/projects/" + item.id}
           />
         </div>
         <p className="card-synopsis">{item.synopsis}</p>
         <br />
-        {/* <a href={"/projects/" + item.id}> Detail</a> */}
       </div>
     ));
     return (
@@ -118,7 +118,6 @@ class ProjectsPage extends Component {
             text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
             style="standard-text-paragraph par-pos-1 paragraph-mb-med"
           />
-           {this.items}
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Projecten" />
           <EasyFlexRow style="row-space-between col-card-width-1 ">

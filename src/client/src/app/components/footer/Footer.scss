@@ -1,0 +1,13 @@
+@media only screen and (max-width: 750px) {
+    .row-margin-sm {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-link {
+        margin: 5px 0px;
+        font-size: 140%;
+    }
+    .col-medium-height {
+        padding-left: 10%;
+    }
+  }

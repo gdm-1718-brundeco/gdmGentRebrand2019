@@ -11,7 +11,7 @@
     font-size: 100px;
     color: #fff;
     min-height: 0;
-    font-weight: 600;
+    font-weight: 500;
     white-space: pre-line;
     z-index: 10;
     animation: fadeinOpacity 3s;
@@ -46,16 +46,6 @@
 @media only screen and (max-width: 1100px) {
     .header-maintitle-style {
         font-size: 65px;
-        white-space: normal;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .header-maintitle-pos {
-        grid-column-start: 2;
-        grid-column-end: 5;
-        grid-row-start: unset;
-        margin-top: 60%;
     }
 }
 

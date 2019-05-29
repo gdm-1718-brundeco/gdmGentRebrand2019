@@ -43,7 +43,6 @@ class GeneralNav extends Component {
     };
 
     let menuState = this.props.menustate;
-    console.log(menuState);
 
     return (
       <EasyFlexRow style="row-space-between header-nav-justify-content nav-fixed">

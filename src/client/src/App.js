@@ -15,11 +15,9 @@ require('./app/assets/images/favicon/android-chrome-256x256.png')
 class App extends Component {
   render() {
     return (
-      <ParallaxProvider>
         <Router>
           <Main />
         </Router>
-      </ParallaxProvider>
     );
   }
 }

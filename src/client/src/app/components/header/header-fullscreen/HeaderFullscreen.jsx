@@ -5,6 +5,8 @@ import Overlay from "../../styled-components/overlay/Overlay";
 import GridWrapper from "../../structural-components/grid-wrapper/GridWrapper";
 import Title from "../../text-components/title/Title";
 import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyFlexRow";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 
 import "./HeaderFullscreen.scss";
 
@@ -16,29 +18,34 @@ class HeaderFullscreen extends Component {
   render() {
     let imageState = this.props.imagestate;
     return (
-      <MainImageComponent style="project-fullscreen-image">
-        <img src={this.props.src} className="fullscreen-header-image" />
-
-        <Overlay style="header-overlay">
-          <GridWrapper style="header-dynamic-grid">
-            <Overlay style="header-overlay" />
-            <Title
-              style="header-maintitle-style"
-              text={this.state.headertitle}
-            />
-            <Title
-              style="primary-subtitle color-wh primary-subtitle-pos-1"
-              text="arteveldehogeschool, mariakerke"
-            />
-            <EasyFlexRow style="flex-row small-uppercase-title-pos-1">
+        <Parallax className="custom-class project-fullscreen-image" y={[20, -20]} tagOuter="figure">
+          <img src={this.props.src} className="fullscreen-header-image" />
+          <Overlay style="header-overlay">
+            <GridWrapper style="header-dynamic-grid">
+              <Overlay style="header-overlay" />
               <Title
-                style="primary-subtitle primary-subtitle-pos-2 rotate color-wh"
-                text="scroll down"
+                style="header-maintitle-style"
+                text={this.state.headertitle}
               />
-            </EasyFlexRow>
-          </GridWrapper>
-        </Overlay>
-      </MainImageComponent>
+              <Parallax
+                className="custom-class"
+                y={[50, -100]}
+                tagOuter="figure"
+              >
+                <Title
+                  style="primary-subtitle color-wh primary-subtitle-pos-1"
+                  text="arteveldehogeschool, mariakerke"
+                />
+              </Parallax>
+              <EasyFlexRow style="flex-row small-uppercase-title-pos-1">
+                <Title
+                  style="primary-subtitle primary-subtitle-pos-2 rotate color-wh"
+                  text="scroll down"
+                />
+              </EasyFlexRow>
+            </GridWrapper>
+          </Overlay>
+        </Parallax>
     );
   }
 }

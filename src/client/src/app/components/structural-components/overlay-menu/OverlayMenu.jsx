@@ -37,11 +37,14 @@ class OverlayMenu extends Component {
             <a href="/team" className="overlay-menu-links">
               Team
             </a>
-            <a href="/statement" className="overlay-menu-links">
+            <a href="/statements" className="overlay-menu-links">
               Getuigenissen
             </a>
             <a href="/news" className="overlay-menu-links">
-              Nieuws & events
+              Nieuws
+            </a>
+            <a href="/events" className="overlay-menu-links">
+              Events
             </a>
             <a href="/contact" className="overlay-menu-links">
               Contact

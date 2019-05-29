@@ -71,8 +71,8 @@ class HomePage extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <ParallaxProvider>
+      <ParallaxProvider>
+        <React.Fragment>
           <OverlayMenu menustate={this.state.showMenu} />
           <HeaderFullscreen
             src={require("../../assets/images/bg-image-homepage-3.jpg")}
@@ -87,15 +87,17 @@ class HomePage extends Component {
               style="section-title"
               text="Wat je kan verwachten van onze gdm opleidingen"
             />
-            <Paragraph
-              text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-            />
-            <Quote
-              text="“Wij stomen toekomstige talenten klaar voor een bruisende toekomst als audiovisual artist, graphic designer of developer” - Luk 
+            <Parallax className="custom-class" y={[-20, 40]} tagOuter="figure">
+              <Paragraph
+                text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+                style="standard-text-paragraph par-pos-1 paragraph-mb-med"
+              />
+              <Quote
+                text="“Wij stomen toekomstige talenten klaar voor een bruisende toekomst als audiovisual artist, graphic designer of developer” - Luk 
 Bouters, opleidingsdirecteur"
-              style="primary-quote quote-pos-1"
-            />
+                style="primary-quote quote-pos-1"
+              />
+
             <Paragraph style="paragraph-bottomline par-pos-1" />
             <EasyFlexRow style="row-end">
               <a
@@ -105,6 +107,7 @@ Bouters, opleidingsdirecteur"
                 Bekijk onze richtingen
               </a>
             </EasyFlexRow>
+            </Parallax>
             <BlankDiv style="blank-div-md" />
             <div className="row-space-between">
               <Title style="section-title" text="Work" />
@@ -121,8 +124,8 @@ Bouters, opleidingsdirecteur"
             <BlankDiv style="blank-div-lg" />
             <Footer />
           </GridWrapper>
-        </ParallaxProvider>
-      </React.Fragment>
+        </React.Fragment>
+      </ParallaxProvider>
     );
   }
 }
