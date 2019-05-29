@@ -19,6 +19,7 @@ class ProjectsOverviewPage extends Component {
 		return (
 			<ContentLayout title='Projects Overview' tabs={tabs}>
 				{ children }
+				<Route exact path="/admin/projects" component={ProjectsTablePage}></Route>
 			</ContentLayout>
 		)
 	}
