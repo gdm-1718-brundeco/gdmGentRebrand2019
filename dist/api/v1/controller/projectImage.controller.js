@@ -118,7 +118,9 @@ var ProjectImageController = function ProjectImageController() {
               _context2.prev = 0;
               id = req.params.id;
               _context2.next = 4;
-              return _database.ProjectImage.findById(id).exec();
+              return _database.ProjectImage.find({
+                'projectId': id
+              }).exec();
 
             case 4:
               item = _context2.sent;
@@ -128,7 +130,7 @@ var ProjectImageController = function ProjectImageController() {
                 break;
               }
 
-              throw new _utilities.APIError(404, "Event with id: ".concat(id, " not found!"));
+              throw new _utilities.APIError(404, "Images from Project: ".concat(id, " not found!"));
 
             case 7:
               return _context2.abrupt("return", res.status(200).json(item));

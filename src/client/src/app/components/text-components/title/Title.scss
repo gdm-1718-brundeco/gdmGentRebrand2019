@@ -1,14 +1,43 @@
 @import '../../../_sass/abstracts/variables';
 
+.mybgfontimg {
+    background: url(../../../assets/images/bg-image-homepage-2.jpg)no-repeat;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .header-maintitle-style {
     font-family: $font-family-roboto;
-    font-size: 80px;
+    font-size: 100px;
     color: #fff;
     min-height: 0;
     font-weight: 600;
     white-space: pre-line;
     z-index: 10;
     animation: fadeinOpacity 3s;
+}
+
+.header-maintitle-pos {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    margin-top: 40%;
+}
+
+@media only screen and (max-width: 1100px) {
+    .header-maintitle-style {
+        font-size: 65px;
+        white-space: normal;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .header-maintitle-pos {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: unset;
+        margin-top: 60%;
+    }
 }
 
 @keyframes fadeinOpacity {
@@ -19,32 +48,6 @@
     to {
         opacity: 1;
     }
-}
-
-// @keyframes fadeinPosition {
-//     0% {
-//         position: absolute;
-//         top: 30%;
-//         opacity: 0;
-//     }
-
-//     75% {
-//         position: absolute;
-//         top: 15%;
-//         opacity: 1;
-//     }
-
-//     100% {
-//         position: absolute;
-//         top: 0%;
-//     }
-// }
-
-.header-maintitle-pos {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    margin-top: 40%;
 }
 
 .small-uppercase-title-style {
@@ -78,16 +81,17 @@
     color: #000;
 }
 
-.small-uppercase-title-pos-1 {
-    grid-column-start: 4;
-    grid-row-start: 3;
-}
-
 .small-uppercase-title-pos-2 {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 3;
     z-index: 10;
+}
+
+.small-uppercase-title-pos-1 {
+    grid-column-start: 2;
+    position: absolute;
+    right: 0;
 }
 
 .rotate {

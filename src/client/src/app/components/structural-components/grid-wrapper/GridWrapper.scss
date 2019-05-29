@@ -1,9 +1,9 @@
-.header-dynamic-grid{
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  display: grid;
+.header-dynamic-grid {
+  display: flex;
   height: 100vh;
   position: relative;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .main-page-wrapper {
@@ -15,5 +15,15 @@
 @media only screen and (min-width: 1224px) {
     .main-page-wrapper {
       width: 1050px;
+    }
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    .header-dynamic-grid  {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .header-maintitle-pos {
+      grid-column-end: 4;
     }
   }

@@ -75,9 +75,7 @@ class HomePage extends Component {
         <ParallaxProvider>
           <OverlayMenu menustate={this.state.showMenu} />
           <HeaderFullscreen
-            toggleMenu={this.toggleMenu}
-            menustate={this.getParentState()}
-            src={require("../../assets/images/bg-image-homepage.jpg")}
+            src={require("../../assets/images/bg-image-homepage-3.jpg")}
           />
           <GridWrapper style="main-page-wrapper">
             <GeneralNav

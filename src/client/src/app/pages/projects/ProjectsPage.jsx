@@ -26,6 +26,9 @@ import PrimaryButton from "../../components/button-components/primary-button/Pri
 import ProjectHeader from "../../components/header/project-header";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
+import MainImageComponent from "../../components/image-components/main-image-component";
+import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
+
 class ProjectsPage extends Component {
   state = {
     projects: [],
@@ -45,7 +48,7 @@ class ProjectsPage extends Component {
     console.log(pageIndex);
     Api.findAllProjects({ limit: 3, skip: pageIndex })
       .then(data => {
-        console.log(data.docs)
+        console.log(data.docs);
         const prevProjects = this.state.projects;
         const newProjects = [...prevProjects, ...data.docs];
         this.setState(prevState => ({
@@ -74,61 +77,64 @@ class ProjectsPage extends Component {
   };
 
   getParentState = e => {
-    let parentState = this.state.showMenu
-    return(parentState)
-  }
+    let parentState = this.state.showMenu;
+    return parentState;
+  };
 
   render() {
     const { pagination, projects } = this.state;
-    this.items = this.state.projects.map( (item,key) =>
-    <div key={item.id}>
-      <h1>{item.title}</h1>
-      <p>{item.synopsis}</p>
-      <br></br>
-      <a href={'/projects/' + item.id}> Detail</a>
-    </div>
-  );
+    this.items = this.state.projects.map((item, key) => (
+      <div key={item.id}>
+        <h1>{item.title}</h1>
+        <p>{item.synopsis}</p>
+        <br />
+        <a href={"/projects/" + item.id}> Detail</a>
+      </div>
+    ));
     return (
-     /*  <React.Fragment>
-      <OverlayMenu menuState={this.state.showMenu}/>
+      <React.Fragment>
+        <OverlayMenu menustate={this.state.showMenu} />
 
-        {<h1 className="hidden">Nieuws</h1>
-                <section className="section section--articles">
+        {/* <section className="section section--articles">
                     <PostsListPaged posts={posts} pagination={pagination} onReadMore={this.goToPostDetailPage} onLoadMore={this.loadPosts} />
-                </section>}
+                </section>  */}
         <GridWrapper style="main-page-wrapper">
           <GeneralNav
             toggleMenu={this.toggleMenu}
             menustate={this.getParentState()}
           />
           <BlankDiv style="blank-div-lg" />
-          <Title style="section-title" text="Nieuws" />
-          <Link
-            style="news-list-item"
-            text="Erasmus project: exchange knowledge for future innovation"
+          <Title style="section-title" text="Work" />
+          <Paragraph
+            text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+            style="standard-text-paragraph par-pos-1 paragraph-mb-med"
           />
-          <Link style="news-list-item" text="Did someone say bootcamp?" />
-          <Link
-            style="news-list-item"
-            text="Is ondernemerschap iets dat je kan aanleren?"
-          />
-          <Link style="news-list-item" text="Aftermovie GMB cafe" />
-          <Link
-            style="news-list-item"
-            text="Parkspot pitch bij In The Pocket"
-          />
+          <BlankDiv style="blank-div-lg" />
+          <EasyFlexRow style="row-space-between col-card-width-1 ">
+            <EasyFlexCol style="col-space-between col-card-width-full">
+              <p className="small-uppercase-title-style card-title-pos bl">
+                Thrive
+              </p>
+              <MainImageComponent style="card-bg-image card-image-pos" />
+            </EasyFlexCol>
+            <EasyFlexCol style="col-space-between col-card-width-full">
+              <p className="small-uppercase-title-style card-title-pos bl">
+                Thrive
+              </p>
+              <MainImageComponent style="card-bg-image card-image-pos" />
+            </EasyFlexCol>
+          </EasyFlexRow>
           <BlankDiv style="blank-div-lg" />
           <Footer />
         </GridWrapper>
       </React.Fragment>
-       */
-      <React.Fragment>
+
+      /* <React.Fragment>
         <Title style="section-title" text="Projects" />
            {this.items}
-      </React.Fragment>
+      </React.Fragment> */
     );
   }
 }
 
 export default ProjectsPage;
-

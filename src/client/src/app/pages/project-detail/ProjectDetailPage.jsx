@@ -36,9 +36,6 @@ class ProjectDetailPage extends Component {
             .catch((error) => {
 
             });
-
-       
-          
     }
 
     render() {

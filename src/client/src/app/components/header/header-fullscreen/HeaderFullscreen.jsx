@@ -6,25 +6,25 @@ import GridWrapper from "../../structural-components/grid-wrapper/GridWrapper";
 import Title from "../../text-components/title/Title";
 import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
-import './HeaderFullscreen.scss'
+import "./HeaderFullscreen.scss";
 
 class HeaderFullscreen extends Component {
   state = {
-    headertitle: `Grafische \n en digitale media`,
+    headertitle: `Grafische \n en digitale media`
   };
 
   render() {
-    let imageState = this.props.imagestate
-  return (
+    let imageState = this.props.imagestate;
+    return (
       <MainImageComponent style="project-fullscreen-image">
         <Overlay style="header-overlay">
           <GridWrapper style="header-dynamic-grid">
             <img src={this.props.src} className="fullscreen-header-image" />
-            <Overlay style="header-overlay"/>
-            <Title
-              style="header-maintitle-style header-maintitle-pos"
-              text={this.state.headertitle}
-            />
+            <Overlay style="header-overlay" />
+              <Title
+                style="header-maintitle-style"
+                text={this.state.headertitle}
+              />
             <Title
               style="small-uppercase-title-style color-wh small-uppercase-title-pos-2"
               text="arteveldehogeschool, mariakerke"

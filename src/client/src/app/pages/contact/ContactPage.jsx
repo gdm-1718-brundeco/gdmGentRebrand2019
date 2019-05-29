@@ -25,7 +25,7 @@ import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
-
+import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 
 class ContactPage extends Component {
   state = {
@@ -87,7 +87,7 @@ class ContactPage extends Component {
               text="“Wij stomen toekomstige talenten klaar voor een bruisende toekomst als audiovisual artist, graphic designer of developer” - Luk Bouters, opleidingsdirecteur"
               style="primary-quote quote-pos-1"
             />
-            <Paragraph style="paragraph-bottomline par-pos-1" />      
+            <Paragraph style="paragraph-bottomline par-pos-1" />
             <BlankDiv style="blank-div-lg" />
             <Footer />
           </GridWrapper>
