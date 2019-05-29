@@ -32,6 +32,7 @@ import EasyFlexCol from "../../components/structural-components/flexbox/easy-fle
 class ProjectsPage extends Component {
   state = {
     projects: [],
+    projectImage: null,
     pagination: {
       limit: 5,
       page: 1,
@@ -46,7 +47,7 @@ class ProjectsPage extends Component {
 
   loadPosts = pageIndex => {
     console.log(pageIndex);
-    Api.findAllProjects({ limit: 3, skip: pageIndex })
+    Api.findAllProjects({ limit: 4, skip: pageIndex })
       .then(data => {
         console.log(data.docs);
         const prevProjects = this.state.projects;
@@ -61,8 +62,7 @@ class ProjectsPage extends Component {
             total: data.total
           }
         }));
-      })
-      .catch(error => {
+      }).catch(error => {
         console.log(error);
       });
   };
@@ -118,6 +118,7 @@ class ProjectsPage extends Component {
             text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
             style="standard-text-paragraph par-pos-1 paragraph-mb-med"
           />
+           {this.items}
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Projecten" />
           <EasyFlexRow style="row-space-between col-card-width-1 ">
