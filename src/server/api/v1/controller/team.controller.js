@@ -56,6 +56,7 @@ class TeamController {
 				last_name: req.body.last_name,
 				job: req.body.job,
 				image: req.body.image,
+				bio: req.body.bio,
 				quote: req.body.quote,
 			});
 			const team = await teamCreate.save();
