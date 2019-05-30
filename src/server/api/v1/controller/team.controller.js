@@ -1,29 +1,28 @@
-import { Project } from '../database';
+import { Team } from '../database';
 import { APIError, handleAPIError } from '../../../utilities';
 
-class ProjectController {
+class TeamController {
 	index = async (req, res, next) => {
 		try {
 			const { limit, skip } = req.query;
-			let projects = null;
+			let team = null;
 
 			if (limit && skip) {
 				const options = {
 					page: parseInt(skip, 10) || 1,
 					limit: parseInt(limit, 10) || 10,
-					populate: ['images', 'category'],
 					sort: { created_at: -1 },
 				};
-				projects = await Project.paginate({}, options);
+				team = await Team.paginate({}, options);
 			} else {
-				projects = await Project.find().populate(['category', 'images']).sort({ created_at: -1 }).exec();
+				team = await Team.find().sort({ created_at: -1 }).exec();
 			}
 
-			if( projects === undefined || projects === null) {
+			if( team === undefined || team === null) {
 				throw new APIError(404, 'Collection for projects not found');
 			}
 
-			return res.status(200).json(projects);
+			return res.status(200).json(team);
 		} catch (err) {
 			return handleAPIError(500, err.message || 'Some error occured while retrieving posts', next);
 		}
@@ -32,7 +31,7 @@ class ProjectController {
 	show = async (req, res, next) => {
 		try {
 			const { id } = req.params;
-			const item = await Project.findById(id).populate(['category', 'images']).exec();
+			const item = await Team.findById(id).exec();
 
 			if (item === undefined || item === null) {
 				throw new APIError(404, `Project with id ${id} not found`);
@@ -52,15 +51,16 @@ class ProjectController {
 
 	store = async (req, res, next) => {
 		try {
-			const projectCreate = new Project({
-				title: req.body.title,
-				synopsis: req.body.synopsis,
-				body: req.body.body,
-				categoryId: req.body.categoryId,
-				images: req.body.images,
+			const teamCreate = new Team({
+				first_name: req.body.first_name,
+				last_name: req.body.last_name,
+				job: req.body.job,
+				image: req.body.image,
+				bio: req.body.bio,
+				quote: req.body.quote,
 			});
-			const project = await projectCreate.save();
-			return res.status(201).json(project);
+			const team = await teamCreate.save();
+			return res.status(201).json(team);
 		} catch (err) {
 			return handleAPIError(err.status || 500, err.message || 'Something went wrong while saving the Project.', next);
 		}
@@ -70,7 +70,7 @@ class ProjectController {
 		const { id } = req.params;
 
 		try {
-			const project = await Project.findById(id).exec();
+			const project = await Team.findById(id).exec();
 
 			if(!project) {
 				throw new APIError(404, `Project with id: ${id} not found.`);
@@ -90,13 +90,13 @@ class ProjectController {
 		const { id } = req.params;
 
 		try {
-			const projectUpdate = req.body;
-			const project = await Project.findOneAndUpdate({ _id: id }, projectUpdate, { new: true }).exec();
+			const teamUpdate = req.body;
+			const team = await Team.findOneAndUpdate({ _id: id }, teamUpdate, { new: true }).exec();
 
-			if (!project) {
+			if (!team) {
 				throw new APIError(404, `Post with id: ${id} not found.`);
 			}
-			return res.status(200).json(project);
+			return res.status(200).json(team);
 		} catch(err) {
 			return handleAPIError(err.status || 500, err.message || `Some error occured while updating the post with id: ${id}`);
 		}
@@ -106,17 +106,17 @@ class ProjectController {
 		const { id } = req.params;
 
 		try {
-			let project = null;
+			let team = null;
 			let { mode } = req.query;
 
 			if(mode) {
-				project = await Project.findByIdAndUpdate({ _id: id }, { deleted_at: (mode === 'softDelete' ? Date.now() : null)} , { new: true });
+				team = await Team.findByIdAndUpdate({ _id: id }, { deleted_at: (mode === 'softDelete' ? Date.now() : null)} , { new: true });
 			} else {
 				mode = 'delete';
-				project = await Project.findByIdAndRemove({ _id: id });
+				team = await Team.findByIdAndRemove({ _id: id });
 			}
 
-			if(!project) {
+			if(!team) {
 				throw new APIError(404, `Project with id: ${id} not found.`);
 			} else {
 				return res.status(200).json({ message: `Successfully deleted the Project with id: ${id}.`, post, mode });
@@ -127,4 +127,4 @@ class ProjectController {
 	}
 }
 
-export default ProjectController;
+export default TeamController;
