@@ -9,10 +9,12 @@ const TeamSchema = new Schema(
 		first_name: { type: String, required: true, max: 64 },
 		last_name: { type: String, required: true, max: 64 },
 		job: { type: String, required: true, max: 128 },
+		email: { type: String, required: true, max: 128 },
 		slug: { type: String, lowercase: true, unique: true, required: true },
+		image_path: { type: String, required: true, max: 256 },
 		// Add with extra necessary info
 		deleted_at: { type: Date, required: false },
-		quotes: [{ type: Schema.Types.ObjectId, ref: 'Quote', required: false }],
+		quote: { type: String, required: false },
 	},
 	{
 		toJSON: { virtuals: true },

@@ -20,6 +20,7 @@ import projectRouter from './project.routes';
 import projectImageRouter from './projectImage.routes';
 import eventRouter from './event.routes';
 import teamRouter from './team.routes';
+import testimonialRouter from './testimonial.routes';
 
 // Initialize the AuthService
 const authService = new AuthService();
@@ -35,5 +36,6 @@ projectRouter(apiV1Router, authService);
 projectImageRouter(apiV1Router, authService);
 eventRouter(apiV1Router, authService);
 teamRouter(apiV1Router, authService);
+testimonialRouter(apiV1Router, authService);
 
 export default apiV1Router;

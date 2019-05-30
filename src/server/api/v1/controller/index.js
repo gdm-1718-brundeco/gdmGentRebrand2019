@@ -8,6 +8,8 @@ import ProjectController from './project.controller';
 import EventController from './event.controller';
 import ProjectImageController from './projectImage.controller';
 import TeamController from './team.controller';
+import TestimonialController from './testimonial.controller';
+import TypeController from './type.controller';
 
 
 export {
@@ -20,4 +22,6 @@ export {
 		ProjectImageController,
 		EventController,
 		TeamController,
+		TestimonialController,
+		TypeController,
 };

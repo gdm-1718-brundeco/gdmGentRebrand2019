@@ -7,6 +7,8 @@ import Project from './project.schema';
 import Event from './event.schema';
 import ProjectImage from './projectImage.schema';
 import Team from './team.schema';
+import Testimonial from './testimonial.schema';
+import Type from './type.schema';
 
 export {
     Blog,
@@ -17,4 +19,6 @@ export {
 		ProjectImage,
 		Event,
 		Team,
+		Testimonial,
+		Type,
 };

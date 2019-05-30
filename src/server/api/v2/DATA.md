@@ -8,7 +8,7 @@
 * [x] Blog (Posts)
 * [ ] Diensten (opleidingen)
 * [x] Team
-* [ ] Getuigenissen
+* [x] Getuigenissen (Testimonial)
 
 * User (dashboard)
 
@@ -16,5 +16,5 @@
 
 * Categorie
 * Afbeeldingen
-* Video
+* Types voor testimonials
 * ...
