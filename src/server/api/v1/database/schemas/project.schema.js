@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 const ProjectSchema = new Schema(
 	{
-		title: { type: String, require: true, max: 128 },
+		title: { type: String, required: true, max: 128 },
 		synopsis: { type: String, required: true, max: 1024 },
 		body: { type: String, required: true },
 		slug: {
