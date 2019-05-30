@@ -12,7 +12,7 @@ const TeamSchema = new Schema(
 		email: { type: String, required: true, max: 128 },
 		slug: { type: String, lowercase: true, unique: true, required: true },
 		image_path: { type: String, required: true, max: 256 },
-		// Add with extra necessary info
+		bio: { type: String, required: true },
 		deleted_at: { type: Date, required: false },
 		quote: { type: String, required: false },
 	},
