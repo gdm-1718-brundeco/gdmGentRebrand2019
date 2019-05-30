@@ -6,6 +6,7 @@ import User from './user.schema';
 import Project from './project.schema';
 import Event from './event.schema';
 import ProjectImage from './projectImage.schema';
+import Team from './team.schema';
 
 export {
     Blog,
@@ -15,4 +16,5 @@ export {
 		Project,
 		ProjectImage,
 		Event,
+		Team,
 };

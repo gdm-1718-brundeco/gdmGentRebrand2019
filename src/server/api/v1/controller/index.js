@@ -7,6 +7,8 @@ import UserController from './user.controller';
 import ProjectController from './project.controller';
 import EventController from './event.controller';
 import ProjectImageController from './projectImage.controller';
+import TeamController from './team.controller';
+
 
 export {
     AuthController,
@@ -17,4 +19,5 @@ export {
 		ProjectController,
 		ProjectImageController,
 		EventController,
+		TeamController,
 };

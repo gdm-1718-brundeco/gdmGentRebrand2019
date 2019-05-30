@@ -7,7 +7,7 @@
 * [x] Events
 * [x] Blog (Posts)
 * [ ] Diensten (opleidingen)
-* [ ] Team
+* [x] Team
 * [ ] Getuigenissen
 
 * User (dashboard)
