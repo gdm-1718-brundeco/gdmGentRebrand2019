@@ -11,12 +11,12 @@ class TeamController {
 				const options = {
 					page: parseInt(skip, 10) || 1,
 					limit: parseInt(limit, 10) || 10,
-					populate: ['images', 'category'],
+					populate: 'quotes',
 					sort: { created_at: -1 },
 				};
 				team = await Team.paginate({}, options);
 			} else {
-				team = await Team.find().populate(['category', 'images']).sort({ created_at: -1 }).exec();
+				team = await Team.find().populate('quotes').sort({ created_at: -1 }).exec();
 			}
 
 			if( team === undefined || team === null) {

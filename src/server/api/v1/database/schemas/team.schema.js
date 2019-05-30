@@ -37,12 +37,12 @@ TeamSchema.pre('validate', function (next) {
 
 TeamSchema.virtual('id').get(function () { return this._id });
 TeamSchema.virtual('full_name').get(function() { return this.first_name + ' ' + this.last_name });
-TeamSchema.virtual('quotes', {
-	ref: 'Quote',
-	localField: 'quotes',
-	foreignField: '_id',
-	justOne: false,
-});
+// TeamSchema.virtual('quotes', {
+// 	ref: 'Quote',
+// 	localField: 'quotes',
+// 	foreignField: '_id',
+// 	justOne: false,
+// });
 
 TeamSchema.plugin(mongoosePaginate);
 export default mongoose.model('Team', TeamSchema);
