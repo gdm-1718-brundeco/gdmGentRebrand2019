@@ -10,6 +10,7 @@ const TestimonialSchema = new Schema (
 		name: { type: String, required: true, max: 128 },
 		typeId: { type: Schema.Types.ObjectId, ref: 'UserType', required: true, },
 		body: { type: String, required: true },
+		slug: { type: String, lowercase: true, unique: true, required: true },
 		deleted_at: { type: Date, required: false },
 	},
 	{
@@ -20,6 +21,10 @@ const TestimonialSchema = new Schema (
 		timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
 	}
 );
+
+TestimonialSchema.methods.slugify = () => {
+	this.slug = slug(this.subject);
+}
 
 TestimonialSchema.virtual('id').get(function () { return this._id });
 TestimonialSchema.virtual('type', {

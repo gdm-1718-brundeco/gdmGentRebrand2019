@@ -55,7 +55,8 @@ class TeamController {
 				first_name: req.body.first_name,
 				last_name: req.body.last_name,
 				job: req.body.job,
-				image: req.body.image,
+				email: req.body.email,
+				image_path: req.body.image_path,
 				bio: req.body.bio,
 				quote: req.body.quote,
 			});

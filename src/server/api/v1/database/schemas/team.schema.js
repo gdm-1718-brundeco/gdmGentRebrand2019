@@ -11,7 +11,7 @@ const TeamSchema = new Schema(
 		job: { type: String, required: true, max: 128 },
 		email: { type: String, required: true, max: 128 },
 		slug: { type: String, lowercase: true, unique: true, required: true },
-		image_path: { type: String, required: true, max: 256 },
+		image_path: { type: String, required: true },
 		bio: { type: String, required: true },
 		deleted_at: { type: Date, required: false },
 		quote: { type: String, required: false },
@@ -22,11 +22,11 @@ const TeamSchema = new Schema(
 	},
 	{
 		timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
-	}
+	},
 );
 
 TeamSchema.methods.slugify = function () {
-	this.slug = slug(this.title);
+	this.slug = slug((this.first_name + this.last_name));
 }
 
 TeamSchema.pre('validate', function (next) {
@@ -38,7 +38,7 @@ TeamSchema.pre('validate', function (next) {
 });
 
 TeamSchema.virtual('id').get(function () { return this._id });
-TeamSchema.virtual('full_name').get(function() { return this.first_name + ' ' + this.last_name });
+TeamSchema.virtual('full_name').get(function() { return (this.first_name + ' ' + this.last_name) });
 // TeamSchema.virtual('quotes', {
 // 	ref: 'Quote',
 // 	localField: 'quotes',
