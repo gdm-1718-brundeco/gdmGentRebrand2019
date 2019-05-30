@@ -13,8 +13,6 @@ var _mongoosePaginate = _interopRequireDefault(require("mongoose-paginate"));
 
 var _slug = _interopRequireDefault(require("slug"));
 
-var _post = _interopRequireDefault(require("./post.schema"));
-
 var Schema = _mongoose["default"].Schema;
 var ProjectSchema = new Schema({
   title: {
@@ -49,7 +47,12 @@ var ProjectSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: false
-  }
+  },
+  images: [{
+    type: Schema.Types.ObjectId,
+    ref: 'ProjectImage',
+    required: true
+  }]
 }, {
   toJSON: {
     virtuals: true

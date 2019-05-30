@@ -5,9 +5,16 @@
     font-size: 50px;
     font-weight: 900;
     transition: 0.2s ease-in-out;
-    &:hover{
+
+    &:hover {
         cursor: pointer;
         transition: 0.2s ease-in-out;
         color: $primary-color;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .switch-articles-button {
+        font-size: 30px;
     }
 }

@@ -6,7 +6,7 @@
     height: auto;
     justify-content: space-around;
     align-items: center;
-    height: 45px;
+    height: 52px;
 
     &:hover {
         cursor: pointer;
@@ -50,7 +50,8 @@
     width: 45px;
     height: 1px;
     background: $color-dark-grey;
-    transition: 0.2s ease-in-out;
+    transition: 1s ease-in-out;
+    transform: rotate(0deg);
 }
 
 .nav-burger-bottom {

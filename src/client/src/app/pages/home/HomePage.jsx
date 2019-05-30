@@ -35,19 +35,36 @@ import EasyFlexRow from "../../components/structural-components/flexbox/easy-fle
 class HomePage extends Component {
   state = {
     showMenu: false,
-    headerImage: require("../../assets/images/robot.jpeg")
+    projects: [],
+    projectImage: null,
+    pagination: {
+      limit: 5,
+      page: 1,
+      pages: 1,
+      total: 1
+    }
   };
 
   componentWillMount() {
     this.loadPosts();
   }
 
-  loadPosts = () => {
-    Api.findAllPosts()
+  loadPosts = pageIndex => {
+    // console.log(pageIndex);
+    Api.findAllProjects({ limit: 2, skip: pageIndex })
       .then(data => {
+        // console.log(data.docs[0].images);
+        const prevProjects = this.state.projects;
+        const newProjects = [...prevProjects, ...data.docs];
         this.setState(prevState => ({
           ...prevState,
-          posts: data
+          projects: newProjects,
+          pagination: {
+            limit: data.limit,
+            page: data.page,
+            pages: data.pages,
+            total: data.total
+          }
         }));
       })
       .catch(error => {
@@ -70,6 +87,22 @@ class HomePage extends Component {
   };
 
   render() {
+    const { pagination, projects } = this.state;
+
+    this.items = this.state.projects.map((item, key) => (
+      <div key={item.id} className="col-space-between card-wrapper">
+        <h2 className="primary-subtitle">{item.title}</h2>
+        <div className="card-zoom">
+          <img
+            src={item.images[0].path}
+            className="placeholder"
+            href={"/projects/" + item.id}
+          />
+        </div>
+        <p className="card-synopsis">{item.synopsis}</p>
+        <br />
+      </div>
+    ));
     return (
       <ParallaxProvider>
         <React.Fragment>
@@ -85,7 +118,7 @@ class HomePage extends Component {
             <BlankDiv style="blank-div-md" />
             <Title
               style="section-title"
-              text="Wat je kan verwachten van onze gdm opleidingen"
+              text="Wat je kan verwachten van onze GDM opleidingen"
             />
             <Parallax className="custom-class" y={[-20, 40]} tagOuter="figure">
               <Paragraph
@@ -98,27 +131,30 @@ Bouters, opleidingsdirecteur"
                 style="primary-quote quote-pos-1"
               />
 
-            <Paragraph style="paragraph-bottomline par-pos-1" />
-            <EasyFlexRow style="row-end">
-              <a
-                href="/"
-                className="primary-subtitle row-center primary-button"
-              >
-                Bekijk onze richtingen
-              </a>
-            </EasyFlexRow>
+              <Paragraph style="paragraph-bottomline par-pos-1" />
+              <EasyFlexRow style="row-end">
+                <a
+                  href="/"
+                  className="primary-subtitle row-center primary-button"
+                >
+                  Bekijk onze richtingen
+                </a>
+              </EasyFlexRow>
             </Parallax>
             <BlankDiv style="blank-div-md" />
             <div className="row-space-between">
-              <Title style="section-title" text="Work" />
+              <Title style="section-title" text="Door GDM" />
             </div>
+            <EasyFlexRow style="row-space-between col-card-width-1 ">
+              {this.items}
+            </EasyFlexRow>
             <BlankDiv style="blank-div-md" />
             <EasyFlexRow style="row-center">
               <a
                 href="/projects"
                 className="primary-subtitle row-center primary-button"
               >
-                Bekijk alle projecten
+                Bekijk meer projecten
               </a>
             </EasyFlexRow>
             <BlankDiv style="blank-div-lg" />

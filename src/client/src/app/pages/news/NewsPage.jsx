@@ -71,14 +71,17 @@ class NewsPage extends Component {
     const { pagination, posts } = this.state;
     console.log(posts);
 
-    // this.items = this.state.posts.map((item, key) => (
-    //   <div key={item.id}>
-    //     <h1 className="news-list-item">{item.title}</h1>
-    //     <p>{item.synopsis}</p>
-    //     <br />
-    //     <a href={"/news/" + item.id}> Detail</a>
-    //   </div>
-    // ));
+    this.items = this.state.posts.map((item, key) => (
+      <div key={item.id}>
+        <h1
+          className="news-list-item"
+          href={"/news/" + item.id}
+          onClick={e => this.goToPostDetailPage(item.id)}
+        >
+          {item.title}
+        </h1>
+      </div>
+    ));
 
     return (
       <React.Fragment>
@@ -90,12 +93,13 @@ class NewsPage extends Component {
           />
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Nieuws" />
-          <PostsListPaged
+          {/* <PostsListPaged
             posts={posts}
             pagination={pagination}
             onReadMore={this.goToPostDetailPage}
             onLoadMore={this.loadPosts}
-          />
+          /> */}
+          {this.items}
           <BlankDiv style="blank-div-lg" />
           <Footer />
         </GridWrapper>

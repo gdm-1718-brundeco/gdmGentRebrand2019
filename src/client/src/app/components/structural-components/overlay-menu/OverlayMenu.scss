@@ -13,7 +13,6 @@ a {
     height: 100vh;
     background: white;
     z-index: 5;
-    transition: width 0.3s;
     transition-timing-function: cubic-bezier(.2, .88, .85, .35);
     opacity: 0;
 }
@@ -24,18 +23,18 @@ a {
     align-items: center;
 }
 
-.bg-color-dark {
+.show-overlay-menu {
     background: rgb(0, 0, 158);
-    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
-    transition: width 0.3s;
-    width: 100%;
+    transition: 0.7s ease-in-out;
     opacity: 1;
     z-index: 100;
+    width: 100%;
+    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
 }
 
 .display-none {
-    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
-    transition: width 0.3s;
+    transition: 0.7s ease-in-out;
     opacity: 0;
-    display: none;
+    width: 1%;
+    z-index: -1;
 }

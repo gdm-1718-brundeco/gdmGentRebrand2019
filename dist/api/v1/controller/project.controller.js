@@ -45,7 +45,7 @@ var ProjectController = function ProjectController() {
               options = {
                 page: parseInt(skip, 10) || 1,
                 limit: parseInt(limit, 10) || 10,
-                populate: 'category',
+                populate: ['images', 'category'],
                 sort: {
                   created_at: -1
                 }
@@ -60,7 +60,7 @@ var ProjectController = function ProjectController() {
 
             case 10:
               _context.next = 12;
-              return _database.Project.find().populate('category').sort({
+              return _database.Project.find().populate(['category', 'images']).sort({
                 created_at: -1
               }).exec();
 
@@ -109,7 +109,7 @@ var ProjectController = function ProjectController() {
               _context2.prev = 0;
               id = req.params.id;
               _context2.next = 4;
-              return _database.Project.findById(id).populate('category').exec();
+              return _database.Project.findById(id).populate(['category', 'images']).exec();
 
             case 4:
               item = _context2.sent;

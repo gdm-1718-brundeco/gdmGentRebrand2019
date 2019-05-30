@@ -23,7 +23,7 @@ import LoginPage from './pages/login';
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import TeamPage from "./pages/team";
-import NewsDetail from "./pages/news-detail";
+import NewsDetailPage from "./pages/news-detail/NewsDetailPage";
 import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
 import ProjectsPage from './pages/projects/ProjectsPage';
 import EventsPage from './pages/events/EventsPage';
@@ -60,7 +60,7 @@ class Main extends Component {
             exact
             path="/news/:id"
             layout={PageLayout}
-            component={NewsDetail}
+            component={NewsDetailPage}
           />
           <RouteWithLayout
             exact

@@ -84,8 +84,7 @@ class ProjectsPage extends Component {
 
   render() {
     const { pagination, projects } = this.state;
-
-    this.items = this.state.projects.map((item, key) => (
+    this.items = this.state.projects.map(item => (
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
         <div className="card-zoom">
@@ -102,11 +101,6 @@ class ProjectsPage extends Component {
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />
-
-        {/* <section className="section section--articles">
-                    <PostsListPaged posts={posts} pagination={pagination} onReadMore={this.goToPostDetailPage} onLoadMore={this.loadPosts} />
-                </section>  */}
-
         <GridWrapper style="main-page-wrapper">
           <GeneralNav
             toggleMenu={this.toggleMenu}
@@ -120,23 +114,10 @@ class ProjectsPage extends Component {
           />
           <BlankDiv style="blank-div-lg" />
           <Title style="section-title" text="Projecten" />
+          <BlankDiv style="blank-div-lg" />
           <EasyFlexRow style="row-space-between col-card-width-1 ">
             {this.items}
-
-            {/* <EasyFlexCol style="col-space-between col-card-width-full">
-              <p className="small-uppercase-title-style card-title-pos bl">
-                Thrive
-              </p>
-              <MainImageComponent style="card-bg-image card-image-pos" />
-            </EasyFlexCol>
-            <EasyFlexCol style="col-space-between col-card-width-full">
-              <p className="small-uppercase-title-style card-title-pos bl">
-                Thrive
-              </p>
-              <MainImageComponent style="card-bg-image card-image-pos" />
-            </EasyFlexCol> */}
           </EasyFlexRow>
-
           <BlankDiv style="blank-div-lg" />
           <Footer />
         </GridWrapper>

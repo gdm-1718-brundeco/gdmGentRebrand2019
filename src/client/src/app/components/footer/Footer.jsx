@@ -10,13 +10,13 @@ const Footer = () => {
   return (
     <EasyFlexCol style="col-medium-height">
       <EasyFlexRow style="row-space-between row-margin-sm row-width-md">
-        <a href="" className="footer-link">Getuigenissen</a>
-        <a href="" className="footer-link">Events</a>
-        <a href="" className="footer-link">Nieuws</a>
-        <a href="" className="footer-link">Diensten</a>
-        <a href="" className="footer-link">Contact</a>
-        <a href="" className="footer-link">Team</a>
-        <a href="" className="footer-link">Work</a>
+        <a href="statements" className="footer-link">Getuigenissen</a>
+        <a href="/events" className="footer-link">Events</a>
+        <a href="/news" className="footer-link">Nieuws</a>
+        <a href="/services" className="footer-link">Diensten</a>
+        <a href="/contact" className="footer-link">Contact</a>
+        <a href="/team" className="footer-link">Team</a>
+        <a href="/projects" className="footer-link">Work</a>
       </EasyFlexRow>
       <EasyFlexRow style="row-space-between row-margin-sm row-width-xsm">
         <a href="https://www.facebook.com/GrafischeendigitalemediaArteveldehogeschool/" target='_blank' className="color-lightgrey footer-link">Facebook</a>

@@ -17,8 +17,8 @@ import { AdminLayout } from "../../../admin/layouts";
 class OverlayMenu extends Component {
   render() {
     const showHide = {
-      showMenu: "overlay-menu-wrapper bg-color-dark overlay-menu-wrapper",
-      hideMenu: "overlay-menu-wrapper overlay-menu-wrapper display-none"
+      showMenu: "overlay-menu-wrapper show-overlay-menu",
+      hideMenu: "overlay-menu-wrapper display-none"
     };
     let menuState = this.props.menustate;
 

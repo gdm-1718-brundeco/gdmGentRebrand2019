@@ -1,5 +1,5 @@
 import React, { Component, StyleSheet } from "react";
-import "./Overlay.scss";
+import "./Parallax.scss";
 
 const Parallax = ({ style, children }) => {
   return <div className={style}>{children}</div>;
