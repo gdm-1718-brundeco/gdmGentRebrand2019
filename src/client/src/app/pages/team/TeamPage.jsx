@@ -29,6 +29,7 @@ import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 import TeacherProfile from "../../components/card-components/teacher-profile/TeacherProfile";
+import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
 class TeamPage extends Component {
   state = {
@@ -62,8 +63,6 @@ class TeamPage extends Component {
       });
   };
 
-
-
   toggleMenu = e => {
     e.preventDefault();
     this.setState(state => ({ showMenu: !state.showMenu }));
@@ -77,42 +76,39 @@ class TeamPage extends Component {
   render() {
     const { team } = this.state;
     this.items = team.map(item => (
-      <div key={item.id} className="col-space-between card-wrapper">
-        <h2 className="primary-subtitle">{item.first_name} {item.last_name}</h2>
+      <div key={item.id} className="col-space-between team-card-wrapper">
+        <h2 className="team-name-title">
+          {item.first_name} {item.last_name}
+        </h2>
         <div className="card-zoom">
-          <a  href={"/team/" + item.id}>
-            <img
-              src={item.image_path}
-              style={imageStyle}
-            />
+          <a href={"/team/" + item.id}>
+            <img src={item.image_path} className="team-thumbnail" />
           </a>
         </div>
-        <p className="card-synopsis">{item.job}</p>
-       
-        <a  href={"/team/" + item.id} >Meer</a>
+        <p className="team-jobsubscription">{item.job}</p>
+        <a href={"/team/" + item.id} className="team-read-more-button">Meer</a>
       </div>
     ));
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />
-        <GridWrapper style="main-page-wrapper">
-          <BlankDiv style="blank-div-lg" />
-          <GeneralNav
-            toggleMenu={this.toggleMenu}
-            menustate={this.getParentState()}
-          />
-          <Title style="section-title" text="Team" />
-          <Paragraph
-            text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-            style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-          />
-          <BlankDiv style="blank-div-lg" />
-          {/* <TeacherProfile />
-          <TeacherProfile />
-          <TeacherProfile /> */}
-           {this.items}
-          <Footer />
-
+        <GridWrapper style="html-wrapper">
+          <GridWrapper style="main-page-wrapper">
+            <BlankDiv style="blank-div-lg" />
+            <GeneralNav
+              toggleMenu={this.toggleMenu}
+              menustate={this.getParentState()}
+            />
+            <Title style="section-title" text="Team" />
+            <Paragraph
+              text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
+            />
+            <EasyFlexRow style="team-general-page-wrapper">
+            {this.items}
+            </EasyFlexRow>
+            <Footer />
+          </GridWrapper>
         </GridWrapper>
       </React.Fragment>
     );
@@ -121,7 +117,7 @@ class TeamPage extends Component {
 
 export default TeamPage;
 var imageStyle = {
-  width: '300px',
-  height:'300px',
-  objectFit: 'cover',
+  width: "300px",
+  height: "300px",
+  objectFit: "cover"
 };

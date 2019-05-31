@@ -67,7 +67,7 @@ class Api {
     }
      //Testemonial api calls
      static findTestemonials = async (queryParams=null) => {
-        let url = `${this.URL}/testemonials`;
+        let url = `${this.URL}/testimonials`;
         if (queryParams !== null) {
             url += (url.indexOf('?') === -1 ? '?' : '&') + this.queryParams(queryParams);
         }   

@@ -16,6 +16,25 @@
     }
 }
 
+.team-read-more-button {
+  height: 35px;
+  width: 50%;
+  transition: 0.2s ease-in-out;
+  color: #fff;
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+      border: #000;
+      background: #000;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      color: #fff;
+      animation: pulse 0.6s;
+  }
+}
+
 .auto-left-margin {
     margin-left: auto;
 }
