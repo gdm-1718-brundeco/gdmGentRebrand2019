@@ -32,8 +32,37 @@ import TeacherProfile from "../../components/card-components/teacher-profile/Tea
 
 class TeamPage extends Component {
   state = {
+    team: [],
     post: null
   };
+  async componentWillMount() {
+    await this.loadTeam(1);
+  }
+
+  loadTeam = pageIndex => {
+    // console.log(pageIndex);
+    Api.findTeam({ limit: 4, skip: pageIndex })
+      .then(data => {
+        // console.log(data.docs[0].images);
+        const prevMember = this.state.team;
+        const newMember = [...prevMember, ...data.docs];
+        this.setState(prevState => ({
+          ...prevState,
+          team: newMember,
+          pagination: {
+            limit: data.limit,
+            page: data.page,
+            pages: data.pages,
+            total: data.total
+          }
+        }));
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+
 
   toggleMenu = e => {
     e.preventDefault();
@@ -46,8 +75,23 @@ class TeamPage extends Component {
   };
 
   render() {
-    const { post } = this.state;
-    console.log(post);
+    const { team } = this.state;
+    this.items = team.map(item => (
+      <div key={item.id} className="col-space-between card-wrapper">
+        <h2 className="primary-subtitle">{item.first_name} {item.last_name}</h2>
+        <div className="card-zoom">
+          <a  href={"/team/" + item.id}>
+            <img
+              src={item.image_path}
+              style={imageStyle}
+            />
+          </a>
+        </div>
+        <p className="card-synopsis">{item.job}</p>
+       
+        <a  href={"/team/" + item.id} >Meer</a>
+      </div>
+    ));
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />
@@ -63,9 +107,10 @@ class TeamPage extends Component {
             style="standard-text-paragraph par-pos-1 paragraph-mb-med"
           />
           <BlankDiv style="blank-div-lg" />
+          {/* <TeacherProfile />
           <TeacherProfile />
-          <TeacherProfile />
-          <TeacherProfile />
+          <TeacherProfile /> */}
+           {this.items}
           <Footer />
         </GridWrapper>
       </React.Fragment>
@@ -74,3 +119,8 @@ class TeamPage extends Component {
 }
 
 export default TeamPage;
+var imageStyle = {
+  width: '300px',
+  height:'300px',
+  objectFit: 'cover',
+};
