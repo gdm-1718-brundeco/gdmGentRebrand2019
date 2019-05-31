@@ -20,18 +20,18 @@ const TypeSchema = new Schema(
 	},
 );
 
-TypeSchema.methods.slugify = () => {
+TypeSchema.methods.slugify = function () {
 	this.slug = slug(this.name);
 }
 
-TypeSchema.pre('validate', (next) => {
+TypeSchema.pre('validate', function (next) {
 	if (!this.slug) {
 		this.slugify();
 	}
 	return next();
 });
 
-TypeSchema.virtual('id').get(() => { return this._id });
+TypeSchema.virtual('id').get(function() { return this._id });
 
 TypeSchema.plugin(mongoosePaginate);
 export default mongoose.model('Type', TypeSchema);
