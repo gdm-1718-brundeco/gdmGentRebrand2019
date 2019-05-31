@@ -47,6 +47,36 @@ Object.defineProperty(exports, "ProjectImage", {
     return _projectImage["default"];
   }
 });
+Object.defineProperty(exports, "Team", {
+  enumerable: true,
+  get: function get() {
+    return _team["default"];
+  }
+});
+Object.defineProperty(exports, "Testimonial", {
+  enumerable: true,
+  get: function get() {
+    return _testimonial["default"];
+  }
+});
+Object.defineProperty(exports, "Type", {
+  enumerable: true,
+  get: function get() {
+    return _type["default"];
+  }
+});
+Object.defineProperty(exports, "Study", {
+  enumerable: true,
+  get: function get() {
+    return _study["default"];
+  }
+});
+Object.defineProperty(exports, "Course", {
+  enumerable: true,
+  get: function get() {
+    return _course["default"];
+  }
+});
 
 var _blog = _interopRequireDefault(require("./blog.schema"));
 
@@ -61,3 +91,13 @@ var _project = _interopRequireDefault(require("./project.schema"));
 var _event = _interopRequireDefault(require("./event.schema"));
 
 var _projectImage = _interopRequireDefault(require("./projectImage.schema"));
+
+var _team = _interopRequireDefault(require("./team.schema"));
+
+var _testimonial = _interopRequireDefault(require("./testimonial.schema"));
+
+var _type = _interopRequireDefault(require("./type.schema"));
+
+var _study = _interopRequireDefault(require("./study.schema"));
+
+var _course = _interopRequireDefault(require("./course.schema"));

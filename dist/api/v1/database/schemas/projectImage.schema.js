@@ -21,11 +21,6 @@ var ProjectImageSchema = new Schema({
   path: {
     type: String,
     required: true
-  },
-  projectId: {
-    type: Schema.Types.ObjectId,
-    ref: 'Project',
-    required: true
   }
 }, {
   toJSON: {
@@ -42,12 +37,6 @@ var ProjectImageSchema = new Schema({
 });
 ProjectImageSchema.virtual('id').get(function () {
   return this._id;
-});
-ProjectImageSchema.virtual('project', {
-  ref: 'Project',
-  localField: 'projectId',
-  foreignField: '_id',
-  justOne: true
 });
 ProjectImageSchema.plugin(_mongoosePaginate["default"]);
 
