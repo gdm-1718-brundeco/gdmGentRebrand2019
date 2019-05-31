@@ -29,7 +29,7 @@ import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
 import ProjectsPage from './pages/projects/ProjectsPage';
 import EventsPage from './pages/events/EventsPage';
 import EventDetailPage from './pages/event-detail/EventDetailPage';
-
+import StatementPage from './pages/statements/StatementPage';
 
 
 /*
@@ -98,6 +98,12 @@ class Main extends Component {
             path="/team/:id"
             layout={PageLayout}
             component={TeamDetailPage}
+          />
+            <RouteWithLayout
+            exact
+            path="/testemonials"
+            layout={PageLayout}
+            component={StatementPage}
           />
           <RouteWithLayout
             path="/login"
