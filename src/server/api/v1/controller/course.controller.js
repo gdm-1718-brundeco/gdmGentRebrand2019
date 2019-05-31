@@ -56,6 +56,7 @@ class CourseController {
             const courseCreate = new Course({
 								name: req.body.name,
 								description: req.body.description,
+								points: req.body.points,
 								teacherIds: req.body.teacherIds,
 								studyIds: req.body.studyIds,
 								parentCourseId: req.body.parentCourseId,
