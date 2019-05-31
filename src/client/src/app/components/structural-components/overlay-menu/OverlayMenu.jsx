@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import "./OverlayMenu.scss";
 import EasyFlexCol from "../flexbox/easy-flex-col/EasyFlexCol";
 import EasyFlexRow from "../flexbox/easy-flex-row/EasyFlexRow";
-import Title from "../../text-components/title/Title";
-import Link from "../../text-components/link/Link";
 import Paragraph from "../../text-components/paragraph/Paragraph";
 import BlankDiv from "../../styled-components/blank-div/BlankDiv";
-import { Route } from "react-router-dom";
 
 /*
 Layout
@@ -29,7 +26,7 @@ class OverlayMenu extends Component {
         <EasyFlexRow style="row-space-between">
           <EasyFlexCol style="col-space-between">
             <a href="/projects" className="overlay-menu-links">
-              Work
+              Projecten
             </a>
             <a href="/services" className="overlay-menu-links">
               Diensten
@@ -51,31 +48,19 @@ class OverlayMenu extends Component {
             </a>
           </EasyFlexCol>
           <EasyFlexCol style="col-flex-start text-align-right">
-            <Link
-              style="overlay-menu-link"
-              text="Github"
-              style="overlay-menu-links-social"
-            />
-            <Link
-              style="overlay-menu-link"
-              text="Facebook"
-              style="overlay-menu-links-social"
-            />
-            <Link
-              style="overlay-menu-link"
-              text="Twitter"
-              style="overlay-menu-links-social"
-            />
-            <Link
-              style="overlay-menu-link"
-              text="Vimeo"
-              style="overlay-menu-links-social"
-            />
-            <Link
-              style="overlay-menu-link"
-              text="Instagram"
-              style="overlay-menu-links-social"
-            />
+            <a className="overlay-menu-link overlay-menu-links-social">
+              Github
+            </a>
+            <a className="overlay-menu-link overlay-menu-links-social">
+              Facebook
+            </a>
+            <a className="overlay-menu-link overlay-menu-links-social">
+              Twitter
+            </a>
+            <a className="overlay-menu-link overlay-menu-links-social">Vimeo</a>
+            <a className="overlay-menu-link overlay-menu-links-social">
+              Instagram
+            </a>
           </EasyFlexCol>
         </EasyFlexRow>
         <BlankDiv style="blank-div-sm" />

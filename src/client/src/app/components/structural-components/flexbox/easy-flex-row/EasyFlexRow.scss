@@ -25,6 +25,14 @@
     margin-bottom: auto;
 }
 
+.row-space-between-extra {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+}
+
 .row-space-between-no-margin {
     display: flex;
     justify-content: space-between;
@@ -55,13 +63,6 @@
 }
 
 .row-general-page-wrapper {
-    margin: 100px 0px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.team-general-page-wrapper {
     margin: 100px 0px;
     display: flex;
     justify-content: center;

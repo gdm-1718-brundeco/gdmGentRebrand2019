@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Footer.scss";
 import EasyFlexCol from "../structural-components/flexbox/easy-flex-col/EasyFlexCol";
 import EasyFlexRow from "../structural-components/flexbox/easy-flex-row/EasyFlexRow";
-import Link from "../text-components/link/Link";
 import Title from "../text-components/title/Title";
 import Paragraph from "../text-components/paragraph/Paragraph";
 

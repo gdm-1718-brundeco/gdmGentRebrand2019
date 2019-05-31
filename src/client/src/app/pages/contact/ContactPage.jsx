@@ -68,13 +68,17 @@ class ContactPage extends Component {
             toggleMenu={this.toggleMenu}
             menustate={this.getParentState()}
             src={require("../../assets/images/bg-image-contactpage.jpg")}
+            title="Contact page"
+            subtitle="Onze moderne artevelde campus te mariakerke"
           />
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">
-              <GeneralNav
-                toggleMenu={this.toggleMenu}
-                menustate={this.getParentState()}
-              />
+              <div className="provide-white">
+                <GeneralNav
+                  toggleMenu={this.toggleMenu}
+                  menustate={this.getParentState()}
+                />
+              </div>
               <BlankDiv style="blank-div-md" />
               <Title
                 style="section-title"

@@ -2,14 +2,15 @@
 
 .switch-articles-button {
     font-family: $font-family-roboto;
-    font-size: 50px;
-    font-weight: 900;
+    font-size: 25px;
+    font-weight: 600;
     transition: 0.2s ease-in-out;
 
     &:hover {
         cursor: pointer;
         transition: 0.2s ease-in-out;
         color: $primary-color;
+        padding-left: 5px;
     }
 }
 

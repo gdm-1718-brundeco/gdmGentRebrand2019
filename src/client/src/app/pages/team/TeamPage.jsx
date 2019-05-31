@@ -80,12 +80,12 @@ class TeamPage extends Component {
         <h2 className="team-name-title">
           {item.first_name} {item.last_name}
         </h2>
+        <p className="team-jobsubscription">{item.job}</p>
         <div className="card-zoom">
           <a href={"/team/" + item.id}>
             <img src={item.image_path} className="team-thumbnail" />
           </a>
         </div>
-        <p className="team-jobsubscription">{item.job}</p>
         <a href={"/team/" + item.id} className="team-read-more-button">Meer</a>
       </div>
     ));

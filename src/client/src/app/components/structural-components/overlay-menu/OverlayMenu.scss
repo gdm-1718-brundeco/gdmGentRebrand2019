@@ -38,3 +38,104 @@ a {
     width: 1%;
     z-index: -1;
 }
+
+.overlay-menu-text {
+    font-size: 13px;
+    line-height: 25px;
+    color: #b5b5b5;
+    font-weight: 100;
+}
+
+.left-right-margin {
+    margin: 0px 15px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.color-lightgrey {
+    color: $color-medium-grey;
+}
+
+.overlay-menu-links {
+    font-size: 40px;
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    font-weight: 200;
+
+    &:hover {
+        padding-left: 2px;
+        color: $color-dark-grey;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+.overlay-menu-links-social {
+    font-size: 25px;
+    color: $color-dark-grey;
+    font-weight: 300;
+
+    &:hover {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+
+.news-list-item {
+    font-family: $font-family-roboto;
+    font-size: 35px;
+    font-weight: 500;
+    max-width: 70%;
+    padding: 30px 0px;
+    border-bottom: 1px solid $color-light-grey;
+    display: block;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: $primary-color;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        padding-left: 5px;
+    }
+}
+
+.link-previous-article {
+    font-family: $font-family-roboto;
+    font-size: 40px;
+    font-weight: 500;
+    max-width: 70%;
+    margin-bottom: 60px;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: rgba($color: $primary-color, $alpha: 0.6);
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        padding-left: 5px;
+    }
+}
+
+.link-next-article {
+    font-family: $font-family-roboto;
+    font-size: 40px;
+    font-weight: 500;
+    max-width: 70%;
+    margin-bottom: 60px;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: rgba($color: $primary-color, $alpha: 0.6);
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        padding-right: 5px;
+    }
+}
+
+.footer-link:hover {
+    cursor: pointer;
+    color: $primary-color;
+    transition: 0.2s ease-in-out
+}

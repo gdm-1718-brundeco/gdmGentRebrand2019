@@ -96,7 +96,6 @@
     min-height: 0;
     font-weight: 500;
     white-space: pre-line;
-    z-index: 10;
     animation: fadeinOpacity 4s;
     padding: 0% 10%;
     margin-bottom: 20px;
@@ -168,21 +167,6 @@
     font-weight: 500;
     max-width: 70%;
     margin-bottom: 60px;
-}
-
-.team-name-title {
-    font-family: $font-family-roboto;
-    font-size: 30px;
-    font-weight: 500;
-    max-width: 100%;
-    margin-bottom: 60px;
-}
-
-.team-jobsubscription {
-    margin-top: 15px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    color: $color-dark-grey
 }
 
 .news-title {

@@ -44,18 +44,37 @@
 .team-detail-email {
     font-weight: 600;
     font-size: 20px;
-    width: 100%;
 }
 
 .team-detail-block-pos {
     margin-left: -150px;
-    background-color: $hardly-grey;
-    padding: 100px;
+    background-color: #f4fcff;
+    padding: 200px 100px 100px;
+    margin-top: -100px;
 }
 
 .team-detail-block-pos-2 {
-    margin-left: -150px;
     background-color: $primary-color;
-    padding: 20px 100px;
-    color: white;
+    border: 1px solid $primary-color;
+    padding: 25px 80px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    width: 30%;
+    float: right;
+    display: flex;
+    justify-content: center;
+}
+
+.team-detail-block-pos-2:hover {
+    margin-left: -150px;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid $primary-color;
+    background-color: #fff;
+    padding: 25px 80px;
+    color: $primary-color;
+    padding-left: 115px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
 }

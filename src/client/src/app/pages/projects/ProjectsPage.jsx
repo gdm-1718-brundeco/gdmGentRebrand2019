@@ -23,9 +23,9 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
-
 import MainImageComponent from "../../components/image-components/main-image-component";
 import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
+import "./ProjectsPage.scss";
 
 class ProjectsPage extends Component {
   state = {
@@ -86,11 +86,8 @@ class ProjectsPage extends Component {
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
         <div className="card-zoom">
-          <a  href={"/projects/" + item.id}>
-          <img
-            src={item.images[0].path}
-            className="placeholder"    
-          />
+          <a href={"/projects/" + item.id}>
+            <img src={item.images[0].path} className="placeholder" />
           </a>
         </div>
         <p className="card-synopsis">{item.synopsis}</p>
@@ -107,17 +104,18 @@ class ProjectsPage extends Component {
               menustate={this.getParentState()}
             />
             <BlankDiv style="blank-div-lg" />
-            <Title style="section-title" text="Work" />
-            <Paragraph
-              text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-            />
-            <BlankDiv style="blank-div-lg" />
             <Title style="section-title" text="Projecten" />
             <EasyFlexRow style="row-space-between col-card-width-1 ">
               {this.items}
             </EasyFlexRow>
             <BlankDiv style="blank-div-lg" />
+            <EasyFlexRow style="row-space-between-extra">
+              <Title style="section-title" text="Passie" />
+              <Paragraph
+                text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+                style="par-pos-1 paragraph-mb-med paragraph-extra"
+              />
+            </EasyFlexRow>
             <Footer />
           </GridWrapper>
         </GridWrapper>

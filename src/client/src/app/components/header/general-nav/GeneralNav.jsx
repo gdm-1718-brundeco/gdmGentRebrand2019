@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../../image-components/main-image-component/MainImageComponent";
-import Link from "../../text-components/link/Link";
 import EasyFlexRow from "../../structural-components/flexbox/easy-flex-row/EasyFlexRow";
 import "./GeneralNav.scss";
 

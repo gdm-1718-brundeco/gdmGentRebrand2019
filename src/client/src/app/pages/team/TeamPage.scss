@@ -1,5 +1,66 @@
+@import '../../_sass/abstracts/variables';
+
 .team-thumbnail {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.team-read-more-button {
+    height: 45px;
+    width: 40%;
+    transition: 0.2s ease-in-out;
+    color: #fff;
+    background: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        border: #000;
+        background: #000;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        color: #fff;
+        animation: pulse 0.6s;
+    }
+}
+
+.team-name-title {
+    font-family: $font-family-roboto;
+    font-size: 30px;
+    font-weight: 500;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+.team-jobsubscription {
+    margin-bottom: 25px;
+    margin-right: auto;
+    color: #707070;
+}
+
+.team-general-page-wrapper {
+    margin: 100px 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-card-wrapper {
+    width: 35%;
+    height: auto;
+    position: relative;
+    margin: 50px 5%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .team-general-page-wrapper {
+        flex-direction: column
+    }
+
+    .team-card-wrapper {
+        width: 60%;
+    }
 }

@@ -6,7 +6,7 @@
     height: auto;
     justify-content: space-around;
     align-items: center;
-    height: 52px;
+    height: 33px;
 
     &:hover {
         cursor: pointer;
@@ -18,11 +18,15 @@
     opacity: 1;
     transition: 0.2s ease-in-out;
     color: $color-dark-grey;
+    font-size: 70%;
+    font-weight: 300;
 }
 
 .fade-out-menutitle {
     opacity: 0;
     transition: 0.2s ease-in-out;
+    font-size: 70%;
+    font-weight: 300;
 }
 
 .menu-action {
@@ -59,14 +63,13 @@
     height: 1px;
     background: $color-dark-grey;
     transition: 0.2s ease-in-out;
-    margin-top: 10px;
 }
 
 .nav-burger-top-wh {
     height: 1px;
     background: #fff;
     transform: rotate(45deg);
-    width: 20px;
+    width: 15px;
     margin-top: 19px;
     transition: 0.2s ease-in-out;
 }
@@ -75,7 +78,7 @@
     height: 1px;
     background: #fff;
     transform: rotate(-45deg);
-    width: 20px;
+    width: 15px;
     transition: 0.2s ease-in-out;
 }
 
@@ -89,7 +92,7 @@
     right: 0;
     top: 0;
     z-index: 9994;
-    height: 80px;
+    height: 60px;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     box-sizing: border-box;

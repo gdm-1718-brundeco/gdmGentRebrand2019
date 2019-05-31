@@ -42,7 +42,8 @@ class HomePage extends Component {
       page: 1,
       pages: 1,
       total: 1
-    }
+    },
+    headertitle: `Grafische \n en digitale media`
   };
 
   componentWillMount() {
@@ -93,11 +94,13 @@ class HomePage extends Component {
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
         <div className="card-zoom">
-          <img
-            src={item.images[0].path}
-            className="placeholder"
-            href={"/projects/" + item.id}
-          />
+          <a href={"/projects/" + item.id}>
+            <img
+              src={item.images[0].path}
+              className="placeholder"
+              href={"/projects/" + item.id}
+            />
+          </a>
         </div>
         <p className="card-synopsis">{item.synopsis}</p>
         <br />
@@ -109,6 +112,8 @@ class HomePage extends Component {
           <OverlayMenu menustate={this.state.showMenu} />
           <HeaderFullscreen
             src={require("../../assets/images/bg-image-homepage-3.jpg")}
+            title={this.state.headertitle}
+            subtitle="Let's build the future together"
           />
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">

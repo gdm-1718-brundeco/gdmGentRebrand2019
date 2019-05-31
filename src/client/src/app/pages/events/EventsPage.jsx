@@ -12,7 +12,6 @@ import GeneralNav from "../../components/header/general-nav/GeneralNav";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Footer from "../../components/footer";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
-import Link from "../../components/text-components/link/Link";
 import Title from "../../components/text-components/title/Title";
 import Overlay from "../../components/styled-components/overlay/Overlay";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";

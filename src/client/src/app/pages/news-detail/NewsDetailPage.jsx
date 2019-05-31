@@ -67,10 +67,9 @@ class NewsDetailPage extends Component {
               <p className="standard-text-paragraph">{post.body}</p>
               <BlankDiv style="blank-div-sm" />
               <EasyFlexRow style="row-space-between">
-                <SwitchArticlesButton
-                  text="Terug naar overzicht"
-                  href="/news/"
-                />
+                <a href="/news">
+                  <SwitchArticlesButton text="Terug naar overzicht" />
+                </a>
               </EasyFlexRow>
               <BlankDiv style="blank-div-lg" />
               <Footer />
