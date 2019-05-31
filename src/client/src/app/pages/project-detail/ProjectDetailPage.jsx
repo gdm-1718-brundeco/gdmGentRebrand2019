@@ -11,7 +11,7 @@ import Api from '../../services';
 class ProjectDetailPage extends Component {
     state = {
         project: null,
-        projectImage: null,
+        
     };
 
     componentWillMount() {
@@ -24,15 +24,7 @@ class ProjectDetailPage extends Component {
                     ...prevState,
                     project: data
                 }));
-            }).then( ()=> {
-                Api.findProjectImage(id)
-                .then((imageData) => {
-                    this.setState(prevState => ({
-                        ...prevState,
-                        projectImage: imageData
-                    }));
-                })
-              })
+            })
             .catch((error) => {
 
             });
@@ -40,15 +32,15 @@ class ProjectDetailPage extends Component {
 
     render() {
         const { project } = this.state;
-        const { projectImage } = this.state;
-      console.log(projectImage);
-        if(project != null && projectImage != null){
+       
+      console.log(project);
+        if(project != null){
           return (
             <React.Fragment>
               <h1>{project.title}</h1>
               <h3>{project.slug}</h3>
               <p>{project.body}</p>
-              {projectImage.map((value , key) =>{
+              {project.images.map((value , key) =>{
                   return <img key={key} src={value.path} style={imageStyle}></img>
               })}
             </React.Fragment>
