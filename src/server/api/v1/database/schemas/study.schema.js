@@ -11,7 +11,7 @@ const StudySchema = new Schema(
 		description: { type: String, required: true, max: 512 },
 		slug: { type: String, lowercase: true, unique: true, required: true },
 		deleted_at: { type: Date, required: false },
-		parentStudyId: { type: Schema.Types.ObjectId, ref: Study, required: false },
+		parentStudyId: { type: Schema.Types.ObjectId, ref: 'Study', required: false },
 	},
 	{
 		toJSON: { virtuals: true },
