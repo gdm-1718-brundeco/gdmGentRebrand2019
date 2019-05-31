@@ -10,6 +10,8 @@ import ProjectImageController from './projectImage.controller';
 import TeamController from './team.controller';
 import TestimonialController from './testimonial.controller';
 import TypeController from './type.controller';
+import StudyController from './study.controller';
+import CourseController from './course.controller';
 
 
 export {
@@ -24,4 +26,6 @@ export {
 		TeamController,
 		TestimonialController,
 		TypeController,
+		StudyController,
+		CourseController,
 };
