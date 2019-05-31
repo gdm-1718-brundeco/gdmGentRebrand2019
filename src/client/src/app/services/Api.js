@@ -65,6 +65,7 @@ class Api {
         const response = await fetch(`${this.URL}/team/${id}`);
         return await response.json();
     }
+    
 }
 
 export default Api;
