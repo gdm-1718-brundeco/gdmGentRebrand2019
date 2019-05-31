@@ -186,7 +186,8 @@ var ProjectController = function ProjectController() {
                 title: req.body.title,
                 synopsis: req.body.synopsis,
                 body: req.body.body,
-                categoryId: req.body.categoryId
+                categoryId: req.body.categoryId,
+                images: req.body.images
               });
               _context4.next = 4;
               return projectCreate.save();

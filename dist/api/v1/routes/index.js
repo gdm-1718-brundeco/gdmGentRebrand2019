@@ -27,6 +27,16 @@ var _projectImage = _interopRequireDefault(require("./projectImage.routes"));
 
 var _event = _interopRequireDefault(require("./event.routes"));
 
+var _team = _interopRequireDefault(require("./team.routes"));
+
+var _testimonial = _interopRequireDefault(require("./testimonial.routes"));
+
+var _type = _interopRequireDefault(require("./type.routes"));
+
+var _study = _interopRequireDefault(require("./study.routes"));
+
+var _course = _interopRequireDefault(require("./course.routes"));
+
 /*
 Import the external libraries:
 - express
@@ -51,5 +61,10 @@ var apiV1Router = _express["default"].Router();
 (0, _project["default"])(apiV1Router, authService);
 (0, _projectImage["default"])(apiV1Router, authService);
 (0, _event["default"])(apiV1Router, authService);
+(0, _team["default"])(apiV1Router, authService);
+(0, _testimonial["default"])(apiV1Router, authService);
+(0, _type["default"])(apiV1Router, authService);
+(0, _study["default"])(apiV1Router, authService);
+(0, _course["default"])(apiV1Router, authService);
 var _default = apiV1Router;
 exports["default"] = _default;

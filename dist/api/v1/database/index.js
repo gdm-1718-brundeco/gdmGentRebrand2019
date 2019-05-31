@@ -47,6 +47,36 @@ Object.defineProperty(exports, "Event", {
     return _schemas.Event;
   }
 });
+Object.defineProperty(exports, "Team", {
+  enumerable: true,
+  get: function get() {
+    return _schemas.Team;
+  }
+});
+Object.defineProperty(exports, "Testimonial", {
+  enumerable: true,
+  get: function get() {
+    return _schemas.Testimonial;
+  }
+});
+Object.defineProperty(exports, "Type", {
+  enumerable: true,
+  get: function get() {
+    return _schemas.Type;
+  }
+});
+Object.defineProperty(exports, "Study", {
+  enumerable: true,
+  get: function get() {
+    return _schemas.Study;
+  }
+});
+Object.defineProperty(exports, "Course", {
+  enumerable: true,
+  get: function get() {
+    return _schemas.Course;
+  }
+});
 Object.defineProperty(exports, "Seeder", {
   enumerable: true,
   get: function get() {

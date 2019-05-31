@@ -17,7 +17,7 @@ var Schema = _mongoose["default"].Schema;
 var ProjectSchema = new Schema({
   title: {
     type: String,
-    require: true,
+    required: true,
     max: 128
   },
   synopsis: {

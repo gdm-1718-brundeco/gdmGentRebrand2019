@@ -53,6 +53,36 @@ Object.defineProperty(exports, "ProjectImageController", {
     return _projectImage["default"];
   }
 });
+Object.defineProperty(exports, "TeamController", {
+  enumerable: true,
+  get: function get() {
+    return _team["default"];
+  }
+});
+Object.defineProperty(exports, "TestimonialController", {
+  enumerable: true,
+  get: function get() {
+    return _testimonial["default"];
+  }
+});
+Object.defineProperty(exports, "TypeController", {
+  enumerable: true,
+  get: function get() {
+    return _type["default"];
+  }
+});
+Object.defineProperty(exports, "StudyController", {
+  enumerable: true,
+  get: function get() {
+    return _study["default"];
+  }
+});
+Object.defineProperty(exports, "CourseController", {
+  enumerable: true,
+  get: function get() {
+    return _course["default"];
+  }
+});
 
 var _auth = _interopRequireDefault(require("./auth.controller"));
 
@@ -69,3 +99,13 @@ var _project = _interopRequireDefault(require("./project.controller"));
 var _event = _interopRequireDefault(require("./event.controller"));
 
 var _projectImage = _interopRequireDefault(require("./projectImage.controller"));
+
+var _team = _interopRequireDefault(require("./team.controller"));
+
+var _testimonial = _interopRequireDefault(require("./testimonial.controller"));
+
+var _type = _interopRequireDefault(require("./type.controller"));
+
+var _study = _interopRequireDefault(require("./study.controller"));
+
+var _course = _interopRequireDefault(require("./course.controller"));
