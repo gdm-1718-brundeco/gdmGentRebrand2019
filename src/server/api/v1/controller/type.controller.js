@@ -53,9 +53,8 @@ class TypeController {
     store = async (req, res, next) => {
         try {
             const typeCreate = new Type({
-                title: req.body.title,
-                synopsis: req.body.synopsis,
-                body: req.body.body,
+								name: req.body.name,
+								description: req.body.description,
             });
             const type = await typeCreate.save();
             return res.status(201).json(type);

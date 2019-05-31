@@ -22,13 +22,18 @@ const TestimonialSchema = new Schema (
 	}
 );
 
-TestimonialSchema.methods.slugify = () => {
+TestimonialSchema.methods.slugify = function() {
 	this.slug = slug(this.subject);
 }
-
+TestimonialSchema.pre('validate', function (next) {
+	if (!this.slug) {
+		this.slugify();
+	}
+	return next();
+});
 TestimonialSchema.virtual('id').get(function () { return this._id });
 TestimonialSchema.virtual('type', {
-	ref: 'UserType',
+	ref: 'Type',
 	localField: 'typeId',
 	foreignField: '_id',
 	justOne: true,

@@ -65,7 +65,15 @@ class Api {
         const response = await fetch(`${this.URL}/team/${id}`);
         return await response.json();
     }
-    
+     //Testemonial api calls
+     static findTestemonials = async (queryParams=null) => {
+        let url = `${this.URL}/testimonials`;
+        if (queryParams !== null) {
+            url += (url.indexOf('?') === -1 ? '?' : '&') + this.queryParams(queryParams);
+        }   
+        const response = await fetch(`${url}`);
+        return await response.json();
+    }
 }
 
 export default Api;
