@@ -9,6 +9,8 @@ import ProjectImage from './projectImage.schema';
 import Team from './team.schema';
 import Testimonial from './testimonial.schema';
 import Type from './type.schema';
+import Study from './study.schema';
+import Course from './course.schema';
 
 export {
     Blog,
@@ -21,4 +23,6 @@ export {
 		Team,
 		Testimonial,
 		Type,
+		Study,
+		Course,
 };
