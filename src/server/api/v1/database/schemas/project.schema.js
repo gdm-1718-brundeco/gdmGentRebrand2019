@@ -12,6 +12,7 @@ const ProjectSchema = new Schema(
 		slug: {
 			type: String, lowercase: true, unique: true, required: true,
 		},
+		creater: { type: String, required: true, max: 128 },
 		published_at: { type: Date, required: false },
 		deleted_at: { type: Date, required: false },
 		categoryId: { type: Schema.Types.ObjectId, ref: 'Category', required: false },
