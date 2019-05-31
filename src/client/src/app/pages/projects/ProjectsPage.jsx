@@ -12,7 +12,6 @@ import GeneralNav from "../../components/header/general-nav/GeneralNav";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Footer from "../../components/footer";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
-import Link from "../../components/text-components/link/Link";
 import Title from "../../components/text-components/title/Title";
 import Overlay from "../../components/styled-components/overlay/Overlay";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
@@ -23,7 +22,6 @@ import Featured from "../../components/card-components/featured/Featured";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
-import ProjectHeader from "../../components/header/project-header";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
 import MainImageComponent from "../../components/image-components/main-image-component";
@@ -88,11 +86,12 @@ class ProjectsPage extends Component {
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
         <div className="card-zoom">
+          <a  href={"/projects/" + item.id}>
           <img
             src={item.images[0].path}
-            className="placeholder"
-            href={"/projects/" + item.id}
+            className="placeholder"    
           />
+          </a>
         </div>
         <p className="card-synopsis">{item.synopsis}</p>
         <br />
@@ -101,25 +100,26 @@ class ProjectsPage extends Component {
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />
-        <GridWrapper style="main-page-wrapper">
-          <GeneralNav
-            toggleMenu={this.toggleMenu}
-            menustate={this.getParentState()}
-          />
-          <BlankDiv style="blank-div-lg" />
-          <Title style="section-title" text="Work" />
-          <Paragraph
-            text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-            style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-          />
-          <BlankDiv style="blank-div-lg" />
-          <Title style="section-title" text="Projecten" />
-          <BlankDiv style="blank-div-lg" />
-          <EasyFlexRow style="row-space-between col-card-width-1 ">
-            {this.items}
-          </EasyFlexRow>
-          <BlankDiv style="blank-div-lg" />
-          <Footer />
+        <GridWrapper style="html-wrapper">
+          <GridWrapper style="main-page-wrapper">
+            <GeneralNav
+              toggleMenu={this.toggleMenu}
+              menustate={this.getParentState()}
+            />
+            <BlankDiv style="blank-div-lg" />
+            <Title style="section-title" text="Work" />
+            <Paragraph
+              text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
+            />
+            <BlankDiv style="blank-div-lg" />
+            <Title style="section-title" text="Projecten" />
+            <EasyFlexRow style="row-space-between col-card-width-1 ">
+              {this.items}
+            </EasyFlexRow>
+            <BlankDiv style="blank-div-lg" />
+            <Footer />
+          </GridWrapper>
         </GridWrapper>
       </React.Fragment>
     );

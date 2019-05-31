@@ -16,7 +16,6 @@ class HeaderFullscreen extends Component {
   };
 
   render() {
-    let imageState = this.props.imagestate;
     return (
         <Parallax className="custom-class project-fullscreen-image" y={[20, -20]} tagOuter="figure">
           <img src={this.props.src} className="fullscreen-header-image" />
@@ -39,7 +38,7 @@ class HeaderFullscreen extends Component {
               </Parallax>
               <EasyFlexRow style="flex-row small-uppercase-title-pos-1">
                 <Title
-                  style="primary-subtitle primary-subtitle-pos-2 rotate color-wh"
+                  style="primary-subtitle primary-subtitle-pos-2 color-wh"
                   text="scroll down"
                 />
               </EasyFlexRow>
