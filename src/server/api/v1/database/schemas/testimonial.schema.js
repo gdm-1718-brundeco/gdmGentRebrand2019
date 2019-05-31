@@ -33,7 +33,7 @@ TestimonialSchema.pre('validate', function (next) {
 });
 TestimonialSchema.virtual('id').get(function () { return this._id });
 TestimonialSchema.virtual('type', {
-	ref: 'UserType',
+	ref: 'Type',
 	localField: 'typeId',
 	foreignField: '_id',
 	justOne: true,
