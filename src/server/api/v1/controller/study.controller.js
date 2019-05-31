@@ -10,7 +10,7 @@ class StudyController {
             if (limit && skip) {
                 const options = {
                     page: parseInt(skip, 10) || 1,
-                    limit: parseInt(limit, 10) || 10,
+										limit: parseInt(limit, 10) || 10,
                     sort: { created_at: -1 },
                 };
                 studies = await Study.paginate({}, options);
@@ -55,6 +55,7 @@ class StudyController {
             const studyCreate = new Study({
 								name: req.body.name,
 								description: req.body.description,
+								parentStudyId: req.body.parentStudyId,
             });
             const study = await studyCreate.save();
             return res.status(201).json(study);
