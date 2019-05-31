@@ -29,7 +29,7 @@ class StatementPage extends Component {
                 pagination: {
                     limit: data.limit,
                     page: data.page,
-                    pages: data.pages,
+                    pages: data.pages,  
                     total: data.total
                 }
                 }));
@@ -41,10 +41,17 @@ class StatementPage extends Component {
 
     render() {
         const { testemonials } = this.state;
-        console.log('testemonials');
+        this.items = this.state.testemonials.map(item => (
+            <div key={item.id} className="col-space-between card-wrapper">
+              <h2 className="primary-subtitle">{item.subject}</h2>
+              <p className="">{item.body}</p>
+              <p className="">{item.name}</p>
+              <br />
+            </div>
+          ));
         return (
             <React.Fragment>
-                <p>sedgxfhgjhuio</p>
+                 {this.items}
             </React.Fragment>
         )
     }
