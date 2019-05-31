@@ -10,19 +10,18 @@ import Api from '../../services';
 
 class TeamDetailPage extends Component {
     state = {
-        project: null,
-        projectImage: null,
+        member: null,
     };
 
     componentWillMount() {
-        this.Project(this.props.match.params.id);
+        this.Member(this.props.match.params.id);
     }
-    Project = (id) => {
+    Member = (id) => {
         Api.findOneMember(id)
             .then((data) => {
                 this.setState(prevState => ({
                     ...prevState,
-                    project: data
+                    member: data
                 }));
             })
             .catch((error) => {
@@ -31,24 +30,21 @@ class TeamDetailPage extends Component {
     }
 
     render() {
-        const { project } = this.state;
-        const { projectImage } = this.state;
-      console.log(projectImage);
-        if(project != null && projectImage != null){
+        const { member } = this.state;
+        if(member != null ){
           return (
             <React.Fragment>
-              <h1>{project.title}</h1>
-              <h3>{project.slug}</h3>
-              <p>{project.body}</p>
-              {projectImage.map((value , key) =>{
-                  return <img key={key} src={value.path} style={imageStyle}></img>
-              })}
+              <h1>{member.first_name}</h1>
+              <p>{member.body}</p>
+              <img src={member.image_path} style={imageStyle}></img>
+
             </React.Fragment>
         )
         }
         else{
           return(
-            <React.Fragment></React.Fragment>
+            <React.Fragment>
+            </React.Fragment>
           )
         }
         
