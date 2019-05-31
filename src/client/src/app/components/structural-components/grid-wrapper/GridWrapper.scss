@@ -1,3 +1,9 @@
+@import '../../../_sass/abstracts/variables';
+
+html{
+  background: $primary-color;
+}
+
 .header-dynamic-grid {
   display: flex;
   height: 100vh;
@@ -6,10 +12,16 @@
   justify-content: center;
 }
 
+.html-wrapper {
+  background: #fff;
+  width: 100%;
+}
+
 .main-page-wrapper {
     width: 90%;
     min-height: 100px;
     margin: 0 auto;
+    background: #fff;
 }
 
 @media only screen and (min-width: 1224px) {

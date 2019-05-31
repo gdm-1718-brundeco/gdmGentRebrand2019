@@ -112,6 +112,7 @@ class TeamPage extends Component {
           <TeacherProfile /> */}
            {this.items}
           <Footer />
+
         </GridWrapper>
       </React.Fragment>
     );

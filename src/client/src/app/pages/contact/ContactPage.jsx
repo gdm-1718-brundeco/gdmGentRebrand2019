@@ -69,27 +69,29 @@ class ContactPage extends Component {
             menustate={this.getParentState()}
             src={require("../../assets/images/bg-image-contactpage.jpg")}
           />
-          <GridWrapper style="main-page-wrapper">
-            <GeneralNav
-              toggleMenu={this.toggleMenu}
-              menustate={this.getParentState()}
-            />
-            <BlankDiv style="blank-div-md" />
-            <Title
-              style="section-title"
-              text="De school is op 31 december 2000 ontstaan uit de fusie van vier Gentse katholieke hogescholen"
-            />
-            <Paragraph
-              text="De school is op 31 december 2000 ontstaan uit de fusie van vier Gentse katholieke hogescholen: de Hogeschool voor Economisch en Grafisch Onderwijs (EGON). De Arteveldehogeschool is een katholieke hogeschool. De Arteveldehogeschool in Gent biedt diverse bacheloropleidingen aan, alsook bachelor-na-bacheloropleidingen, postgraduaten en bijscholingen en studiedagen. Op het moment van de fusie in 2000 telden deze hogescholen samen ongeveer 6.700 studenten en bijna 800 medewerkers en was de Arteveldehogeschool de op twee na grootste hogeschool in Vlaanderen. Op 1 januari 2017 telde de school meer dan 14.000 studenten en 1.300 personeelsleden."
-              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-            />
-            <Quote
-              text="“Wij stomen toekomstige talenten klaar voor een bruisende toekomst als audiovisual artist, graphic designer of developer” - Luk Bouters, opleidingsdirecteur"
-              style="primary-quote quote-pos-1"
-            />
-            <Paragraph style="paragraph-bottomline par-pos-1" />
-            <BlankDiv style="blank-div-lg" />
-            <Footer />
+          <GridWrapper style="html-wrapper">
+            <GridWrapper style="main-page-wrapper">
+              <GeneralNav
+                toggleMenu={this.toggleMenu}
+                menustate={this.getParentState()}
+              />
+              <BlankDiv style="blank-div-md" />
+              <Title
+                style="section-title"
+                text="De school is op 31 december 2000 ontstaan uit de fusie van vier Gentse katholieke hogescholen"
+              />
+              <Paragraph
+                text="De school is op 31 december 2000 ontstaan uit de fusie van vier Gentse katholieke hogescholen: de Hogeschool voor Economisch en Grafisch Onderwijs (EGON). De Arteveldehogeschool is een katholieke hogeschool. De Arteveldehogeschool in Gent biedt diverse bacheloropleidingen aan, alsook bachelor-na-bacheloropleidingen, postgraduaten en bijscholingen en studiedagen. Op het moment van de fusie in 2000 telden deze hogescholen samen ongeveer 6.700 studenten en bijna 800 medewerkers en was de Arteveldehogeschool de op twee na grootste hogeschool in Vlaanderen. Op 1 januari 2017 telde de school meer dan 14.000 studenten en 1.300 personeelsleden."
+                style="standard-text-paragraph par-pos-1 paragraph-mb-med"
+              />
+              <Quote
+                text="“Wij stomen toekomstige talenten klaar voor een bruisende toekomst als audiovisual artist, graphic designer of developer” - Luk Bouters, opleidingsdirecteur"
+                style="primary-quote quote-pos-1"
+              />
+              <Paragraph style="paragraph-bottomline par-pos-1" />
+              <BlankDiv style="blank-div-lg" />
+              <Footer />
+            </GridWrapper>
           </GridWrapper>
         </ParallaxProvider>
       </React.Fragment>

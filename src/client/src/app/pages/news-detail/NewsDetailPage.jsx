@@ -55,21 +55,26 @@ class NewsDetailPage extends Component {
       return (
         <React.Fragment>
           <OverlayMenu menustate={this.state.showMenu} />
-          <GridWrapper style="main-page-wrapper">
-            <GeneralNav
-              toggleMenu={this.toggleMenu}
-              menustate={this.getParentState()}
-            />
-            <BlankDiv style="blank-div-lg" />
-            <h1 className="section-title">{post.title}</h1>
-            <h3 className="primary-quote">{post.slug}</h3>
-            <p className="standard-text-paragraph">{post.body}</p>
-            <BlankDiv style="blank-div-sm" />
-            <EasyFlexRow style="row-space-between">
-              <SwitchArticlesButton text="Terug naar overzicht" href="/news/"/>
-            </EasyFlexRow>
-            <BlankDiv style="blank-div-lg" />
-            <Footer />
+          <GridWrapper style="html-wrapper">
+            <GridWrapper style="main-page-wrapper">
+              <GeneralNav
+                toggleMenu={this.toggleMenu}
+                menustate={this.getParentState()}
+              />
+              <BlankDiv style="blank-div-lg" />
+              <h1 className="section-title">{post.title}</h1>
+              <h3 className="primary-quote">{post.slug}</h3>
+              <p className="standard-text-paragraph">{post.body}</p>
+              <BlankDiv style="blank-div-sm" />
+              <EasyFlexRow style="row-space-between">
+                <SwitchArticlesButton
+                  text="Terug naar overzicht"
+                  href="/news/"
+                />
+              </EasyFlexRow>
+              <BlankDiv style="blank-div-lg" />
+              <Footer />
+            </GridWrapper>
           </GridWrapper>
         </React.Fragment>
       );

@@ -86,22 +86,24 @@ class NewsPage extends Component {
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />
-        <GridWrapper style="main-page-wrapper">
-          <GeneralNav
-            toggleMenu={this.toggleMenu}
-            menustate={this.getParentState()}
-          />
-          <BlankDiv style="blank-div-lg" />
-          <Title style="section-title" text="Nieuws" />
-          {/* <PostsListPaged
+        <GridWrapper style="html-wrapper">
+          <GridWrapper style="main-page-wrapper">
+            <GeneralNav
+              toggleMenu={this.toggleMenu}
+              menustate={this.getParentState()}
+            />
+            <BlankDiv style="blank-div-lg" />
+            <Title style="section-title" text="Nieuws" />
+            {/* <PostsListPaged
             posts={posts}
             pagination={pagination}
             onReadMore={this.goToPostDetailPage}
             onLoadMore={this.loadPosts}
           /> */}
-          {this.items}
-          <BlankDiv style="blank-div-lg" />
-          <Footer />
+            {this.items}
+            <BlankDiv style="blank-div-lg" />
+            <Footer />
+          </GridWrapper>
         </GridWrapper>
       </React.Fragment>
     );
