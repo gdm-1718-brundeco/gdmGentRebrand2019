@@ -22,6 +22,8 @@ import eventRouter from './event.routes';
 import teamRouter from './team.routes';
 import testimonialRouter from './testimonial.routes';
 import typeRouter from './type.routes';
+import studyRouter from './study.routes';
+import courseRouter from './course.routes';
 
 // Initialize the AuthService
 const authService = new AuthService();
@@ -39,5 +41,7 @@ eventRouter(apiV1Router, authService);
 teamRouter(apiV1Router, authService);
 testimonialRouter(apiV1Router, authService);
 typeRouter(apiV1Router, authService);
+studyRouter(apiV1Router, authService);
+courseRouter(apiV1Router, authService);
 
 export default apiV1Router;
