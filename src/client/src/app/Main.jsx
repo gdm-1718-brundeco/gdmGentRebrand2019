@@ -23,6 +23,7 @@ import LoginPage from './pages/login';
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
 import TeamPage from "./pages/team";
+import TeamDetailPage from "./pages/team-detail";
 import NewsDetailPage from "./pages/news-detail/NewsDetailPage";
 import ProjectDetailPage from './pages/project-detail/ProjectDetailPage';
 import ProjectsPage from './pages/projects/ProjectsPage';
@@ -91,6 +92,12 @@ class Main extends Component {
             path="/team"
             layout={PageLayout}
             component={TeamPage}
+          />
+            <RouteWithLayout
+            exact
+            path="/team/:id"
+            layout={PageLayout}
+            component={TeamDetailPage}
           />
           <RouteWithLayout
             path="/login"

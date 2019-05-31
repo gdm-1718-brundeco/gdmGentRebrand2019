@@ -86,11 +86,12 @@ class ProjectsPage extends Component {
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
         <div className="card-zoom">
+          <a  href={"/projects/" + item.id}>
           <img
             src={item.images[0].path}
-            className="placeholder"
-            href={"/projects/" + item.id}
+            className="placeholder"    
           />
+          </a>
         </div>
         <p className="card-synopsis">{item.synopsis}</p>
         <br />
