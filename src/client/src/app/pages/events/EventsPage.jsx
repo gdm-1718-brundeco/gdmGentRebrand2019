@@ -23,7 +23,6 @@ import Featured from "../../components/card-components/featured/Featured";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
-import ProjectHeader from "../../components/header/project-header";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
 class EventsPage extends Component {

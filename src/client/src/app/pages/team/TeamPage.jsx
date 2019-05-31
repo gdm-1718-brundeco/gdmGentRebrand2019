@@ -51,22 +51,24 @@ class TeamPage extends Component {
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />
-        <GridWrapper style="main-page-wrapper">
-          <BlankDiv style="blank-div-lg" />
-          <GeneralNav
-            toggleMenu={this.toggleMenu}
-            menustate={this.getParentState()}
-          />
-          <Title style="section-title" text="Team" />
-          <Paragraph
-            text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-            style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-          />
-          <BlankDiv style="blank-div-lg" />
-          <TeacherProfile />
-          <TeacherProfile />
-          <TeacherProfile />
-          <Footer />
+        <GridWrapper style="html-wrapper">
+          <GridWrapper style="main-page-wrapper">
+            <BlankDiv style="blank-div-lg" />
+            <GeneralNav
+              toggleMenu={this.toggleMenu}
+              menustate={this.getParentState()}
+            />
+            <Title style="section-title" text="Team" />
+            <Paragraph
+              text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
+              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
+            />
+            <BlankDiv style="blank-div-lg" />
+            <TeacherProfile />
+            <TeacherProfile />
+            <TeacherProfile />
+            <Footer />
+          </GridWrapper>
         </GridWrapper>
       </React.Fragment>
     );
