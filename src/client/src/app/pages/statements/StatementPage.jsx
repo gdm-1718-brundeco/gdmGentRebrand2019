@@ -10,31 +10,41 @@ import Api from '../../services';
 
 class StatementPage extends Component {
     state = {
-        post: null,
+        testemonials: [],
     };
 
     componentWillMount() {
-        this.loadPost(this.props.match.params.id);
+        this.loadTestemonials(1);
     }
 
-    loadPost = (id) => {
-        Api.findOnePost(id)
-            .then((data) => {
+    loadTestemonials = (pageIndex) => {
+        Api.findTestemonials({ limit: 4, skip: pageIndex })
+            .then(data => {
+                console.log(data.docs);
+                const prevTestomial = this.state.testemonials;
+                const newTestemonial = [...prevTestomial, ...data.docs];
                 this.setState(prevState => ({
-                    ...prevState,
-                    post: data
+                ...prevState,
+                testemonials: newTestemonial,
+                pagination: {
+                    limit: data.limit,
+                    page: data.page,
+                    pages: data.pages,
+                    total: data.total
+                }
                 }));
             })
-            .catch((error) => {
-
+            .catch(error => {
+                console.log(error);
             });
     }
 
     render() {
-        const { post } = this.state;
-        console.log(post);
+        const { testemonials } = this.state;
+        console.log('testemonials');
         return (
             <React.Fragment>
+                <p>sedgxfhgjhuio</p>
             </React.Fragment>
         )
     }
