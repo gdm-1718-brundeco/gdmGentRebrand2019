@@ -34,10 +34,19 @@ class TeamDetailPage extends Component {
         if(member != null ){
           return (
             <React.Fragment>
-              <h1>{member.first_name}</h1>
-              <p>{member.body}</p>
-              <img src={member.image_path} style={imageStyle}></img>
-
+               <img src={member.image_path} style={imageStyle}></img>
+              <h1>{member.first_name} {member.last_name}</h1>
+              <p>Email: </p>
+              <p>{member.email}</p>
+              <p>Job: </p>
+              <p>{member.job}</p>
+              <p>Bio: </p>
+              <p>
+                {member.bio}
+                <br></br>
+                <q>{member.quote}</q>
+              </p>
+             
             </React.Fragment>
         )
         }
