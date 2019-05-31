@@ -8,6 +8,7 @@ const CourseSchema = new Schema(
 	{
 		name: { type: String, required: true, max: 128 },
 		description: { type: String, required: true, max: 512 },
+		points: { type: Number, required: true },
 		slug: { type: String, lowercase: true, unique: true, required: true },
 		teacherIds: [ { type: Schema.Types.ObjectId, ref: 'Team', required: false } ],
 		studyIds: [ { type: Schema.Types.ObjectId, ref: 'Study', required: true, } ],
