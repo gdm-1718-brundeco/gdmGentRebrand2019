@@ -56,6 +56,7 @@ class ProjectController {
 				title: req.body.title,
 				synopsis: req.body.synopsis,
 				body: req.body.body,
+				creator: req.body.creator,
 				categoryId: req.body.categoryId,
 				images: req.body.images,
 			});

@@ -57,6 +57,7 @@ class CourseController {
 								name: req.body.name,
 								description: req.body.description,
 								points: req.body.points,
+								year: req.body.year,
 								teacherIds: req.body.teacherIds,
 								studyIds: req.body.studyIds,
 								parentCourseId: req.body.parentCourseId,

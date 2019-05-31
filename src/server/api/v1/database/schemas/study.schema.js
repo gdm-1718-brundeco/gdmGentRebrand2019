@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
 import slug from 'slug';
+import { Study } from '.';
 
 const { Schema } = mongoose;
 
@@ -10,6 +11,7 @@ const StudySchema = new Schema(
 		description: { type: String, required: true, max: 512 },
 		slug: { type: String, lowercase: true, unique: true, required: true },
 		deleted_at: { type: Date, required: false },
+		parentStudyId: { type: Schema.Types.ObjectId, ref: 'Study', required: false },
 	},
 	{
 		toJSON: { virtuals: true },
@@ -33,6 +35,12 @@ StudySchema.pre('validate', function(next) {
 });
 
 StudySchema.virtual('id').get(function() { return this._id });
+StudySchema.virtual('subStudies', {
+	ref: 'Study',
+	localField: '_id',
+	foreignField: 'parentStudyId',
+	justOne: false,
+})
 
 StudySchema.plugin(mongoosePaginate);
 export default mongoose.model('Study', StudySchema);
