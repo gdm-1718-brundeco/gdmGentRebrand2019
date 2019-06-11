@@ -10,6 +10,7 @@ Layout
 */
 import { LoginLayout, PageLayout } from "../../../layouts";
 import { AdminLayout } from "../../../admin/layouts";
+import Title from "../../text-components/title/Title";
 
 class OverlayMenu extends Component {
   render() {
@@ -66,6 +67,7 @@ class OverlayMenu extends Component {
         <BlankDiv style="blank-div-sm" />
         <EasyFlexRow style="row-flex-start">
           <div>
+            <Title text="FIND US HERE" style="overlay-contact-title" />
             <Paragraph
               text="Industrieweg 232, 9090 Mariakerke"
               style="overlay-menu-text"

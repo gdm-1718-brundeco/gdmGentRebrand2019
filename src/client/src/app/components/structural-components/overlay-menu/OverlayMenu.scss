@@ -24,26 +24,39 @@ a {
 }
 
 .show-overlay-menu {
-    background: rgb(0, 0, 158);
-    transition: 0.7s ease-in-out;
+    background: #060606;
+    transition: 0.6s ease-in-out;
     opacity: 1;
     z-index: 100;
     width: 100%;
-    transition-timing-function: cubic-bezier(.2, .88, .85, .35);
+    height: 100%;
+    // transition-timing-function: cubic-bezier(.2, .88, .85, .35);
+    // transform: skewY(0deg)
+    transform: scale(1) translate(0px, 0px);
 }
 
 .display-none {
     transition: 0.7s ease-in-out;
     opacity: 0;
-    width: 1%;
+    width: 70%;
     z-index: -1;
+    transform: skewY(-10deg);
+    transform: scale(1.8) translate(-50px, 50px);
 }
 
 .overlay-menu-text {
-    font-size: 13px;
+    font-size: 10px;
     line-height: 25px;
     color: #b5b5b5;
     font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.overlay-contact-title {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 12px;
 }
 
 .left-right-margin {
@@ -59,10 +72,11 @@ a {
 }
 
 .overlay-menu-links {
-    font-size: 40px;
+    font-size: 25px;
     color: #fff;
     transition: 0.2s ease-in-out;
-    font-weight: 200;
+    font-weight: 400;
+    margin: 5px 0px;
 
     &:hover {
         padding-left: 2px;
@@ -73,9 +87,10 @@ a {
 }
 
 .overlay-menu-links-social {
-    font-size: 25px;
+    font-size: 18px;
     color: $color-dark-grey;
     font-weight: 300;
+    margin: 5px 0px;
 
     &:hover {
         transition: 0.2s ease-in-out;
