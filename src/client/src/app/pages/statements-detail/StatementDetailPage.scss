@@ -1,0 +1,76 @@
+@import '../../_sass/abstracts/variables';
+
+.statement-detail-page-wrapper {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.testimonial-detail-img-box {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.testimonial-detail-img {
+    background-image: url(/static/media/campus.34bdb2b8.jpeg);
+    background-size: cover;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.testimonial-detail-square {
+    width: 70%;
+    height: 70%;
+    background-color: #2f00ff;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.testimonial-quotes {
+    font-size: 300%;
+    font-family: 'lato';
+}
+
+.close-testimonial {
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 5%;
+    transition: 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+.testimonial-bar-1 {
+    top: 0;
+    height: 1px;
+    width: 70%;
+    background: $primary-color;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+.testimonial-bar-2 {
+    height: 1px;
+    width: 70%;
+    background: $primary-color;
+    transform: rotate(-45deg);
+    display: inline;
+    position: absolute;
+}

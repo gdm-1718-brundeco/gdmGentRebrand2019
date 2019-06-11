@@ -30,7 +30,7 @@ import ProjectsPage from './pages/projects/ProjectsPage';
 import EventsPage from './pages/events/EventsPage';
 import EventDetailPage from './pages/event-detail/EventDetailPage';
 import StatementPage from './pages/statements/StatementPage';
-
+import StatementDetailPage from './pages/statements-detail/StatementDetailPage';
 
 /*
 Import styling
@@ -104,6 +104,12 @@ class Main extends Component {
             path="/testimonials"
             layout={PageLayout}
             component={StatementPage}
+          />
+          <RouteWithLayout
+            exact
+            path="/testimonialsdetailpage"
+            layout={PageLayout}
+            component={StatementDetailPage}
           />
           <RouteWithLayout
             path="/login"

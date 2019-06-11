@@ -1,0 +1,56 @@
+@import '../../_sass/abstracts/variables';
+
+.testimonial-wrapper {
+  padding-left: 20%;
+  margin-bottom: 100px;
+}
+
+.testimonial-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  max-width: 70%;
+  margin-bottom: 30px;
+}
+
+.testimonial-box {
+  position: relative;
+  width: 50%;
+}
+
+.testimonial-counter {
+  background: #fff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -50px;
+  position: absolute;
+  bottom: 10%;
+  box-shadow: 3px 3px 30px #5d5d5d26;
+}
+
+.testimonial-image {
+  background-image: url("../../assets/images/bg-image-homepage-2.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.testimonial-link {
+  padding: 10px 20px;
+  border: 1px solid $primary-color;
+  margin-top: 20px;
+  display: block;
+  width: 20%;
+  font-size: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blue;
+  &:hover {
+    background: $primary-color;
+    color: white;
+  }
+}

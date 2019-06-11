@@ -12,6 +12,16 @@
     justify-content: flex-start;
 }
 
+.col-space-evenly {
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    position: relative;
+}
+
 .col-card-width-1 {
     width: 85%;
     height: 100%;

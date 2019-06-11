@@ -35,6 +35,11 @@ var ProjectSchema = new Schema({
     unique: true,
     required: true
   },
+  creator: {
+    type: String,
+    required: true,
+    max: 128
+  },
   published_at: {
     type: Date,
     required: false

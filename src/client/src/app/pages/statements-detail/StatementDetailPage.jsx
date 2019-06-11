@@ -11,7 +11,7 @@ import Api from "../../services";
 /*
 Import css file
 */
-import "./StatementPage.scss";
+import "./StatementDetailPage.scss";
 
 /*
 Import components
@@ -22,14 +22,12 @@ import Title from "../../components/text-components/title/Title";
 import Paragraph from "../../components/text-components/paragraph/Paragraph";
 import Quote from "../../components/text-components/quote";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import Featured from "../../components/card-components/featured/Featured";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 import TeacherProfile from "../../components/card-components/teacher-profile/TeacherProfile";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
+import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 
 class StatementPage extends Component {
   state = {
@@ -84,45 +82,21 @@ class StatementPage extends Component {
     ));
     return (
       <React.Fragment>
-        <OverlayMenu menustate={this.state.showMenu} />
         <GridWrapper style="html-wrapper">
-          <GridWrapper style="main-page-wrapper">
-            <BlankDiv style="blank-div-lg" />
-            <GeneralNav
-              toggleMenu={this.toggleMenu}
-              menustate={this.getParentState()}
-            />
-            <Title style="section-title" text="Getuigenissen" />
-            <Paragraph
-              text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-              style="standard-text-paragraph par-pos-1 paragraph-mb-med"
-            />
-            <BlankDiv style="blank-div-lg" />
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Nomi Van Gool" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">01</div>
+          <GridWrapper style="statement-detail-page-wrapper">
+            <EasyFlexCol style="col-space-evenly">
+              <Title text="Nomi Van Gool" style="testimonial-person"/>
+              <p className="testimonial-quotes">‘’</p>
+              <Paragraph style="testimonial-text-paragraph" text="Het is een doorzoekbaar archief gevuld met publicaties van (oud-)studenten, docenten, onderzoekers, diensten of externe partners van de Arteveldehogeschool. Aire streeft naar Open Access, zodat de publicaties zo veel mogelijk vrij toegankelijk zijn."/>
+              <div className="testimonial-detail-img-box">
+                <div className="testimonial-detail-img"/>
+                <div className="testimonial-detail-square"></div>
               </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">LEES GETUIGENIS</a>
-            </div>
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Bert Goosens" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">02</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">LEES GETUIGENIS</a>
-            </div>
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Victor Gouhie" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">03</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">LEES GETUIGENIS</a>
-            </div>
-            <Footer />
+              <a className="close-testimonial" href="/testimonials">
+                <div className="testimonial-bar-1"></div>
+                <div className="testimonial-bar-2"></div>
+              </a>
+            </EasyFlexCol>
           </GridWrapper>
         </GridWrapper>
       </React.Fragment>
