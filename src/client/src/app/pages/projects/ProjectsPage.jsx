@@ -79,7 +79,6 @@ class ProjectsPage extends Component {
     let parentState = this.state.showMenu;
     return parentState;
   };
-
   render() {
     const { pagination, projects } = this.state;
     this.items = this.state.projects.map(item => (
@@ -110,15 +109,11 @@ class ProjectsPage extends Component {
             </EasyFlexRow>
             <BlankDiv style="blank-div-lg" />
             <EasyFlexRow style="row-space-between-extra">
-              <Title
-                style="section-title"
-                text="Passie voor Grafische en Digitale Media"
-              />
+              <Title style="section-title" text="Passie" />
               <Paragraph
                 text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-                style="paragraph-mb-med paragraph-extra"
+                style="par-pos-1 paragraph-mb-med paragraph-extra"
               />
-              <BlankDiv style="blank-div-lg" />
             </EasyFlexRow>
             <Footer />
           </GridWrapper>
