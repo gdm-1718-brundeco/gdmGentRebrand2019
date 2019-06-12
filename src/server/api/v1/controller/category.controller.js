@@ -63,9 +63,9 @@ class CategoryController {
     store = async (req, res, next) => {
         try {
             const categoryCreate = new Category({
-                title: req.body.title,
-                synopsis: req.body.synopsis,
-                body: req.body.body,
+                name: req.body.name,
+                description: req.body.description,
+                
             });
             const category = await categoryCreate.save();
             return res.status(201).json(category);
