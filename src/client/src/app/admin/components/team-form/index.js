@@ -23,10 +23,14 @@ Validation
 */
 const validationSchema = Yup.object(
 {
-    title: Yup.string("Enter a title").required("Title is required").min(10).max(128),
-    synopsis: Yup.string("Enter a synopsis").required("Synopsis is required").min(30).max(1024),
-    body: Yup.string("Enter a story").required(false).min(50),
-    categoryId: Yup.string("Select a category").required(false),
+    first_name: Yup.string("Enter a name").required("Name is required").max(30),
+    last_name: Yup.string("Enter a name").required("Name is required").max(30),
+    job: Yup.string("Enter a job").required("job is required").max(100),
+    email: Yup.string("Enter a name").required("email is required").min(10).max(100),
+    bio: Yup.string("Enter a bio").required("bio is required").min(20).max(1024),
+    quote: Yup.string("Enter a quote"),
+    image_path: Yup.string("Enter an image").required("Image is required").max(1024),
+   
 });
 
 /*
@@ -46,25 +50,23 @@ const styles = theme => ({
  }
 });
 
-class PostForm extends Component {
+class StudyForm extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
     }
     
     state = {
-        categories: [],
-        post: { title: "", synopsis: "", body: "", categoryId: "", },
+        member: { first_name: "", lastt_name: "", job: "", email: "",image_path: "",bio: "",quote: "", },
     };
 
     componentWillMount() {
-        this.loadCategories();
         
-        if (this.props.postId) {            
-            this.loadPost(this.props.postId);
+        if (this.props.studyId) {            
+            this.loadPost(this.props.studyId);
         }
     }
 
-    loadCategories = async () => {
+    loadPost = async (memberId) => {
         try {
             const options = {
                 method: 'GET',
@@ -72,29 +74,7 @@ class PostForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch('/api/v1/categories', options);
-            console.log(response);
-            const responseJson = await response.json();
-            if (responseJson) {
-                this.setState(prevState => ({ 
-                    ...prevState, 
-                    categories: responseJson 
-                }));
-            }
-        } catch(error) {
-            console.log(error);
-        }
-    }
-
-    loadPost = async (postId) => {
-        try {
-            const options = {
-                method: 'GET',
-                mode: 'cors',
-                cache: 'default'
-            };
-
-            const response = await fetch(`/api/v1/posts/${postId}`, options);
+            const response = await fetch(`/api/v1/posts/${memberId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -108,10 +88,10 @@ class PostForm extends Component {
     }
 
     submit = (values, actions) => {
-        const { postId } = this.props;
+        const { memberId } = this.props;
 
-        if (postId) {  
-            this.updatePost(postId, values);          
+        if (memberId) {  
+            this.updatePost(memberId, values);          
         } else {
             this.savePost(values);
         }
@@ -131,7 +111,7 @@ class PostForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch('/api/v1/posts', options);
+            const response = await fetch('/api/v1/team', options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -141,7 +121,7 @@ class PostForm extends Component {
         }
     }
 
-    updatePost = async (postId, postData) => {
+    updatePost = async (memberId, postData) => {
         try {
             const options = {
                 method: 'PUT',
@@ -154,7 +134,7 @@ class PostForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/posts/${postId}`, options);
+            const response = await fetch(`/api/v1/team/${memberId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -188,4 +168,4 @@ class PostForm extends Component {
     }
 }
 
-export default withStyles(styles)(PostForm);
+export default withStyles(styles)(StudyForm);
