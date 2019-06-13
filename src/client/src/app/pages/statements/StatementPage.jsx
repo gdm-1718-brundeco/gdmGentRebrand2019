@@ -72,7 +72,9 @@ class StatementPage extends Component {
       <div key={item.id} className="testimonial-wrapper">
         <Title style="testimonial-title" text={item.name} />
         <div className="testimonial-box">
+          <a href={"/testimonials/" + item.id}>
           <div className="testimonial-image" />
+          </a>
           <div className="testimonial-counter">01</div>
         </div>
         <a href={"/testimonials/" + item.id} className="testimonial-link">

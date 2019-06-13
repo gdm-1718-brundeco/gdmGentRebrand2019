@@ -8,3 +8,11 @@
 .quote-pos-1 {
     margin-left: auto;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .primary-quote {
+        font-size: 80%;
+        margin-left: inherit;
+    }
+}

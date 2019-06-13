@@ -66,7 +66,7 @@ class OverlayMenu extends Component {
         </EasyFlexRow>
         <BlankDiv style="blank-div-sm" />
         <EasyFlexRow style="row-flex-start">
-          <div>
+          <div className="overlay-contact-info">
             <Title text="FIND US HERE" style="overlay-contact-title" />
             <Paragraph
               text="Industrieweg 232, 9090 Mariakerke"

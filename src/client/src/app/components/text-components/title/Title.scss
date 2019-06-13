@@ -44,12 +44,6 @@
 
 // css styling
 
-@media only screen and (max-width: 1100px) {
-    .header-maintitle-style {
-        font-size: 65px;
-    }
-}
-
 @keyframes fadeinOpacity {
     from {
         opacity: 0;
@@ -88,6 +82,25 @@
     }
 }
 
+.passion-quote {
+    height: 100%;
+    width: 100%;
+    font-size: 700%;
+    font-weight: 600;
+    background: url('../../../assets/images/bg-image-homepage-3.5.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-clip: text;
+    background-position: right;
+    -webkit-text-fill-color: transparent;
+    animation: fadeinOpacity 3s;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    white-space: pre-line;
+}
 
 .header-maintitle-style {
     font-family: $font-family-roboto;
@@ -100,6 +113,22 @@
     padding: 0% 10%;
     margin-bottom: 20px;
     mix-blend-mode: exclusion;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .header-maintitle-style {
+        font-size: 65px;
+    }
+    .primary-subtitle-pos-2 {
+        opacity: 0 !important;
+    }
+    .section-title {
+        font-size: 30px !important;
+    }
+    .passion-quote {
+        font-size: 75px;
+    }
 }
 
 .header-maintitle-pos {

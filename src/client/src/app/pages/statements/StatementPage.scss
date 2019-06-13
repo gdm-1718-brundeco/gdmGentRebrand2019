@@ -16,6 +16,15 @@
 .testimonial-box {
   position: relative;
   width: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover .testimonial-counter {
+    // transition: 0.4s ease-in-out;
+    transition-timing-function: cubic-bezier(.6, .21, .22, .94);
+    bottom: 50%;
+    opacity: 1;
+  }
 }
 
 .testimonial-counter {
@@ -29,6 +38,8 @@
   position: absolute;
   bottom: 10%;
   box-shadow: 3px 3px 30px #5d5d5d26;
+  transition: 0.4s ease-in-out;
+  opacity: 0.9;
 }
 
 .testimonial-image {

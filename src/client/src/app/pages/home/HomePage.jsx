@@ -89,7 +89,7 @@ class HomePage extends Component {
 
   render() {
     const { pagination, projects } = this.state;
-
+console.log(this.state.projects)
     this.items = this.state.projects.map((item, key) => (
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
