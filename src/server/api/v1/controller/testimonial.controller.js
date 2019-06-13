@@ -57,6 +57,7 @@ class TestimonialController {
 				name: req.body.name,
 				typeId: req.body.typeId,
 				body: req.body.body,
+				image: req.body.image,
 			});
 			const testimonial = await testimonialCreate.save();
 			return res.status(201).json(testimonial);
