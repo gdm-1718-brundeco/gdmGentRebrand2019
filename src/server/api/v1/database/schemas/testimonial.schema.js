@@ -11,6 +11,7 @@ const TestimonialSchema = new Schema (
 		typeId: { type: Schema.Types.ObjectId, ref: 'UserType', required: true, },
 		body: { type: String, required: true },
 		slug: { type: String, lowercase: true, unique: true, required: true },
+		image: { type: String, required: true },
 		deleted_at: { type: Date, required: false },
 	},
 	{
