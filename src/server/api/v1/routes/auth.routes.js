@@ -8,7 +8,10 @@ import { AuthController } from '../controller';
 const authController = new AuthController();
 
 const initializeEndpoints = (parentRouter, authService) => {
-    parentRouter.post('/login/local', (req, res, next) => authController.loginLocal(authService, req, res, next));
+		parentRouter.post('/login/local', (req, res, next) => authController.loginLocal(authService, req, res, next));
+		parentRouter.get('/logout', (req, res, next) => {
+			authController.logout(authService, req, res, next)
+		});
 };
 
 export default initializeEndpoints;

@@ -7,6 +7,7 @@ const ProjectImageSchema = new Schema(
 	{
 		title: { type: String, required: true, max: 128 },
 		path: { type: String, required: true },
+		projectId: { type: String, required: true },
 	},
 	{
 		toJSON: { virtuals: true },
