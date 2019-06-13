@@ -41,7 +41,7 @@ class ProjectImageController {
     show = async (req, res, next) => {
         try {
             const { id } = req.params;
-            const item = await ProjectImage.find({ 'projectId': id }).exec();
+            const item = await ProjectImage.findById(id).exec();
             if (item === undefined || item === null) {
                 throw new APIError(404, `Images from Project: ${id} not found!`);
             }
