@@ -104,24 +104,6 @@ a {
     }
 }
 
-.news-list-item {
-    font-family: $font-family-roboto;
-    font-size: 35px;
-    font-weight: 500;
-    max-width: 70%;
-    padding: 30px 0px;
-    border-bottom: 1px solid $color-light-grey;
-    display: block;
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-        color: $primary-color;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
-        padding-left: 5px;
-    }
-}
-
 .link-previous-article {
     font-family: $font-family-roboto;
     font-size: 40px;
