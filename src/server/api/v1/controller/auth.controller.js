@@ -15,7 +15,7 @@ class AuthController {
             }
             req.auth = {
                 id: user.id,
-            };
+						};
             const token = createToken(req.auth);
             return res.status(200).json({
                 email: user.email,
@@ -23,7 +23,14 @@ class AuthController {
                 strategy: 'local',
             });
         })(req, res, next);
-    };
+		};
+		
+		logout = async (authService, req, res, next) => {
+			req.logout();
+			return res.status(200).json({
+				message: 'logged out!',
+			});
+		}
 }
 
 export default AuthController;
