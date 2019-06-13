@@ -35,6 +35,10 @@
     height: 400px;
     position: relative;
     margin: 3.5%;
+    &:hover .card-synopsis {
+        color: $primary-color;
+        transition: 0.4s ease-in-out;
+    }
 }
 
 @media only screen and (max-width: 1000px) {

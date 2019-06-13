@@ -15,6 +15,8 @@ import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Title from "../../components/text-components/title/Title";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 
+import './NewsPage.scss'
+
 class NewsPage extends Component {
   state = {
     posts: [],
@@ -94,13 +96,12 @@ class NewsPage extends Component {
             />
             <BlankDiv style="blank-div-lg" />
             <Title style="section-title" text="Nieuws" />
-            {/* <PostsListPaged
-            posts={posts}
-            pagination={pagination}
-            onReadMore={this.goToPostDetailPage}
-            onLoadMore={this.loadPosts}
-          /> */}
-            {this.items}
+            <PostsListPaged
+              posts={posts}
+              pagination={pagination}
+              onReadMore={this.goToPostDetailPage}
+              onLoadMore={this.loadPosts}
+            />
             <BlankDiv style="blank-div-lg" />
             <Footer />
           </GridWrapper>
