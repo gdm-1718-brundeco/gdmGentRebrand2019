@@ -14,7 +14,8 @@ import PostsFormPage from '../post-form';
 import EventFormPage from '../event-form';
 import ProjectFormPage from '../project-form';
 import TestimonialPage from '../testimonial-form';
-import Typepage from '../type-form';
+import TypePage from '../type-form';
+import StudyPage from '../study-form';
 
 
 
@@ -29,7 +30,9 @@ class AdminPage extends Component {
         <Route path="/admin/event/create" component={ EventFormPage }></Route>
         <Route path="/admin/project/create" component={ ProjectFormPage }></Route>
         <Route path="/admin/testimonial/create" component={ TestimonialPage }></Route>
-        <Route path="/admin/type/create" component={ Typepage }></Route>
+        <Route path="/admin/type/create" component={ TypePage }></Route>
+        <Route path="/admin/study/create" component={ StudyPage }></Route>
+
 
 
 
