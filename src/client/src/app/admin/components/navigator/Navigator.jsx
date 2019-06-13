@@ -31,6 +31,7 @@ const categories = [
       { id: 'Blogs', icon: <PermMediaOutlinedIcon />, link: '/admin/blogs' },
       { id: 'Categories', icon: <DnsRoundedIcon />, link: '/admin/categories' },
       { id: 'Posts', icon: <PeopleIcon />, link: '/admin/posts' },
+      { id: 'Events', icon: <PeopleIcon />, link: '/admin/events' },
     ],
   },
 ];
