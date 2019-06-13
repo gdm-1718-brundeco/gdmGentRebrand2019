@@ -24,8 +24,8 @@ Validation
 const validationSchema = Yup.object(
 {
     title: Yup.string("Enter a title").required("Title is required").min(10).max(128),
-    synopsis: Yup.string("Enter a synopsis").required("Synopsis is required").min(128).max(1024),
-    body: Yup.string("Enter a story").required(false).min(512),
+    synopsis: Yup.string("Enter a synopsis").required("Synopsis is required").min(30).max(1024),
+    body: Yup.string("Enter a story").required(false).min(50),
     categoryId: Yup.string("Select a category").required(false),
 });
 
