@@ -92,7 +92,9 @@ class ProjectDetailPage extends Component {
               <BlankDiv style="blank-div-md" />
               <h1 className="section-title">{project.title}</h1>
               <h3 className="primary-quote quote-pos-1">{project.slug}</h3>
-              <p className="standard-text-paragraph par-pos-1">{project.body}</p>
+              <p className="standard-text-paragraph par-pos-1">
+                {project.body}
+              </p>
               {/* {projectImage.map((value, key) => {
                 return <img key={key} src={value.path} style={imageStyle} />;
               })} */}

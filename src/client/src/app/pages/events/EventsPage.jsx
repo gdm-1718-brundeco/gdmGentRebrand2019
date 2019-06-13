@@ -68,12 +68,18 @@ class EventsPage extends Component {
   render() {
     const { pagination, events } = this.state;
     this.items = this.state.events.map((item, key) => (
-      <div key={item.id}>
-        <h1>{item.title}</h1>
-        <p>{item.synopsis}</p>
-        <p />
-        <br />
-        <a href={"/events/" + item.id}> Detail</a>
+      <div key={item.id} className="event-wrapper">
+        <h2 className="primary-subtitle">{item.title}</h2>
+        <div className="event-border" />
+        <div className="image-wrapper">
+          <div className="event-image-color-layer" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/gdmgent-4f491.appspot.com/o/projects%2Flg_thumbnail.PNG?alt=media&token=804e5513-82ea-4c0f-bbf7-adfcf1081090"
+            alt=""
+            className="event-image"
+          />
+        </div>
+        <a href={"/events/" + item.id} className="view-event-button">BEKIJK EVENT</a>
       </div>
     ));
     return (
@@ -88,74 +94,7 @@ class EventsPage extends Component {
             <BlankDiv style="blank-div-lg" />
             <Title style="section-title" text="Events" />
             <div className="event-row-container">
-              <div className="event-wrapper">
-                <h2 className="event-title">
-                  Erasmus project: exchange knowledge for future innovation
-                </h2>
-                <div className="event-border" />
-                <div className="image-wrapper">
-                  <div className="event-image-color-layer" />
-                  <img
-                    src={require("../../assets/images/bootcamp.jpg")}
-                    alt=""
-                    className="event-image"
-                  />
-                </div>
-                <a href="/" className="view-event-button">
-                  BEKIJK EVENT
-                </a>
-              </div>
-              <div className="event-wrapper">
-                <h2 className="event-title">
-                  Erasmus project: exchange knowledge for future innovation
-                </h2>
-                <div className="event-border" />
-                <div className="image-wrapper">
-                  <div className="event-image-color-layer" />
-                  <img
-                    src={require("../../assets/images/kinderhuisziekenfonds.png")}
-                    alt=""
-                    className="event-image"
-                  />
-                </div>
-                <a href="/" className="view-event-button">
-                  BEKIJK EVENT
-                </a>
-              </div>
-              <div className="event-wrapper">
-                <h2 className="event-title">
-                  Erasmus project: exchange knowledge for future innovation
-                </h2>
-                <div className="event-border" />
-                <div className="image-wrapper">
-                  <div className="event-image-color-layer" />
-                  <img
-                    src={require("../../assets/images/project-1.jpg")}
-                    alt=""
-                    className="event-image"
-                  />
-                </div>
-                <a href="/" className="view-event-button">
-                  BEKIJK EVENT
-                </a>
-              </div>
-              <div className="event-wrapper">
-                <h2 className="event-title">
-                  Erasmus project: exchange knowledge for future innovation
-                </h2>
-                <div className="event-border" />
-                <div className="image-wrapper">
-                  <div className="event-image-color-layer" />
-                  <img
-                    src={require("../../assets/images/bootcamp.jpg")}
-                    alt=""
-                    className="event-image"
-                  />
-                </div>
-                <a href="/" className="view-event-button">
-                  BEKIJK EVENT
-                </a>
-              </div>
+              {this.items}
             </div>
             <BlankDiv style="blank-div-lg" />
             <Footer />
