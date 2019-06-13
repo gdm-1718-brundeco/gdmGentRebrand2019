@@ -99,6 +99,12 @@ class ProjectDetailPage extends Component {
                 return <img key={key} src={value.path} style={imageStyle} />;
               })} */}
               <BlankDiv style="blank-div-lg" />
+              <a
+                href="/projects"
+                className="primary-subtitle row-center primary-button"
+              >
+                Project overzicht
+              </a>
               <Footer />
             </GridWrapper>
           </GridWrapper>

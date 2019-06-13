@@ -29,35 +29,25 @@ import TeacherProfile from "../../components/card-components/teacher-profile/Tea
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 
-class StatementPage extends Component {
+class StatementDetailPage extends Component {
   state = {
-    testemonials: []
+    testimonial: null
   };
 
-  componentWillMount() {
-    this.loadTestemonials(1);
+  componentDidMount() {
+    this.Testemonial(this.props.match.params.id);
   }
 
-  loadTestemonials = pageIndex => {
-    Api.findTestemonials({ limit: 4, skip: pageIndex })
+  Testemonial = id => {
+    Api.findOneTestimonial(id)
       .then(data => {
-        console.log(data.docs);
-        const prevTestomial = this.state.testemonials;
-        const newTestemonial = [...prevTestomial, ...data.docs];
         this.setState(prevState => ({
           ...prevState,
-          testemonials: newTestemonial,
-          pagination: {
-            limit: data.limit,
-            page: data.page,
-            pages: data.pages,
-            total: data.total
-          }
+          testimonial: data
         }));
+        console.log(this.state.testimonial);
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => {});
   };
 
   toggleMenu = e => {
@@ -71,37 +61,40 @@ class StatementPage extends Component {
   };
 
   render() {
-    const { testemonials } = this.state;
-    this.items = this.state.testemonials.map(item => (
-      <div key={item.id} className="col-space-between card-wrapper">
-        <h2 className="primary-subtitle">{item.subject}</h2>
-        <p className="">{item.body}</p>
-        <p className="">{item.name}</p>
-        <br />
-      </div>
-    ));
-    return (
-      <React.Fragment>
-        <GridWrapper style="html-wrapper">
-          <GridWrapper style="statement-detail-page-wrapper">
-            <EasyFlexCol style="col-space-evenly">
-              <Title text="Nomi Van Gool" style="testimonial-person"/>
-              <p className="testimonial-quotes">‘’</p>
-              <Paragraph style="testimonial-text-paragraph" text="Het is een doorzoekbaar archief gevuld met publicaties van (oud-)studenten, docenten, onderzoekers, diensten of externe partners van de Arteveldehogeschool. Aire streeft naar Open Access, zodat de publicaties zo veel mogelijk vrij toegankelijk zijn."/>
-              <div className="testimonial-detail-img-box">
-                <div className="testimonial-detail-img"/>
-                <div className="testimonial-detail-square"></div>
-              </div>
-              <a className="close-testimonial" href="/testimonials">
-                <div className="testimonial-bar-1"></div>
-                <div className="testimonial-bar-2"></div>
-              </a>
-            </EasyFlexCol>
+    const { testimonial } = this.state;
+    if (testimonial != null) {
+      console.log(testimonial);
+      return (
+        <React.Fragment>
+          <GridWrapper style="html-wrapper">
+            <GridWrapper style="statement-detail-page-wrapper">
+              <EasyFlexCol style="col-space-evenly">
+                <Title text={testimonial.name} style="testimonial-person" />
+                <p className="testimonial-quotes">‘’</p>
+                <Paragraph
+                  style="testimonial-text-paragraph"
+                  text={testimonial.body}
+                />
+                <div className="testimonial-detail-img-box">
+                  <img
+                    className="testimonial-detail-img"
+                    src={require("../../assets/images/bg-image-homepage-2.jpg")}
+                  />
+                  <div className="testimonial-detail-square" />
+                </div>
+                <a className="close-testimonial" href="/testimonials">
+                  <div className="testimonial-bar-1" />
+                  <div className="testimonial-bar-2" />
+                </a>
+              </EasyFlexCol>
+            </GridWrapper>
           </GridWrapper>
-        </GridWrapper>
-      </React.Fragment>
-    );
+        </React.Fragment>
+      );
+    } else {
+      return <div>No testimonials found</div>;
+    }
   }
 }
 
-export default StatementPage;
+export default StatementDetailPage;
