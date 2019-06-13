@@ -9,6 +9,7 @@ const EventSchema = new Schema(
 		title: { type: String, required: true, max: 128 },
 		body: { type: String, required: false },
 		event_date: { type: Date, required: true },
+		image: { type: String, required: true },
 		slug: { type: String, lowercarse: true, unique: true, required: true},
 		deleted_at: { type: Date, required: false },
 	},

@@ -11,12 +11,12 @@ class CourseController {
                 const options = {
                     page: parseInt(skip, 10) || 1,
 										limit: parseInt(limit, 10) || 10,
-										populate: ['teachers', 'study', 'mainCourse', 'subCourses'],
+										populate: ['teachers', 'studies', 'mainCourse', 'subCourses'],
                     sort: { created_at: -1 },
                 };
                 courses = await Course.paginate({}, options);
             } else {
-                courses = await Course.find().populate(['teachers', 'study', 'mainCourse', 'subCourses']).sort({ created_at: -1 }).exec();
+                courses = await Course.find().populate(['teachers', 'studies', 'mainCourse', 'subCourses']).sort({ created_at: -1 }).exec();
             }
 
             if (courses === undefined || courses === null) {
@@ -32,7 +32,7 @@ class CourseController {
     show = async (req, res, next) => {
         try {
             const { id } = req.params;
-            const item = await Course.findById(id).exec();
+            const item = await Course.findById(id).populate(['teachers', 'studies', 'mainCourse', 'subCourses']).exec();
             if (item === undefined || item === null) {
                 throw new APIError(404, `Study with id: ${id} not found!`);
             }
@@ -61,7 +61,7 @@ class CourseController {
 								teacherIds: req.body.teacherIds,
 								studyIds: req.body.studyIds,
 								parentCourseId: req.body.parentCourseId,
-            });
+						});
             const course = await courseCreate.save();
             return res.status(201).json(course);
         } catch (err) {

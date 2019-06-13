@@ -65,7 +65,8 @@ class EventController {
             const eventCreate = new Event({
                 title: req.body.title,
                 body: req.body.body,
-                event_date: req.body.event_date,
+								event_date: req.body.event_date,
+								image: req.body.image,
             });
             const event = await eventCreate.save();
             return res.status(201).json(event);
