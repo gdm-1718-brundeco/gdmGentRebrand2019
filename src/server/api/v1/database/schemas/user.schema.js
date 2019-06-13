@@ -70,6 +70,7 @@ UserSchema.pre('save', function (next) {
             if (errSalt) throw errSalt;
 
             return bcrypt.hash(user.localProvider.password, salt, (errHash, hash) => {
+								console.log(user.localProvider.password);
                 if (errHash) throw errHash;
 
                 user.localProvider.password = hash;

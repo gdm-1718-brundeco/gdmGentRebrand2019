@@ -64,11 +64,11 @@ class UserController {
     store = async (req, res, next) => {
         try {
             const postCreate = new User({
-                title: req.body.title,
-                synopsis: req.body.synopsis,
-                body: req.body.body,
-                categoryId: req.body.categoryId
-            });
+								email: req.body.email,
+								localProvider: {
+									password: req.body.localProvider.password,
+								},
+						});
             const user = await postCreate.save();
             return res.status(201).json(user);
         } catch (err) {
