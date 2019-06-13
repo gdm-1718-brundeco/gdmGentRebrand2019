@@ -32,6 +32,14 @@ const categories = [
       { id: 'Categories', icon: <DnsRoundedIcon />, link: '/admin/categories' },
       { id: 'Posts', icon: <PeopleIcon />, link: '/admin/posts' },
       { id: 'Events', icon: <PeopleIcon />, link: '/admin/events' },
+      { id: 'Projects', icon: <PeopleIcon />, link: '/admin/projects' },
+      { id: 'Type', icon: <PeopleIcon />, link: '/admin/types' },
+      { id: 'Testimonial', icon: <PeopleIcon />, link: '/admin/testimonials' },
+      { id: 'Study', icon: <PeopleIcon />, link: '/admin/studies' },
+      { id: 'Course', icon: <PeopleIcon />, link: '/admin/courses' },
+      { id: 'Team', icon: <PeopleIcon />, link: '/admin/team' },
+      { id: 'Image', icon: <PeopleIcon />, link: '/admin/projectimages' },
+      
     ],
   },
 ];

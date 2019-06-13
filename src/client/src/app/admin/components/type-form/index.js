@@ -23,9 +23,9 @@ Validation
 */
 const validationSchema = Yup.object(
 {
-    title: Yup.string("Enter a title").required("Title is required").min(10).max(128),
-    body: Yup.string("Enter a story").required(false).min(50),
-    event_date: Yup.date().required(false),
+    name: Yup.string("Enter a name").required("Name is required").min(10).max(128),
+    description: Yup.string("Enter a description").required("Description is required").min(50).max(1024),
+   
 });
 
 /*
@@ -45,22 +45,23 @@ const styles = theme => ({
  }
 });
 
-class EventForm extends Component {
+class TypeForm extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
     }
     
     state = {
-        post: { title: "",body: "", event_date: "", },
+        type: { name: "", description: "", },
     };
 
     componentWillMount() {
         
-        if (this.props.postId) {            
-            this.loadPost(this.props.postId);
+        if (this.props.typeId) {            
+            this.loadPost(this.props.typeId);
         }
     }
-    loadPost = async (postId) => {
+
+    loadPost = async (typeId) => {
         try {
             const options = {
                 method: 'GET',
@@ -68,7 +69,7 @@ class EventForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/events/${postId}`, options);
+            const response = await fetch(`/api/v1/posts/${typeId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -82,10 +83,10 @@ class EventForm extends Component {
     }
 
     submit = (values, actions) => {
-        const { postId } = this.props;
+        const { typeId } = this.props;
 
-        if (postId) {  
-            this.updatePost(postId, values);          
+        if (typeId) {  
+            this.updatePost(typeId, values);          
         } else {
             this.savePost(values);
         }
@@ -105,7 +106,7 @@ class EventForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch('/api/v1/events', options);
+            const response = await fetch('/api/v1/types', options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -115,7 +116,7 @@ class EventForm extends Component {
         }
     }
 
-    updatePost = async (postId, postData) => {
+    updatePost = async (typeId, postData) => {
         try {
             const options = {
                 method: 'PUT',
@@ -128,7 +129,7 @@ class EventForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/events/${postId}`, options);
+            const response = await fetch(`/api/v1/types/${typeId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -162,4 +163,4 @@ class EventForm extends Component {
     }
 }
 
-export default withStyles(styles)(EventForm);
+export default withStyles(styles)(TypeForm);

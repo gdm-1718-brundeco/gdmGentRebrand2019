@@ -24,8 +24,9 @@ Validation
 const validationSchema = Yup.object(
 {
     title: Yup.string("Enter a title").required("Title is required").min(10).max(128),
-    body: Yup.string("Enter a story").required(false).min(50),
-    event_date: Yup.date().required(false),
+    synopsis: Yup.string("Enter a synopsis").required(false).min(50),
+    body: Yup.string("Enter a story").required(false).min(128),
+    categoryId: Yup.string("Select a category").required(false),
 });
 
 /*
@@ -45,21 +46,44 @@ const styles = theme => ({
  }
 });
 
-class EventForm extends Component {
+class ProjectForm extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
     }
     
     state = {
-        post: { title: "",body: "", event_date: "", },
+        categories: [],
+        post: { title: "",synopsis: "", body: "",  categoryId: "", },
     };
 
     componentWillMount() {
-        
+        this.loadCategories();
         if (this.props.postId) {            
             this.loadPost(this.props.postId);
         }
     }
+    loadCategories = async () => {
+        try {
+            const options = {
+                method: 'GET',
+                mode: 'cors',
+                cache: 'default'
+            };
+
+            const response = await fetch('/api/v1/categories', options);
+            console.log(response);
+            const responseJson = await response.json();
+            if (responseJson) {
+                this.setState(prevState => ({ 
+                    ...prevState, 
+                    categories: responseJson 
+                }));
+            }
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
     loadPost = async (postId) => {
         try {
             const options = {
@@ -68,7 +92,7 @@ class EventForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/events/${postId}`, options);
+            const response = await fetch(`/api/v1/projects/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -105,7 +129,7 @@ class EventForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch('/api/v1/events', options);
+            const response = await fetch('/api/v1/projects', options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -128,7 +152,7 @@ class EventForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/events/${postId}`, options);
+            const response = await fetch(`/api/v1/projects/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -162,4 +186,4 @@ class EventForm extends Component {
     }
 }
 
-export default withStyles(styles)(EventForm);
+export default withStyles(styles)(ProjectForm);
