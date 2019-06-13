@@ -58,10 +58,16 @@ class CourseController {
 								description: req.body.description,
 								points: req.body.points,
 								year: req.body.year,
-								teacherIds: req.body.teacherIds,
 								studyIds: req.body.studyIds,
-								parentCourseId: req.body.parentCourseId,
 						});
+
+						if(req.body.parentCourseId && req.body.parentCourseId !== "") {
+							courseCreate.parentCourseId = req.body.parentCourseId;
+						}
+
+						if(req.body.teacherIds && req.body.teacherIds !== "") {
+							courseCreate.teacherIds = req.body.teacherIds;
+						}
             const course = await courseCreate.save();
             return res.status(201).json(course);
         } catch (err) {
