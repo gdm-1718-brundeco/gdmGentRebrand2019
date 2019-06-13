@@ -32,7 +32,7 @@ class AuthService {
 		}
 		
 		initializeGithubStrategy = () => {
-			// Github strategy
+			// Github strategy, TODO:
 		}
 
     initializeLocalStrategy = () => {
