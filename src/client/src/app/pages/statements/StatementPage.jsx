@@ -16,39 +16,33 @@ import "./StatementPage.scss";
 /*
 Import components
 */
-import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Title from "../../components/text-components/title/Title";
 import Paragraph from "../../components/text-components/paragraph/Paragraph";
-import Quote from "../../components/text-components/quote";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import Featured from "../../components/card-components/featured/Featured";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import TeacherProfile from "../../components/card-components/teacher-profile/TeacherProfile";
-import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
+
 
 class StatementPage extends Component {
   state = {
-    testemonials: []
+    testimonials: []
   };
 
   componentWillMount() {
-    this.loadTestemonials(1);
+    this.loadTestimonials(1);
   }
 
-  loadTestemonials = pageIndex => {
-    Api.findTestemonials({ limit: 4, skip: pageIndex })
+  loadTestimonials = pageIndex => {
+    Api.findTestimonials({ limit: 4, skip: pageIndex })
       .then(data => {
-        console.log(data.docs);
-        const prevTestomial = this.state.testemonials;
+        // console.log(data.docs);
+        const prevTestomial = this.state.testimonials;
         const newTestemonial = [...prevTestomial, ...data.docs];
         this.setState(prevState => ({
           ...prevState,
-          testemonials: newTestemonial,
+          testimonials: newTestemonial,
           pagination: {
             limit: data.limit,
             page: data.page,
@@ -73,13 +67,17 @@ class StatementPage extends Component {
   };
 
   render() {
-    const { testemonials } = this.state;
-    this.items = this.state.testemonials.map(item => (
-      <div key={item.id} className="col-space-between card-wrapper">
-        <h2 className="primary-subtitle">{item.subject}</h2>
-        <p className="">{item.body}</p>
-        <p className="">{item.name}</p>
-        <br />
+    const { testimonials } = this.state;
+    this.items = this.state.testimonials.map(item => (
+      <div key={item.id} className="testimonial-wrapper">
+        <Title style="testimonial-title" text={item.name} />
+        <div className="testimonial-box">
+          <div className="testimonial-image" />
+          <div className="testimonial-counter">01</div>
+        </div>
+        <a href={"/testimonials/" + item.id} className="testimonial-link">
+          LEES GETUIGENIS
+        </a>
       </div>
     ));
     return (
@@ -98,13 +96,15 @@ class StatementPage extends Component {
               style="standard-text-paragraph par-pos-1 paragraph-mb-med"
             />
             <BlankDiv style="blank-div-lg" />
-            <div className="testimonial-wrapper">
+            {/* <div className="testimonial-wrapper">
               <Title style="testimonial-title" text="Nomi Van Gool" />
               <div className="testimonial-box">
                 <div className="testimonial-image" />
                 <div className="testimonial-counter">01</div>
               </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">LEES GETUIGENIS</a>
+              <a href="/testimonialsdetailpage" className="testimonial-link">
+                LEES GETUIGENIS
+              </a>
             </div>
             <div className="testimonial-wrapper">
               <Title style="testimonial-title" text="Bert Goosens" />
@@ -112,7 +112,9 @@ class StatementPage extends Component {
                 <div className="testimonial-image" />
                 <div className="testimonial-counter">02</div>
               </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">LEES GETUIGENIS</a>
+              <a href="/testimonialsdetailpage" className="testimonial-link">
+                LEES GETUIGENIS
+              </a>
             </div>
             <div className="testimonial-wrapper">
               <Title style="testimonial-title" text="Victor Gouhie" />
@@ -120,8 +122,11 @@ class StatementPage extends Component {
                 <div className="testimonial-image" />
                 <div className="testimonial-counter">03</div>
               </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">LEES GETUIGENIS</a>
-            </div>
+              <a href="/testimonialsdetailpage" className="testimonial-link">
+                LEES GETUIGENIS
+              </a>
+            </div> */}
+            {this.items}
             <Footer />
           </GridWrapper>
         </GridWrapper>

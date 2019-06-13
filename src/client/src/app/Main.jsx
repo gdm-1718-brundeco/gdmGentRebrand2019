@@ -107,7 +107,7 @@ class Main extends Component {
           />
           <RouteWithLayout
             exact
-            path="/testimonialsdetailpage"
+            path="/testimonials/:id"
             layout={PageLayout}
             component={StatementDetailPage}
           />
