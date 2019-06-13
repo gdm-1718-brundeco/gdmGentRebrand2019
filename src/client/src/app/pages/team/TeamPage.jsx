@@ -86,7 +86,7 @@ class TeamPage extends Component {
             <img src={item.image_path} className="team-thumbnail" />
           </a>
         </div>
-        <a href={"/team/" + item.id} className="team-read-more-button">Meer</a>
+        <a href={"/team/" + item.id} className="team-read-more-button">i</a>
       </div>
     ));
     return (

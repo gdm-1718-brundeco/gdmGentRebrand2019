@@ -7,19 +7,22 @@
 }
 
 .team-read-more-button {
-    height: 45px;
-    width: 40%;
+    height: 35px;
+    width: 35px;
     transition: 0.2s ease-in-out;
-    color: #fff;
-    background: $primary-color;
+    color: $primary-color;
+    border: 1px solid $primary-color;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    font-family: 'Charm', cursive;
+    font-size: 120%;
+    margin-left: auto;
 
     &:hover {
-        border: #000;
-        background: #000;
+        border: 1px solid $primary-color;
+        background: $primary-color;
         cursor: pointer;
         transition: 0.2s ease-in-out;
         color: #fff;

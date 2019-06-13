@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <EasyFlexCol style="col-medium-height">
       <EasyFlexRow style="row-space-between row-margin-sm row-width-md">
-        <a href="testimonials" className="footer-link">Getuigenissen</a>
+        <a href="/testimonials" className="footer-link">Getuigenissen</a>
         <a href="/events" className="footer-link">Events</a>
         <a href="/news" className="footer-link">Nieuws</a>
         <a href="/services" className="footer-link">Diensten</a>

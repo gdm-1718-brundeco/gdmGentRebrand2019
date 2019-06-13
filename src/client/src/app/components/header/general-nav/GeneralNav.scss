@@ -6,7 +6,7 @@
     height: auto;
     justify-content: space-around;
     align-items: center;
-    height: 33px;
+    height: 20px;
 
     &:hover {
         cursor: pointer;
@@ -15,7 +15,7 @@
 }
 
 .fade-in-menutitle {
-    opacity: 1;
+    opacity: 0;
     transition: 0.2s ease-in-out;
     color: $color-dark-grey;
     font-size: 70%;
@@ -29,23 +29,6 @@
     font-weight: 300;
 }
 
-.menu-action {
-    transition: 0.2s ease-in-out;
-
-    &:hover .nav-burger-top {
-        cursor: pointer;
-        transform: scale(1.2);
-        transition: 0.2s ease-in-out;
-        transition-timing-function: cubic-bezier(.17, .67, .83, .67);
-    }
-
-    &:hover .nav-burger-bottom {
-        cursor: pointer;
-        transform: scale(0.0);
-        transition-timing-function: cubic-bezier(.17, .67, .83, .67);
-    }
-}
-
 .fade-in-cross {
     height: auto;
 }
@@ -54,7 +37,7 @@
     width: 45px;
     height: 1px;
     background: $color-dark-grey;
-    transition: 1s ease-in-out;
+    transition: 0.7s ease-in-out;
     transform: rotate(0deg);
 }
 
@@ -62,25 +45,52 @@
     width: 45px;
     height: 1px;
     background: $color-dark-grey;
-    transition: 0.2s ease-in-out;
+    transition: 0.7s ease-in-out;
     margin-top: 7px;
 }
 
 .nav-burger-top-wh {
     height: 1px;
-    background: #fff;
+    background: $primary-color;
     transform: rotate(45deg);
-    width: 15px;
+    width: 23px;
     margin-top: 19px;
     transition: 0.2s ease-in-out;
 }
 
 .nav-burger-bottom-wh {
     height: 1px;
-    background: #fff;
+    background: $primary-color;
     transform: rotate(-45deg);
-    width: 15px;
+    width: 23px;
     transition: 0.2s ease-in-out;
+}
+
+.menu-action {
+    transition: 0.2s ease-in-out;
+
+    &:hover .nav-burger-top {
+        cursor: pointer;
+        transform: scaleX(1.6);
+        transition: 0.2s ease-in-out;
+    }
+
+    &:hover .nav-burger-bottom {
+        cursor: pointer;
+        transform: scaleX(0.6);
+        transition: 0.2s ease-in-out;
+    }
+
+    &:hover .nav-burger-top-wh {
+        cursor: pointer;
+        transform: rotate(-45deg);
+    }
+
+    &:hover .nav-burger-bottom-wh {
+        cursor: pointer;
+        transform: rotate(45deg);
+        transition: 0.2s ease-in-out;
+    }
 }
 
 .nav-fixed {
@@ -93,7 +103,7 @@
     right: 0;
     top: 0;
     z-index: 9994;
-    height: 80px;
+    height: 60px;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     box-sizing: border-box;

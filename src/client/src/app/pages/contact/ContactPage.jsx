@@ -74,10 +74,10 @@ class ContactPage extends Component {
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">
               <div className="provide-white">
-                <GeneralNav
-                  toggleMenu={this.toggleMenu}
-                  menustate={this.getParentState()}
-                />
+              <GeneralNav
+              toggleMenu={this.toggleMenu}
+              menustate={this.getParentState()}
+            />
               </div>
               <BlankDiv style="blank-div-md" />
               <Title

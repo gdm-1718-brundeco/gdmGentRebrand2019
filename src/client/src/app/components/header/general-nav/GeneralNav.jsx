@@ -58,9 +58,9 @@ class GeneralNav extends Component {
           onMouseOver={this.addClass}
           onMouseOut={this.removeClass}
         >
-          <p ref={this.childEl} className={this.state.childElState}>
+          {/* <p ref={this.childEl} className={this.state.childElState}>
             menu
-          </p>
+          </p> */}
           <div
             className={
               menuState

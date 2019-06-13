@@ -1,0 +1,116 @@
+@import '../../_sass/abstracts/_variables.scss';
+
+.event-row-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.event-wrapper {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 60px 0px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover .event-title {
+    color: $color-dark-grey;
+    transition: 0.2s ease-in-out;
+  }
+
+  &:hover .event-border {
+    width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover .event-image-color-layer {
+    background-color: rgba($color: $primary-color, $alpha: 1);
+    transition: 0.3s ease-in-out;
+    padding-left: 15px;
+  }
+
+  &:hover .event-image {
+    transition: 0.3s ease-in-out;
+    padding-left: 15px;
+    position: absolute;
+    height: 110%;
+  }
+  &:hover .view-event-button {
+    top: 85%;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .event-row-container {
+    flex-direction: column;
+  }
+  .event-wrapper {
+    width: 60%;
+  }
+
+  .event-image {
+    height: 300px;
+  }
+}
+
+.view-event-button {
+  width: 35%;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  font-size: 80%;
+  margin: 50px 0px;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  top: 70%;
+  z-index: 0;
+  opacity: 0;
+
+  &:hover {
+    background: $primary-color;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 150px;
+  margin-top: 30px;
+  position: relative;
+}
+
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease-in-out;
+  position: absolute;
+}
+
+.event-image-color-layer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  background-color: rgba($color: $primary-color, $alpha: 0);
+  transition: 0.4s ease-in-out;
+}
+
+.event-border {
+  background-color: $primary-color;
+  height: 1px;
+  margin-bottom: 30px;
+  width: 5%;
+  transition: 1s ease-in-out;
+}
