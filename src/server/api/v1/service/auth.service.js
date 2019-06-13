@@ -51,6 +51,7 @@ class AuthService {
                     }
 
                     return user.comparePassword(password, (isMatch) => {
+											console.log(isMatch);
                         if (!isMatch) {
                             return done(null, false);
                         }

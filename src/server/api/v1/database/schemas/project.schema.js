@@ -16,7 +16,6 @@ const ProjectSchema = new Schema(
 		published_at: { type: Date, required: false },
 		deleted_at: { type: Date, required: false },
 		categoryId: { type: Schema.Types.ObjectId, ref: 'Category', required: false },
-		images: [{ type: Schema.Types.ObjectId, ref: 'ProjectImage', required: true }]
 	},
 	{
 		toJSON: { virtuals: true },
@@ -45,6 +44,12 @@ ProjectSchema.virtual('category', {
 	foreignField: '_id',
 	justOne: true,
 });
+ProjectSchema.virtual('images', {
+	ref: 'ProjectImage',
+	localField: '_id',
+	foreignField: 'projectId',
+	justOne: false,
+})
 
 ProjectSchema.plugin(mongoossePaginate);
 export default mongoose.model('Project', ProjectSchema)
