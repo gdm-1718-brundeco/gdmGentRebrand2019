@@ -7,16 +7,19 @@ import { Route } from 'react-router-dom';
 /*
 Pages
 */
-import BlogsOverviewPage from '../blogs-overview';
 import CategoriesOverviewPage from '../categories-overview';
+import CategorieFormPage from '../categorie-form';
 import PostsOverviewPage from '../posts-overview';
+import PostsFormPage from '../post-form';
 
 class AdminPage extends Component {
   render() {
     return (
       <div className="Admin">
         <Route path="/admin/categories" component={ CategoriesOverviewPage }></Route>
+        <Route path="/admin/categories/create" component={ CategorieFormPage }></Route>
         <Route path="/admin/posts" component={ PostsOverviewPage }></Route>
+        <Route path="/admin/posts/create" component={ PostsFormPage }></Route>
 				{/* <Route path="/admin/projects" component={ ProjectsOverviewPage }></Route> */}
       </div>
     )

@@ -1,16 +1,15 @@
-// import React, { Component } from 'react';
-// import { Redirect, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Redirect, Route } from 'react-router-dom';
 
-// import { ContentLayout } from '../../layouts';
+import { ContentLayout } from '../../layouts';
 
-// import ProjectTablePage from '../project-table';
-// import ProjectFormPage from '../project-form';
+import ProjectTablePage from '../projects-table';
+import ProjectFormPage from '../projects-form';
 
-// const tabs = [
-// 	{ id: 'List', 'link': '/admin/projects' },
-// 	{ id: 'Create new Project', 'link': '/admin/projects/create' },
-// ];
-
+const tabs = [
+	{ id: 'List', 'link': '/admin/projects' },
+	{ id: 'Create new Project', 'link': '/admin/projects/create' },
+];
 
 class ProjectsOverviewPage extends Component {
 	render() {
@@ -19,7 +18,7 @@ class ProjectsOverviewPage extends Component {
 		return (
 			<ContentLayout title='Projects Overview' tabs={tabs}>
 				{ children }
-				<Route exact path="/admin/projects" component={ProjectsTablePage}></Route>
+				<Route exact path="/admin/projects" component={ProjectTablePage}></Route>
 			</ContentLayout>
 		)
 	}

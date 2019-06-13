@@ -50,10 +50,12 @@ class Form extends Component {
 
         return (
           <form
+              action ="/posts"
+              method="POST"
               onSubmit={(e) => {
                 this.props.handleSubmit(e);
               }}
-              method="POST"
+             
           >
               <TextField
                 id="title"

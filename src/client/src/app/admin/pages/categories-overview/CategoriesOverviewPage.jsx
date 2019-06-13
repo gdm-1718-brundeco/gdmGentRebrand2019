@@ -11,9 +11,10 @@ import { ContentLayout } from '../../layouts';
 
 /*
 Pages
+import CategorieTablePage from '../categories-table';
+
 */
-import PostsTablePage from '../posts-table';
-import PostFormPage from '../post-form';
+import CategorieFormPage from '../categorie-form';
 
 const tabs = [
   { id: 'List', link: '/admin/categories' },
