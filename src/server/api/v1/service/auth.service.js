@@ -20,7 +20,8 @@ const { ExtractJwt, Strategy: JwtStrategy } = passportJWT;
 class AuthService {
     constructor() {
         this.initializeLocalStrategy();
-        this.initializeJwtStrategy();
+				this.initializeJwtStrategy();
+				this.initializeGithubStrategy();
         passport.serializeUser((user, done) => {
             done(null, user);
         });
@@ -28,7 +29,11 @@ class AuthService {
             done(null, user);
         });
         this.passport = passport;
-    }
+		}
+		
+		initializeGithubStrategy = () => {
+			// Github strategy, TODO:
+		}
 
     initializeLocalStrategy = () => {
         passport.use(new LocalStrategy(

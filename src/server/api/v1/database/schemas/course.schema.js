@@ -56,7 +56,7 @@ CourseSchema.virtual('subCourses', {
 	foreignField: 'parentCourseId',
 	justOne: false,
 });
-CourseSchema.virtual('study', {
+CourseSchema.virtual('studies', {
 	ref: 'Study',
 	localField: 'studyIds',
 	foreignField: '_id',
