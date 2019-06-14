@@ -65,18 +65,28 @@ class StatementPage extends Component {
     return parentState;
   };
 
+  testimonialCounter = e => {
+    let uiValue =1;
+    let array = this.state.testimonials;
+    // for (uiValue = 1; uiValue < array.length; ++uiValue) {
+    // }
+    // return uiValue;
+    array.forEach(testimonial => {
+      console.log(uiValue++)
+    });
+  }
+ 
   render() {
+    {this.testimonialCounter()}
     const { testimonials } = this.state;
     this.items = this.state.testimonials.map(item => (
       <div key={item.id} className="testimonial-wrapper">
         <Title style="testimonial-title" text={item.name} />
         <div className="testimonial-box">
           <a href={"/testimonials/" + item.id}>
-            {/* <div className="testimonial-image" /> */}
             <img src={item.image} alt="" className="testimonial-image" />
           </a>
-
-          <div className="testimonial-counter">01</div>
+          <div className="testimonial-counter">{this.testimonialCounter()}</div>
         </div>
         <a href={"/testimonials/" + item.id} className="testimonial-link">
           Lees mij

@@ -1,2 +1,2 @@
-import ImagesOverviewPage from './ImagesOverviewPage';
-export default ImagesOverviewPage;
+import ImagesOverViewPage from './ImagesOverViewPage';
+export default ImagesOverViewPage;

@@ -4,6 +4,12 @@ Import extenal libraries
 import React, { Component } from "react";
 
 /*
+Import stylesheet
+*/
+import './ContactPage.scss'
+
+
+/*
 Import internal libraries
 */
 import Api from "../../services";
@@ -29,7 +35,8 @@ import EasyFlexCol from "../../components/structural-components/flexbox/easy-fle
 
 class ContactPage extends Component {
   state = {
-    post: null
+    post: null,
+    quote: `Bekijk ons uitgebreid gamma aan opleidingen`
   };
 
   componentWillMount() {
@@ -74,10 +81,10 @@ class ContactPage extends Component {
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">
               <div className="provide-white">
-              <GeneralNav
-              toggleMenu={this.toggleMenu}
-              menustate={this.getParentState()}
-            />
+                <GeneralNav
+                  toggleMenu={this.toggleMenu}
+                  menustate={this.getParentState()}
+                />
               </div>
               <BlankDiv style="blank-div-md" />
               <Title
@@ -93,6 +100,19 @@ class ContactPage extends Component {
                 style="primary-quote quote-pos-1"
               />
               <Paragraph style="paragraph-bottomline par-pos-1" />
+            </GridWrapper>
+            <EasyFlexRow style="row-space-between-passion-block">
+              <div className="contact-block-quote">
+                <h2 className="passion-quote">{this.state.quote}</h2>
+                <a
+                  href="/projects"
+                  className="primary-subtitle row-center contact-button"
+                >
+                  GDM opleidingen
+                </a>
+              </div>
+            </EasyFlexRow>
+            <GridWrapper style="main-page-wrapper">
               <BlankDiv style="blank-div-lg" />
               <Footer />
             </GridWrapper>
