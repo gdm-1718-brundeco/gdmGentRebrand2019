@@ -1,3 +1,5 @@
+
+
 /*
 External libraries
 */
@@ -41,14 +43,14 @@ const styles = theme => ({
   },
 });
 
-class ProjectsTable extends Component {
+class TeamsTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
   state = {
-    projects: null,
+    teams: null,
     imageId: null,
     postAction: null,
     dialogOpen: false,
@@ -96,19 +98,19 @@ class ProjectsTable extends Component {
 
     switch(this.state.postAction) {
       case POSTACTIONSENUM.DELETE:
-        url = `/api/v1/projects/${this.state.imageId}`;
+        url = `/api/v1/team/${this.state.imageId}`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softdelete`;
+        url = `/api/v1/team/${this.state.imageId}?mode=softdelete`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softundelete`;
+        url = `/api/v1/team/${this.state.imageId}?mode=softundelete`;
         options = {
           method: 'DELETE'
         }
@@ -119,18 +121,18 @@ class ProjectsTable extends Component {
       .then(res => res.json())
       .then(results => {
         if(results.mode && results.mode === 'delete') {
-          this.loadProjects();
+          this.loadTeams();
         } else {
-          const project = results.project;
-          const i = this.state.projects.findIndex((obj, index, array) => {
-            return obj._id === project._id;
+          const team = results.team;
+          const i = this.state.teams.findIndex((obj, index, array) => {
+            return obj._id === team._id;
           });
-          const projects = this.state.projects;
-          projects[i] = project;
+          const teams = this.state.teams;
+          teams[i] = team;
   
           this.setState(prevState => ({
             ...prevState,
-            projects: projects
+            teams: teams
           }));
         }
         }
@@ -140,18 +142,18 @@ class ProjectsTable extends Component {
   }
 
   componentWillMount() {
-    this.loadProjects();
+    this.loadTeams();
   }
 
-  loadProjects = () => {
-    fetch('/api/v1/projects')
+  loadTeams = () => {
+    fetch('/api/v1/team')
       .then( response => response.json())
-      .then( item => this.setState({ projects: item })); 
+      .then( item => this.setState({ teams: item })); 
   }
 
   render() {
     const { classes } = this.props;
-    const { projects } = this.state;
+    const { teams } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -159,31 +161,36 @@ class ProjectsTable extends Component {
           <Table className={classes.table} aria-labelledby="tableTitle">
             <TableHead>
               <TableRow>
-                <TableCell>Title</TableCell>
-                <TableCell>Synopsis</TableCell>
-                <TableCell>Body</TableCell>
-                <TableCell>Category</TableCell>
+                <TableCell>Firstname</TableCell>
+                <TableCell>Lastname</TableCell>
+                <TableCell>Job</TableCell>
+                <TableCell>Email</TableCell>
+                <TableCell>Image</TableCell>
+                <TableCell>Bio</TableCell>
+                <TableCell>Quote</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {projects && projects.map( (project, index) => (
-                <TableRow key={project.id}>
-                  <TableCell>{project.title}</TableCell>
-                  <TableCell>{project.synopsis}</TableCell>
-                  <TableCell>{project.body}</TableCell>
-                  <TableCell>{project.categoryId}</TableCell>
-
+              {teams && teams.map( (team, index) => (
+                <TableRow key={team.id}>
+                  <TableCell>{team.first_name}</TableCell>
+                  <TableCell>{team.last_name}</TableCell>
+                  <TableCell>{team.job}</TableCell>
+                  <TableCell>{team.email}</TableCell>
+                  <TableCell>{team.image_path}</TableCell>
+                  <TableCell>{team.bio}</TableCell>
+                  <TableCell>{team.quote}</TableCell>
                   <TableCell>
                     <IconButton
-                      component={Link} to={ `/admin/projects/${project.id}/edit`}>
+                      component={Link} to={ `/admin/team/${team.id}/edit`}>
                       <IconCreate />
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, (project.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((project.deleted_at)?0.3:1) }}>
+                      onClick={() => this.handleDialogOpen(team.id, (team.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((team.deleted_at)?0.3:1) }}>
                       <IconDelete/>
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, POSTACTIONSENUM.DELETE)}>
+                      onClick={() => this.handleDialogOpen(team.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />
                     </IconButton>
                   </TableCell>
@@ -218,4 +225,4 @@ class ProjectsTable extends Component {
   }
 }
 
-export default withStyles(styles)(ProjectsTable);
+export default withStyles(styles)(TeamsTable);

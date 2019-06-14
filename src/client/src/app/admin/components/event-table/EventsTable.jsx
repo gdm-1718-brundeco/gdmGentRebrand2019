@@ -41,15 +41,15 @@ const styles = theme => ({
   },
 });
 
-class ProjectsTable extends Component {
+class EventsTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
   state = {
-    projects: null,
-    imageId: null,
+    events: null,
+    eventId: null,
     postAction: null,
     dialogOpen: false,
     dialogTitle: '',
@@ -58,27 +58,27 @@ class ProjectsTable extends Component {
 
   
 
-  handleDialogOpen = (imageId, postAction) => {
+  handleDialogOpen = (eventId, postAction) => {
     let title = '';
     let message = '';
 
     switch(postAction) {
       case POSTACTIONSENUM.DELETE:
         title = 'Delete from the database?';
-        message= `Do you wish permenantly delete the post with id ${imageId}?`;
+        message= `Do you wish permenantly delete the post with id ${eventId}?`;
         break;
       case POSTACTIONSENUM.SOFTDELETE:
         title = 'Soft-delete from the database?';
-        message= `Do you wish to soft-delete the post with id ${imageId}?`;
+        message= `Do you wish to soft-delete the post with id ${eventId}?`;
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
         title = 'Soft-undelete from the database?';
-        message= `Do you wish to soft-undelete the post with id ${imageId}?`;
+        message= `Do you wish to soft-undelete the post with id ${eventId}?`;
         break;
     }
 
     this.setState({
-      imageId: imageId,
+      eventId: eventId,
       postAction: postAction,
       dialogOpen: true,
       dialogTitle: title,
@@ -96,19 +96,19 @@ class ProjectsTable extends Component {
 
     switch(this.state.postAction) {
       case POSTACTIONSENUM.DELETE:
-        url = `/api/v1/projects/${this.state.imageId}`;
+        url = `/api/v1/events/${this.state.eventId}`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softdelete`;
+        url = `/api/v1/events/${this.state.eventId}?mode=softdelete`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softundelete`;
+        url = `/api/v1/events/${this.state.eventId}?mode=softundelete`;
         options = {
           method: 'DELETE'
         }
@@ -119,18 +119,18 @@ class ProjectsTable extends Component {
       .then(res => res.json())
       .then(results => {
         if(results.mode && results.mode === 'delete') {
-          this.loadProjects();
+          this.loadEvents();
         } else {
-          const project = results.project;
-          const i = this.state.projects.findIndex((obj, index, array) => {
-            return obj._id === project._id;
+          const event = results.event;
+          const i = this.state.events.findIndex((obj, index, array) => {
+            return obj._id === event._id;
           });
-          const projects = this.state.projects;
-          projects[i] = project;
+          const events = this.state.events;
+          events[i] = event;
   
           this.setState(prevState => ({
             ...prevState,
-            projects: projects
+            events: events
           }));
         }
         }
@@ -140,18 +140,18 @@ class ProjectsTable extends Component {
   }
 
   componentWillMount() {
-    this.loadProjects();
+    this.loadEvents();
   }
 
-  loadProjects = () => {
-    fetch('/api/v1/projects')
+  loadEvents = () => {
+    fetch('/api/v1/events')
       .then( response => response.json())
-      .then( item => this.setState({ projects: item })); 
+      .then( item => this.setState({ events: item })); 
   }
 
   render() {
     const { classes } = this.props;
-    const { projects } = this.state;
+    const { events } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -160,30 +160,28 @@ class ProjectsTable extends Component {
             <TableHead>
               <TableRow>
                 <TableCell>Title</TableCell>
-                <TableCell>Synopsis</TableCell>
                 <TableCell>Body</TableCell>
-                <TableCell>Category</TableCell>
+                <TableCell>Date</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {projects && projects.map( (project, index) => (
-                <TableRow key={project.id}>
-                  <TableCell>{project.title}</TableCell>
-                  <TableCell>{project.synopsis}</TableCell>
-                  <TableCell>{project.body}</TableCell>
-                  <TableCell>{project.categoryId}</TableCell>
-
+              {events && events.map( (event, index) => (
+                <TableRow key={event.id}>
+                  <TableCell>{event.title}</TableCell>
+                  <TableCell>{event.body}</TableCell>
+                  <TableCell>{event.event_date}</TableCell>
                   <TableCell>
                     <IconButton
-                      component={Link} to={ `/admin/projects/${project.id}/edit`}>
+                      component={Link} to={ `/admin/events/${event.id}/edit`}>
                       <IconCreate />
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, (project.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((project.deleted_at)?0.3:1) }}>
+                      onClick={() => this.handleDialogOpen(event.id, (event.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((event.deleted_at)?0.3:1) }}>
                       <IconDelete/>
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, POSTACTIONSENUM.DELETE)}>
+                      onClick={() => this.handleDialogOpen(event.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />
                     </IconButton>
                   </TableCell>
@@ -218,4 +216,4 @@ class ProjectsTable extends Component {
   }
 }
 
-export default withStyles(styles)(ProjectsTable);
+export default withStyles(styles)(EventsTable);

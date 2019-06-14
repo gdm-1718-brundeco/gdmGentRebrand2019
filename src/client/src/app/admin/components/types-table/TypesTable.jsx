@@ -1,3 +1,5 @@
+
+
 /*
 External libraries
 */
@@ -41,14 +43,14 @@ const styles = theme => ({
   },
 });
 
-class ProjectsTable extends Component {
+class TypesTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
   state = {
-    projects: null,
+    types: null,
     imageId: null,
     postAction: null,
     dialogOpen: false,
@@ -96,19 +98,19 @@ class ProjectsTable extends Component {
 
     switch(this.state.postAction) {
       case POSTACTIONSENUM.DELETE:
-        url = `/api/v1/projects/${this.state.imageId}`;
+        url = `/api/v1/types/${this.state.imageId}`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softdelete`;
+        url = `/api/v1/types/${this.state.imageId}?mode=softdelete`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softundelete`;
+        url = `/api/v1/types/${this.state.imageId}?mode=softundelete`;
         options = {
           method: 'DELETE'
         }
@@ -119,18 +121,18 @@ class ProjectsTable extends Component {
       .then(res => res.json())
       .then(results => {
         if(results.mode && results.mode === 'delete') {
-          this.loadProjects();
+          this.loadTypes();
         } else {
-          const project = results.project;
-          const i = this.state.projects.findIndex((obj, index, array) => {
-            return obj._id === project._id;
+          const type = results.type;
+          const i = this.state.types.findIndex((obj, index, array) => {
+            return obj._id === type._id;
           });
-          const projects = this.state.projects;
-          projects[i] = project;
+          const types = this.state.types;
+          types[i] = type;
   
           this.setState(prevState => ({
             ...prevState,
-            projects: projects
+            types: types
           }));
         }
         }
@@ -140,18 +142,18 @@ class ProjectsTable extends Component {
   }
 
   componentWillMount() {
-    this.loadProjects();
+    this.loadTypes();
   }
 
-  loadProjects = () => {
-    fetch('/api/v1/projects')
+  loadTypes = () => {
+    fetch('/api/v1/types')
       .then( response => response.json())
-      .then( item => this.setState({ projects: item })); 
+      .then( item => this.setState({ types: item })); 
   }
 
   render() {
     const { classes } = this.props;
-    const { projects } = this.state;
+    const { types } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -160,30 +162,25 @@ class ProjectsTable extends Component {
             <TableHead>
               <TableRow>
                 <TableCell>Title</TableCell>
-                <TableCell>Synopsis</TableCell>
-                <TableCell>Body</TableCell>
-                <TableCell>Category</TableCell>
+                <TableCell>Description</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {projects && projects.map( (project, index) => (
-                <TableRow key={project.id}>
-                  <TableCell>{project.title}</TableCell>
-                  <TableCell>{project.synopsis}</TableCell>
-                  <TableCell>{project.body}</TableCell>
-                  <TableCell>{project.categoryId}</TableCell>
-
+              {types && types.map( (type, index) => (
+                <TableRow key={type.id}>
+                  <TableCell>{type.name}</TableCell>
+                  <TableCell>{type.description}</TableCell>
                   <TableCell>
                     <IconButton
-                      component={Link} to={ `/admin/projects/${project.id}/edit`}>
+                      component={Link} to={ `/admin/types/${type.id}/edit`}>
                       <IconCreate />
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, (project.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((project.deleted_at)?0.3:1) }}>
+                      onClick={() => this.handleDialogOpen(type.id, (type.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((type.deleted_at)?0.3:1) }}>
                       <IconDelete/>
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, POSTACTIONSENUM.DELETE)}>
+                      onClick={() => this.handleDialogOpen(type.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />
                     </IconButton>
                   </TableCell>
@@ -218,4 +215,4 @@ class ProjectsTable extends Component {
   }
 }
 
-export default withStyles(styles)(ProjectsTable);
+export default withStyles(styles)(TypesTable);

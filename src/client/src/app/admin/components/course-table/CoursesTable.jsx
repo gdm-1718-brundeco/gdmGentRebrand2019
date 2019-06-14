@@ -1,3 +1,4 @@
+
 /*
 External libraries
 */
@@ -41,15 +42,15 @@ const styles = theme => ({
   },
 });
 
-class ProjectsTable extends Component {
+class CoursesTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
   state = {
-    projects: null,
-    imageId: null,
+    courses: null,
+    courseId: null,
     postAction: null,
     dialogOpen: false,
     dialogTitle: '',
@@ -58,27 +59,27 @@ class ProjectsTable extends Component {
 
   
 
-  handleDialogOpen = (imageId, postAction) => {
+  handleDialogOpen = (courseId, postAction) => {
     let title = '';
     let message = '';
 
     switch(postAction) {
       case POSTACTIONSENUM.DELETE:
         title = 'Delete from the database?';
-        message= `Do you wish permenantly delete the post with id ${imageId}?`;
+        message= `Do you wish permenantly delete the post with id ${courseId}?`;
         break;
       case POSTACTIONSENUM.SOFTDELETE:
         title = 'Soft-delete from the database?';
-        message= `Do you wish to soft-delete the post with id ${imageId}?`;
+        message= `Do you wish to soft-delete the post with id ${courseId}?`;
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
         title = 'Soft-undelete from the database?';
-        message= `Do you wish to soft-undelete the post with id ${imageId}?`;
+        message= `Do you wish to soft-undelete the post with id ${courseId}?`;
         break;
     }
 
     this.setState({
-      imageId: imageId,
+      courseId: courseId,
       postAction: postAction,
       dialogOpen: true,
       dialogTitle: title,
@@ -96,19 +97,19 @@ class ProjectsTable extends Component {
 
     switch(this.state.postAction) {
       case POSTACTIONSENUM.DELETE:
-        url = `/api/v1/projects/${this.state.imageId}`;
+        url = `/api/v1/courses/${this.state.courseId}`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softdelete`;
+        url = `/api/v1/courses/${this.state.courseId}?mode=softdelete`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softundelete`;
+        url = `/api/v1/courses/${this.state.courseId}?mode=softundelete`;
         options = {
           method: 'DELETE'
         }
@@ -119,18 +120,18 @@ class ProjectsTable extends Component {
       .then(res => res.json())
       .then(results => {
         if(results.mode && results.mode === 'delete') {
-          this.loadProjects();
+          this.loadCourses();
         } else {
-          const project = results.project;
-          const i = this.state.projects.findIndex((obj, index, array) => {
-            return obj._id === project._id;
+          const course = results.course;
+          const i = this.state.courses.findIndex((obj, index, array) => {
+            return obj._id === course._id;
           });
-          const projects = this.state.projects;
-          projects[i] = project;
+          const courses = this.state.courses;
+          courses[i] = course;
   
           this.setState(prevState => ({
             ...prevState,
-            projects: projects
+            courses: courses
           }));
         }
         }
@@ -140,18 +141,18 @@ class ProjectsTable extends Component {
   }
 
   componentWillMount() {
-    this.loadProjects();
+    this.loadCourses();
   }
 
-  loadProjects = () => {
-    fetch('/api/v1/projects')
+  loadCourses = () => {
+    fetch('/api/v1/courses')
       .then( response => response.json())
-      .then( item => this.setState({ projects: item })); 
+      .then( item => this.setState({ courses: item })); 
   }
 
   render() {
     const { classes } = this.props;
-    const { projects } = this.state;
+    const { courses } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -160,30 +161,29 @@ class ProjectsTable extends Component {
             <TableHead>
               <TableRow>
                 <TableCell>Title</TableCell>
-                <TableCell>Synopsis</TableCell>
-                <TableCell>Body</TableCell>
-                <TableCell>Category</TableCell>
+                <TableCell>Description</TableCell>
+                <TableCell>Points</TableCell>
+                <TableCell>Year</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {projects && projects.map( (project, index) => (
-                <TableRow key={project.id}>
-                  <TableCell>{project.title}</TableCell>
-                  <TableCell>{project.synopsis}</TableCell>
-                  <TableCell>{project.body}</TableCell>
-                  <TableCell>{project.categoryId}</TableCell>
-
+              {courses && courses.map( (course, index) => (
+                <TableRow key={course.id}>
+                  <TableCell>{course.name}</TableCell>
+                  <TableCell>{course.description}</TableCell>
+                  <TableCell>{course.points}</TableCell>
+                  <TableCell>{course.year}</TableCell>
                   <TableCell>
                     <IconButton
-                      component={Link} to={ `/admin/projects/${project.id}/edit`}>
+                      component={Link} to={ `/admin/courses/${course.id}/edit`}>
                       <IconCreate />
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, (project.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((project.deleted_at)?0.3:1) }}>
+                      onClick={() => this.handleDialogOpen(course.id, (course.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((course.deleted_at)?0.3:1) }}>
                       <IconDelete/>
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, POSTACTIONSENUM.DELETE)}>
+                      onClick={() => this.handleDialogOpen(course.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />
                     </IconButton>
                   </TableCell>
@@ -218,4 +218,4 @@ class ProjectsTable extends Component {
   }
 }
 
-export default withStyles(styles)(ProjectsTable);
+export default withStyles(styles)(CoursesTable);

@@ -11,7 +11,7 @@ const initializeEndpoints = (parentRouter, authService) => {
 
 	parentRouter.post('/team', teamController.store);
 
-	parentRouter.get('/team/edit/:id', teamController.edit);
+	parentRouter.get('/team/:id/edit', teamController.edit);
 
 	parentRouter.put('/team/:id', teamController.update);
 

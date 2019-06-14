@@ -41,15 +41,15 @@ const styles = theme => ({
   },
 });
 
-class ProjectsTable extends Component {
+class CategoriesTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
   state = {
-    projects: null,
-    imageId: null,
+    categories: null,
+    categorieId: null,
     postAction: null,
     dialogOpen: false,
     dialogTitle: '',
@@ -58,27 +58,27 @@ class ProjectsTable extends Component {
 
   
 
-  handleDialogOpen = (imageId, postAction) => {
+  handleDialogOpen = (categorieId, postAction) => {
     let title = '';
     let message = '';
 
     switch(postAction) {
       case POSTACTIONSENUM.DELETE:
         title = 'Delete from the database?';
-        message= `Do you wish permenantly delete the post with id ${imageId}?`;
+        message= `Do you wish permenantly delete the post with id ${categorieId}?`;
         break;
       case POSTACTIONSENUM.SOFTDELETE:
         title = 'Soft-delete from the database?';
-        message= `Do you wish to soft-delete the post with id ${imageId}?`;
+        message= `Do you wish to soft-delete the post with id ${categorieId}?`;
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
         title = 'Soft-undelete from the database?';
-        message= `Do you wish to soft-undelete the post with id ${imageId}?`;
+        message= `Do you wish to soft-undelete the post with id ${categorieId}?`;
         break;
     }
 
     this.setState({
-      imageId: imageId,
+      categorieId: categorieId,
       postAction: postAction,
       dialogOpen: true,
       dialogTitle: title,
@@ -96,19 +96,19 @@ class ProjectsTable extends Component {
 
     switch(this.state.postAction) {
       case POSTACTIONSENUM.DELETE:
-        url = `/api/v1/projects/${this.state.imageId}`;
+        url = `/api/v1/categories/${this.state.categorieId}`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softdelete`;
+        url = `/api/v1/categories/${this.state.categorieId}?mode=softdelete`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
-        url = `/api/v1/projects/${this.state.imageId}?mode=softundelete`;
+        url = `/api/v1/categories/${this.state.categorieId}?mode=softundelete`;
         options = {
           method: 'DELETE'
         }
@@ -119,18 +119,18 @@ class ProjectsTable extends Component {
       .then(res => res.json())
       .then(results => {
         if(results.mode && results.mode === 'delete') {
-          this.loadProjects();
+          this.loadCategories();
         } else {
-          const project = results.project;
-          const i = this.state.projects.findIndex((obj, index, array) => {
-            return obj._id === project._id;
+          const category = results.category;
+          const i = this.state.categories.findIndex((obj, index, array) => {
+            return obj._id === category._id;
           });
-          const projects = this.state.projects;
-          projects[i] = project;
+          const categories = this.state.categories;
+          categories[i] = category;
   
           this.setState(prevState => ({
             ...prevState,
-            projects: projects
+            categories: categories
           }));
         }
         }
@@ -140,18 +140,18 @@ class ProjectsTable extends Component {
   }
 
   componentWillMount() {
-    this.loadProjects();
+    this.loadCategories();
   }
 
-  loadProjects = () => {
-    fetch('/api/v1/projects')
+  loadCategories = () => {
+    fetch('/api/v1/categories')
       .then( response => response.json())
-      .then( item => this.setState({ projects: item })); 
+      .then( item => this.setState({ categories: item })); 
   }
 
   render() {
     const { classes } = this.props;
-    const { projects } = this.state;
+    const { categories } = this.state;
 
     return (
       <Paper className={classes.root}>
@@ -161,29 +161,25 @@ class ProjectsTable extends Component {
               <TableRow>
                 <TableCell>Title</TableCell>
                 <TableCell>Synopsis</TableCell>
-                <TableCell>Body</TableCell>
-                <TableCell>Category</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {projects && projects.map( (project, index) => (
-                <TableRow key={project.id}>
-                  <TableCell>{project.title}</TableCell>
-                  <TableCell>{project.synopsis}</TableCell>
-                  <TableCell>{project.body}</TableCell>
-                  <TableCell>{project.categoryId}</TableCell>
-
-                  <TableCell>
+              {categories && categories.map( (category, index) => (
+                <TableRow key={category.id}>
+                  <TableCell>{category.name}</TableCell>
+                  <TableCell>{category.description}</TableCell>
+                    <TableCell>
                     <IconButton
-                      component={Link} to={ `/admin/projects/${project.id}/edit`}>
+                      component={Link} to={ `/admin/categories/${category.id}/edit`}>
                       <IconCreate />
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, (project.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((project.deleted_at)?0.3:1) }}>
+                      onClick={() => this.handleDialogOpen(category.id, (category.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((category.deleted_at)?0.3:1) }}>
                       <IconDelete/>
                     </IconButton>
                     <IconButton
-                      onClick={() => this.handleDialogOpen(project.id, POSTACTIONSENUM.DELETE)}>
+                      onClick={() => this.handleDialogOpen(category.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />
                     </IconButton>
                   </TableCell>
@@ -218,4 +214,4 @@ class ProjectsTable extends Component {
   }
 }
 
-export default withStyles(styles)(ProjectsTable);
+export default withStyles(styles)(CategoriesTable);

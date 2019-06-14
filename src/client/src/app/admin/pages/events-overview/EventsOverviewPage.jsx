@@ -11,14 +11,13 @@ import { ContentLayout } from '../../layouts';
 
 /*
 Pages
-import CategorieTablePage from '../categories-table';
-
 */
-import EventsFormPage from '../events-form';
+import EventsTablePage from '../events-table';
+import EventFormPage from '../event-form';
 
 const tabs = [
   { id: 'List', link: '/admin/events' },
-  { id: 'Create new events', link: '/admin/events/create' },
+  { id: 'Create new event', link: '/admin/events/create' },
 ];
 
 class EventsOverviewPage extends Component {
@@ -28,6 +27,9 @@ class EventsOverviewPage extends Component {
     return (
       <ContentLayout title="Events Overview" tabs={tabs}>
         { children }
+        <Route exact path="/admin/events" component={ EventsTablePage }></Route>
+        <Route path="/admin/events/create" component={ EventFormPage }></Route>
+        <Route path="/admin/events/:id/edit" component={ EventFormPage }></Route>
       </ContentLayout>
     )
   }
