@@ -98,19 +98,19 @@ class ImagesTable extends Component {
 
     switch(this.state.postAction) {
       case POSTACTIONSENUM.DELETE:
-        url = `/api/v1/images/${this.state.imageId}`;
+        url = `/api/v1/projectimages/${this.state.imageId}`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTDELETE:
-        url = `/api/v1/images/${this.state.imageId}?mode=softdelete`;
+        url = `/api/v1/projectimages/${this.state.imageId}?mode=softdelete`;
         options = {
           method: 'DELETE'
         }
         break;
       case POSTACTIONSENUM.SOFTUNDELETE:
-        url = `/api/v1/images/${this.state.imageId}?mode=softundelete`;
+        url = `/api/v1/projectimages/${this.state.imageId}?mode=softundelete`;
         options = {
           method: 'DELETE'
         }
@@ -174,7 +174,7 @@ class ImagesTable extends Component {
                   <TableCell>{image.projectId}</TableCell>
                   <TableCell>
                     <IconButton
-                      component={Link} to={ `/admin/images/${image.id}/edit`}>
+                      component={Link} to={ `/admin/projectimages/${image.id}/edit`}>
                       <IconCreate />
                     </IconButton>
                     <IconButton
