@@ -46,14 +46,6 @@ class ProjectDetailPage extends Component {
           project: data
         }));
       })
-      .then(() => {
-        Api.findProjectImage(id).then(imageData => {
-          this.setState(prevState => ({
-            ...prevState,
-            projectImage: imageData
-          }));
-        });
-      })
       .catch(error => {});
   };
 
@@ -69,18 +61,17 @@ class ProjectDetailPage extends Component {
 
   render() {
     const { project } = this.state;
-    const { projectImage } = this.state;
-    if (project != null && projectImage != null) {
+    if (project != null) {
       return (
         <React.Fragment>
           <OverlayMenu menustate={this.state.showMenu} />
-          {/* <HeaderFullscreen
+          { <HeaderFullscreen
             toggleMenu={this.toggleMenu}
             menustate={this.getParentState()}
             src={project.images[0].path}
             title={project.title}
             subtitle={project.slug}
-          /> */}
+          /> }
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">
               <div className="provide-white">
@@ -95,9 +86,6 @@ class ProjectDetailPage extends Component {
               <p className="standard-text-paragraph par-pos-1">
                 {project.body}
               </p>
-              {/* {projectImage.map((value, key) => {
-                return <img key={key} src={value.path} style={imageStyle} />;
-              })} */}
               <BlankDiv style="blank-div-lg" />
               <a
                 href="/projects"

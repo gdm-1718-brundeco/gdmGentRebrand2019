@@ -47,7 +47,7 @@ const styles = theme => ({
  }
 });
 
-class ProjectForm extends Component {
+class CourseForm extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
     }
@@ -93,7 +93,7 @@ class ProjectForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/projects/${postId}`, options);
+            const response = await fetch(`/api/v1/courses/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -187,4 +187,4 @@ class ProjectForm extends Component {
     }
 }
 
-export default withStyles(styles)(ProjectForm);
+export default withStyles(styles)(CourseForm);

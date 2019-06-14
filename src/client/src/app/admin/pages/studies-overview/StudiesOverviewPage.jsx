@@ -21,7 +21,7 @@ const tabs = [
   { id: 'Create new study', link: '/admin/studies/create' },
 ];
 
-class ImagesOverviewPage extends Component {
+class StudiesOverviewPage extends Component {
   render() {
     const { children } = this.props;
 
@@ -36,4 +36,4 @@ class ImagesOverviewPage extends Component {
   }
 }
 
-export default (ImagesOverviewPage);
+export default (StudiesOverviewPage);

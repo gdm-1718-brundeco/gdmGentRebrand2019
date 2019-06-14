@@ -91,7 +91,7 @@ class ImageForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/projects/${postId}`, options);
+            const response = await fetch(`/api/v1/projectimages/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 

@@ -51,17 +51,17 @@ class StudyForm extends Component {
     }
     
     state = {
-        study: { name: "", description: "", },
+        post: { name: "", description: "", },
     };
 
     componentWillMount() {
         
-        if (this.props.studyId) {            
-            this.loadPost(this.props.studyId);
+        if (this.props.postId) {            
+            this.loadPost(this.props.postId);
         }
     }
 
-    loadPost = async (studyId) => {
+    loadPost = async (postId) => {
         try {
             const options = {
                 method: 'GET',
@@ -69,7 +69,7 @@ class StudyForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/posts/${studyId}`, options);
+            const response = await fetch(`/api/v1/studies/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -83,10 +83,10 @@ class StudyForm extends Component {
     }
 
     submit = (values, actions) => {
-        const { studyId } = this.props;
+        const { postId } = this.props;
 
-        if (studyId) {  
-            this.updatePost(studyId, values);          
+        if (postId) {  
+            this.updatePost(postId, values);          
         } else {
             this.savePost(values);
         }
@@ -116,7 +116,7 @@ class StudyForm extends Component {
         }
     }
 
-    updatePost = async (studyId, postData) => {
+    updatePost = async (postId, postData) => {
         try {
             const options = {
                 method: 'PUT',
@@ -129,7 +129,7 @@ class StudyForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/studies/${studyId}`, options);
+            const response = await fetch(`/api/v1/studies/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);

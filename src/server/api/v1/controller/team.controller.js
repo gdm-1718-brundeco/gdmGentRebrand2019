@@ -71,13 +71,13 @@ class TeamController {
 		const { id } = req.params;
 
 		try {
-			const project = await Team.findById(id).exec();
+			const team = await Team.findById(id).exec();
 
 			if(!project) {
 				throw new APIError(404, `Project with id: ${id} not found.`);
 			} else {
 				const vm = {
-					post,
+					team,
 					categories: [],
 				};
 				return res.status(200).json(vm);

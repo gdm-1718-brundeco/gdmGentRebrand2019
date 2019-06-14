@@ -21,7 +21,7 @@ const tabs = [
   { id: 'Create new member', link: '/admin/team/create' },
 ];
 
-class ImagesOverviewPage extends Component {
+class TeamsOverviewPage extends Component {
   render() {
     const { children } = this.props;
 
@@ -36,4 +36,4 @@ class ImagesOverviewPage extends Component {
   }
 }
 
-export default (ImagesOverviewPage);
+export default (TeamsOverviewPage);
