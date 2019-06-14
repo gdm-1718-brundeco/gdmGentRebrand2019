@@ -78,7 +78,7 @@ class StatementDetailPage extends Component {
                 <div className="testimonial-detail-img-box">
                   <img
                     className="testimonial-detail-img"
-                    src={require("../../assets/images/bg-image-homepage-2.jpg")}
+                    src={testimonial.image}
                   />
                   <div className="testimonial-detail-square" />
                 </div>

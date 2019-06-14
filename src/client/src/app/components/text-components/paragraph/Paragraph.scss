@@ -70,11 +70,15 @@
 
 @media only screen and (max-width: 800px) {
     .standard-text-paragraph {
-        font-size: 80%;
+        font-size: 90%;
         line-height: 22px;
         margin-left: inherit;
-
     }
+
+    .par-pos-1 {
+        width: 100%;
+    }
+
     .paragraph-bottomline {
         width: 80%;
     }

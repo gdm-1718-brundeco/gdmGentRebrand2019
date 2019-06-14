@@ -29,7 +29,7 @@ import "./ProjectsPage.scss";
 
 class ProjectsPage extends Component {
   state = {
-    quote: `Join GDM \n and let's build cool things together`,
+    quote: `Join GDM. \n Let's build cool things together.`,
     projects: [],
     projectImage: null,
     pagination: {

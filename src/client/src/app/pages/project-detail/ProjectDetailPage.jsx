@@ -74,13 +74,13 @@ class ProjectDetailPage extends Component {
       return (
         <React.Fragment>
           <OverlayMenu menustate={this.state.showMenu} />
-          <HeaderFullscreen
+          {/* <HeaderFullscreen
             toggleMenu={this.toggleMenu}
             menustate={this.getParentState()}
             src={project.images[0].path}
             title={project.title}
             subtitle={project.slug}
-          />
+          /> */}
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">
               <div className="provide-white">
