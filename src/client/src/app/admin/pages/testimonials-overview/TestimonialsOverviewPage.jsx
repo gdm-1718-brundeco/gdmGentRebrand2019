@@ -21,7 +21,7 @@ const tabs = [
   { id: 'Create new testimonial', link: '/admin/testimonials/create' },
 ];
 
-class ImagesOverviewPage extends Component {
+class TestimonialsOverviewPage extends Component {
   render() {
     const { children } = this.props;
 
@@ -36,4 +36,4 @@ class ImagesOverviewPage extends Component {
   }
 }
 
-export default (ImagesOverviewPage);
+export default (TestimonialsOverviewPage);
