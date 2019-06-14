@@ -51,25 +51,25 @@ class CategorieForm extends Component {
     }
     
     state = {
-        categorie: { name: "", description: "", },
+        post: { name: "", description: "", },
     };
 
     componentWillMount() {
-        
-        if (this.props.categorieId) {            
-            this.loadPost(this.props.categorieId);
+        console.log(this.props.postId);
+        if (this.props.postId) {            
+            this.loadCategory(this.props.postId);
         }
     }
 
-    loadPost = async (categorieId) => {
+    loadCategory = async (postId) => {
         try {
             const options = {
                 method: 'GET',
                 mode: 'cors',
                 cache: 'default'
             };
-
-            const response = await fetch(`/api/v1/posts/${categorieId}`, options);
+            console.log(postId);
+            const response = await fetch(`/api/v1/categories/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -83,10 +83,10 @@ class CategorieForm extends Component {
     }
 
     submit = (values, actions) => {
-        const { categorieId } = this.props;
+        const { postId } = this.props;
 
-        if (categorieId) {  
-            this.updatePost(categorieId, values);          
+        if (postId) {  
+            this.updatePost(postId, values);          
         } else {
             this.savePost(values);
         }
@@ -116,7 +116,7 @@ class CategorieForm extends Component {
         }
     }
 
-    updatePost = async (categorieId, postData) => {
+    updatePost = async (postId, postData) => {
         try {
             const options = {
                 method: 'PUT',
@@ -129,7 +129,7 @@ class CategorieForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/categories/${categorieId}`, options);
+            const response = await fetch(`/api/v1/categories/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -143,7 +143,7 @@ class CategorieForm extends Component {
         const { classes } = this.props;
         const { post:values } = this.state;
 
-        console.log(values);
+        console.log('test',values);
 
         return (
             <React.Fragment>
