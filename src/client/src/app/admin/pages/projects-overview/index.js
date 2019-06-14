@@ -1,2 +1,2 @@
-import ProjectsOverviewPage from './ProjectsOverview';
+import ProjectsOverviewPage from './ProjectsOverviewPage';
 export default ProjectsOverviewPage;
