@@ -18,7 +18,7 @@ import TypeFormPage from '../type-form';
 
 const tabs = [
   { id: 'List', link: '/admin/types' },
-  { id: 'Create new testimonial', link: '/admin/types/create' },
+  { id: 'Create new Type', link: '/admin/types/create' },
 ];
 
 class TypesOverviewPage extends Component {
@@ -26,7 +26,7 @@ class TypesOverviewPage extends Component {
     const { children } = this.props;
 
     return (
-      <ContentLayout title="Testimonial Overview" tabs={tabs}>
+      <ContentLayout title="Type Overview" tabs={tabs}>
         { children }
         <Route exact path="/admin/types" component={ TypesTablePage }></Route>
         <Route path="/admin/types/create" component={ TypeFormPage }></Route>

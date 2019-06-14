@@ -35,7 +35,7 @@ class TestimonialController {
 			const item = await Testimonial.findById(id).populate('type').exec();
 
 			if (item === undefined || item === null) {
-				throw new APIError(404, `Project with id ${id} not found`);
+				throw new APIError(404, `Testimonial with id ${id} not found`);
 			}
 			return res.status(200).json(item);
 		} catch (err) {
@@ -73,7 +73,7 @@ class TestimonialController {
 			const testimonial = await Testimonial.findById(id).exec();
 
 			if(!testimonial) {
-				throw new APIError(404, `Project with id: ${id} not found.`);
+				throw new APIError(404, `Testimonial with id: ${id} not found.`);
 			} else {
 				const vm = {
 					post,
@@ -82,7 +82,7 @@ class TestimonialController {
 				return res.status(200).json(vm);
 			}
 		} catch (err) {
-			return handleAPIError(err.status || 500, err.message || `Some error occured while editing the Project with id: ${id}`, next);
+			return handleAPIError(err.status || 500, err.message || `Some error occured while editing the Testimonial with id: ${id}`, next);
 		}
 	}
 
@@ -117,12 +117,12 @@ class TestimonialController {
 			}
 
 			if(!testimonial) {
-				throw new APIError(404, `Project with id: ${id} not found.`);
+				throw new APIError(404, `Testimonial with id: ${id} not found.`);
 			} else {
-				return res.status(200).json({ message: `Successfully deleted the Project with id: ${id}.`, post, mode });
+				return res.status(200).json({ message: `Successfully deleted the Testimonial with id: ${id}.`, post, mode });
 			}
 		} catch (err) {
-			return handleAPIError(err.status || 500, err.message || `Some error occured while deleting Project with id: ${project}.`, next);
+			return handleAPIError(err.status || 500, err.message || `Some error occured while deleting Testimonial with id: ${project}.`, next);
 		}
 	}
 }

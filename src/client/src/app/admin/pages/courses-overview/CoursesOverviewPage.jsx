@@ -17,7 +17,7 @@ import CourseFormPage from '../course-form';
 
 const tabs = [
   { id: 'List', link: '/admin/courses' },
-  { id: 'Create new event', link: '/admin/courses/create' },
+  { id: 'Create new course', link: '/admin/courses/create' },
 ];
 
 class CoursesOverviewPage extends Component {
@@ -25,7 +25,7 @@ class CoursesOverviewPage extends Component {
     const { children } = this.props;
 
     return (
-      <ContentLayout title="Events Overview" tabs={tabs}>
+      <ContentLayout title="Courses Overview" tabs={tabs}>
         { children }
         <Route exact path="/admin/courses" component={ CoursesTablePage }></Route>
         <Route path="/admin/courses/create" component={ CourseFormPage }></Route>
