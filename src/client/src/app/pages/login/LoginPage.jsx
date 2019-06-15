@@ -61,6 +61,22 @@ const styles = theme => ({
 });
 
 class LoginPage extends Component {
+	// constructor() {
+	// 	super();
+	// 	this.handleSubmit = this.handleSubmit.bind(this);
+	// }
+
+	// handleSubmit(event) {
+	// 	event.preventDefault();
+	// 	const data = new FormData(event.target);
+
+	// 	console.log(event.target);
+	// 	// fetch('/api/v1/login', {
+	// 	// 	method: 'POST',
+	// 	// 	body: data,
+	// 	// });
+	// }
+
   render() {
     const { classes } = this.props;
     
@@ -74,7 +90,7 @@ class LoginPage extends Component {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form}>
+          <form action="/api/v1/login" method="post" className={classes.form}>
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="email">Email Address</InputLabel>
               <Input id="email" name="email" autoComplete="email" autoFocus />
@@ -97,6 +113,16 @@ class LoginPage extends Component {
               Sign in
             </Button>
           </form>
+					<a href="/api/v1/login/github">
+						<Button
+							type="button"
+							fullWidth
+							variant="flat"
+							color="primary"
+						>
+							Login with Github
+						</Button>
+					</a>
         </Paper>
       </React.Fragment>
     )
