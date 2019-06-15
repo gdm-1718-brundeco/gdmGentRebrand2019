@@ -11,7 +11,7 @@ const tabs = [
     { id: 'Create new image', link: '/admin/projectimages/create' },
 ];
 
-class ImagesOverviewPage extends Component {
+class ImagesOverViewPage extends Component {
     render() {
         const { children } = this.props;
 

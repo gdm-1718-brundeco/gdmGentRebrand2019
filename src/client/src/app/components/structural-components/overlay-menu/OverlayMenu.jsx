@@ -29,7 +29,7 @@ class OverlayMenu extends Component {
             <a href="/projects" className="overlay-menu-links">
               Projecten
             </a>
-            <a href="/services" className="overlay-menu-links">
+            <a href="/courses" className="overlay-menu-links">
               Diensten
             </a>
             <a href="/team" className="overlay-menu-links">
@@ -49,17 +49,39 @@ class OverlayMenu extends Component {
             </a>
           </EasyFlexCol>
           <EasyFlexCol style="col-flex-start text-align-right">
-            <a className="overlay-menu-link overlay-menu-links-social">
+            <a
+              className="overlay-menu-link overlay-menu-links-social"
+              href="https://github.com/gdmgent"
+              target="_blank"
+            >
               Github
             </a>
-            <a className="overlay-menu-link overlay-menu-links-social">
+            <a
+              className="overlay-menu-link overlay-menu-links-social"
+              href="https://www.facebook.com/GrafischeendigitalemediaArteveldehogeschool/"
+              target="_blank"
+            >
               Facebook
             </a>
-            <a className="overlay-menu-link overlay-menu-links-social">
+            <a
+              className="overlay-menu-link overlay-menu-links-social"
+              href="https://twitter.com/arteveldegdm"
+              target="_blank"
+            >
               Twitter
             </a>
-            <a className="overlay-menu-link overlay-menu-links-social">Vimeo</a>
-            <a className="overlay-menu-link overlay-menu-links-social">
+            <a
+              className="overlay-menu-link overlay-menu-links-social"
+              href="https://vimeo.com/bachelorgdm"
+              target="_blank"
+            >
+              Vimeo
+            </a>
+            <a
+              className="overlay-menu-link overlay-menu-links-social"
+              href="https://www.instagram.com/madebygdm/"
+              target="_blank"
+            >
               Instagram
             </a>
           </EasyFlexCol>

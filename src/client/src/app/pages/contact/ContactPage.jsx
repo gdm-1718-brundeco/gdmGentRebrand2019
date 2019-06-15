@@ -6,8 +6,7 @@ import React, { Component } from "react";
 /*
 Import stylesheet
 */
-import './ContactPage.scss'
-
+import "./ContactPage.scss";
 
 /*
 Import internal libraries
@@ -23,15 +22,12 @@ import Title from "../../components/text-components/title/Title";
 import Paragraph from "../../components/text-components/paragraph/Paragraph";
 import Quote from "../../components/text-components/quote";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import Featured from "../../components/card-components/featured/Featured";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
-import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
+import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 
 class ContactPage extends Component {
   state = {
@@ -105,7 +101,7 @@ class ContactPage extends Component {
               <div className="contact-block-quote">
                 <h2 className="passion-quote">{this.state.quote}</h2>
                 <a
-                  href="/projects"
+                  href="/courses"
                   className="primary-subtitle row-center contact-button"
                 >
                   GDM opleidingen

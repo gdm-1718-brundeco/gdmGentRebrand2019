@@ -65,32 +65,20 @@ class StatementPage extends Component {
     return parentState;
   };
 
-  testimonialCounter = e => {
-    let uiValue =1;
-    let array = this.state.testimonials;
-    // for (uiValue = 1; uiValue < array.length; ++uiValue) {
-    // }
-    // return uiValue;
-    array.forEach(testimonial => {
-      console.log(uiValue++)
-    });
-  }
- 
   render() {
-    {this.testimonialCounter()}
-    const { testimonials } = this.state;
     this.items = this.state.testimonials.map(item => (
       <div key={item.id} className="testimonial-wrapper">
         <Title style="testimonial-title" text={item.name} />
         <div className="testimonial-box">
+          <div className="testimonial-box-absolute"></div>
           <a href={"/testimonials/" + item.id}>
             <img src={item.image} alt="" className="testimonial-image" />
           </a>
-          <div className="testimonial-counter">{this.testimonialCounter()}</div>
-        </div>
-        <a href={"/testimonials/" + item.id} className="testimonial-link">
+           <a href={"/testimonials/" + item.id} className="testimonial-link">
           Lees mij
         </a>
+        </div>
+       
       </div>
     ));
     return (
@@ -109,36 +97,6 @@ class StatementPage extends Component {
               style="standard-text-paragraph par-pos-1 paragraph-mb-med"
             />
             <BlankDiv style="blank-div-md" />
-            {/* <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Nomi Van Gool" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">01</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">
-                LEES GETUIGENIS
-              </a>
-            </div>
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Bert Goosens" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">02</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">
-                LEES GETUIGENIS
-              </a>
-            </div>
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Victor Gouhie" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">03</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">
-                LEES GETUIGENIS
-              </a>
-            </div> */}
             {this.items}
             <Footer />
           </GridWrapper>

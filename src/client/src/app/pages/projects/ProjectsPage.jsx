@@ -7,24 +7,14 @@ import React, { Component } from "react";
 Import internal libraries
 */
 import Api from "../../services";
-import PostsListPaged from "../../components/posts-list-paged";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Footer from "../../components/footer";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Title from "../../components/text-components/title/Title";
-import Overlay from "../../components/styled-components/overlay/Overlay";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
-import Paragraph from "../../components/text-components/paragraph/Paragraph";
-import Quote from "../../components/text-components/quote";
-import Featured from "../../components/card-components/featured/Featured";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
-import MainImageComponent from "../../components/image-components/main-image-component";
-import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 import "./ProjectsPage.scss";
 
 class ProjectsPage extends Component {

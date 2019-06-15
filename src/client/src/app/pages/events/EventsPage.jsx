@@ -74,15 +74,11 @@ class EventsPage extends Component {
         <div className="image-wrapper">
           <div className="event-image-color-layer" />
           <a href={"/events/" + item.id}>
-            <img
-              src={item.image}
-              alt=""
-              className="event-image"
-            />
+            <img src={item.image} alt="" className="event-image" />
           </a>
         </div>
         <a href={"/events/" + item.id} className="view-event-button">
-          BEKIJK EVENT
+          Bekijk event
         </a>
       </div>
     ));
