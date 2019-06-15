@@ -1,11 +1,49 @@
 @import './../../_sass/abstracts/variables';
 
-.course-container {
-  margin: 80px 0px;
+.course-btn-wrapper {
+  position: absolute;
+  top: 150px;
+  opacity: 0;
   transition: 0.2s ease-in-out;
+}
+
+.course-info-btn {
+  height: 50px;
+  width: 230px;
+  border: 1px solid ;
+  transition: 0.2s ease-in-out;
+  color: white;
+  margin-top: 40px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background: black;
+
+  &:hover {
+    border: 1px solid $primary-color;
+    background: $primary-color;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    color: #fff;
+    animation: pulse 0.6s;
+  }
+}
+
+.course-container {
+  margin: 140px 0px;
+  transition: 0.2s ease-in-out;
+  position: relative;
   &:hover {
     cursor: pointer;
     padding-left: 1%;
+    transition: 0.2s ease-in-out;
+  }
+  &:hover .course-btn-wrapper {
+    left: 1%;
+    opacity: 1;
     transition: 0.2s ease-in-out;
   }
 }
@@ -22,7 +60,7 @@
 }
 
 .course-points {
-    width: 20%;
+    width: 120px;
     font-size: 90%;
     font-weight: 900;
     display: flex;
@@ -45,3 +83,4 @@
   margin-top: 30px;
   color: #fff;
 }
+

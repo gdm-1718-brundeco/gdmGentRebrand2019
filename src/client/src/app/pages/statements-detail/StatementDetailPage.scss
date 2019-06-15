@@ -1,10 +1,16 @@
 @import '../../_sass/abstracts/variables';
 
+.html-wrapper-2 {
+    background: #efefef;
+    background-image: linear-gradient(to bottom, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc);
+    width: 100%;
+}
+
 .statement-detail-page-wrapper {
     width: 90%;
     height: 100vh;
     margin: 0 auto;
-    background: #fff;
+    background-image: linear-gradient(to bottom, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc);
 }
 
 .testimonial-detail-img-box {

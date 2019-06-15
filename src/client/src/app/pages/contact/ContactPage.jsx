@@ -71,7 +71,7 @@ class ContactPage extends Component {
             toggleMenu={this.toggleMenu}
             menustate={this.getParentState()}
             src={require("../../assets/images/bg-image-contactpage.jpg")}
-            title="Contact page"
+            title="Over GDM"
             subtitle="Onze moderne artevelde campus te mariakerke"
           />
           <GridWrapper style="html-wrapper">
