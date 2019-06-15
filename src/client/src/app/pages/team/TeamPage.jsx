@@ -16,19 +16,13 @@ import "./TeamPage.scss";
 /*
 Import components
 */
-import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Title from "../../components/text-components/title/Title";
 import Paragraph from "../../components/text-components/paragraph/Paragraph";
-import Quote from "../../components/text-components/quote";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import Featured from "../../components/card-components/featured/Featured";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import TeacherProfile from "../../components/card-components/teacher-profile/TeacherProfile";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 
 class TeamPage extends Component {
@@ -41,10 +35,8 @@ class TeamPage extends Component {
   }
 
   loadTeam = pageIndex => {
-    // console.log(pageIndex);
     Api.findTeam({ limit: 4, skip: pageIndex })
       .then(data => {
-        // console.log(data.docs[0].images);
         const prevMember = this.state.team;
         const newMember = [...prevMember, ...data.docs];
         this.setState(prevState => ({
@@ -86,7 +78,9 @@ class TeamPage extends Component {
             <img src={item.image_path} className="team-thumbnail" />
           </a>
         </div>
-        <a href={"/team/" + item.id} className="team-read-more-button">i</a>
+        <a href={"/team/" + item.id} className="team-read-more-button">
+          i
+        </a>
       </div>
     ));
     return (
@@ -105,7 +99,7 @@ class TeamPage extends Component {
               style="standard-text-paragraph par-pos-1 paragraph-mb-med"
             />
             <EasyFlexRow style="team-general-page-wrapper">
-            {this.items}
+              {this.items}
             </EasyFlexRow>
             <Footer />
           </GridWrapper>

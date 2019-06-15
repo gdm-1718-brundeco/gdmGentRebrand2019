@@ -18,3 +18,11 @@
         border-bottom: 1px solid $primary-color;
     }
 }
+
+
+
+@media only screen and (max-width: 800px) {
+    .news-list-item {
+        font-size: 120%;
+    }
+}

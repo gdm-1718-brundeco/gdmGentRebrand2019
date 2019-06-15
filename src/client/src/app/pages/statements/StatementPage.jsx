@@ -24,7 +24,6 @@ import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 
-
 class StatementPage extends Component {
   state = {
     testimonials: []
@@ -67,17 +66,19 @@ class StatementPage extends Component {
   };
 
   render() {
-    const { testimonials } = this.state;
     this.items = this.state.testimonials.map(item => (
       <div key={item.id} className="testimonial-wrapper">
         <Title style="testimonial-title" text={item.name} />
         <div className="testimonial-box">
-          <div className="testimonial-image" />
-          <div className="testimonial-counter">01</div>
-        </div>
-        <a href={"/testimonials/" + item.id} className="testimonial-link">
-          LEES GETUIGENIS
+          <div className="testimonial-box-absolute"></div>
+          <a href={"/testimonials/" + item.id}>
+            <img src={item.image} alt="" className="testimonial-image" />
+          </a>
+           <a href={"/testimonials/" + item.id} className="testimonial-link">
+          Lees mij
         </a>
+        </div>
+       
       </div>
     ));
     return (
@@ -95,37 +96,7 @@ class StatementPage extends Component {
               text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
               style="standard-text-paragraph par-pos-1 paragraph-mb-med"
             />
-            <BlankDiv style="blank-div-lg" />
-            {/* <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Nomi Van Gool" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">01</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">
-                LEES GETUIGENIS
-              </a>
-            </div>
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Bert Goosens" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">02</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">
-                LEES GETUIGENIS
-              </a>
-            </div>
-            <div className="testimonial-wrapper">
-              <Title style="testimonial-title" text="Victor Gouhie" />
-              <div className="testimonial-box">
-                <div className="testimonial-image" />
-                <div className="testimonial-counter">03</div>
-              </div>
-              <a href="/testimonialsdetailpage" className="testimonial-link">
-                LEES GETUIGENIS
-              </a>
-            </div> */}
+            <BlankDiv style="blank-div-md" />
             {this.items}
             <Footer />
           </GridWrapper>

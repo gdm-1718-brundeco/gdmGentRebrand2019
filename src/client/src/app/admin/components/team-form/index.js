@@ -50,23 +50,23 @@ const styles = theme => ({
  }
 });
 
-class StudyForm extends Component {
+class TeamForm extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
     }
     
     state = {
-        member: { first_name: "", lastt_name: "", job: "", email: "",image_path: "",bio: "",quote: "", },
+        post: { first_name: "", last_name: "", job: "", email: "", image_path: "", bio: "", quote: "", },
     };
 
     componentWillMount() {
-        
-        if (this.props.studyId) {            
-            this.loadPost(this.props.studyId);
+        console.log(this.props.postId);
+        if (this.props.postId) {            
+            this.loadMember(this.props.postId);
         }
     }
 
-    loadPost = async (memberId) => {
+    loadMember = async (postId) => {
         try {
             const options = {
                 method: 'GET',
@@ -74,9 +74,10 @@ class StudyForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/posts/${memberId}`, options);
+            const response = await fetch(`/api/v1/team/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
+                console.log(responseJson);
                 this.setState(prevState => ({ 
                     ...prevState, 
                     post: responseJson 
@@ -88,17 +89,17 @@ class StudyForm extends Component {
     }
 
     submit = (values, actions) => {
-        const { memberId } = this.props;
+        const { postId } = this.props;
 
-        if (memberId) {  
-            this.updatePost(memberId, values);          
+        if (postId) {  
+            this.updateMember(postId, values);          
         } else {
-            this.savePost(values);
+            this.saveMember(values);
         }
         
     }
 
-    savePost = async (postData) => {
+    saveMember = async (memberData) => {
         try {
             const options = {
                 method: 'POST',
@@ -106,7 +107,7 @@ class StudyForm extends Component {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(postData),
+                body: JSON.stringify(memberData),
                 mode: 'cors',
                 cache: 'default'
             };
@@ -121,7 +122,7 @@ class StudyForm extends Component {
         }
     }
 
-    updatePost = async (memberId, postData) => {
+    updateMember = async (postId, memberData) => {
         try {
             const options = {
                 method: 'PUT',
@@ -129,12 +130,12 @@ class StudyForm extends Component {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(postData),
+                body: JSON.stringify(memberData),
                 mode: 'cors',
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/team/${memberId}`, options);
+            const response = await fetch(`/api/v1/team/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -168,4 +169,4 @@ class StudyForm extends Component {
     }
 }
 
-export default withStyles(styles)(StudyForm);
+export default withStyles(styles)(TeamForm);

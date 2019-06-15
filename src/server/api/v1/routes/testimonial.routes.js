@@ -11,7 +11,7 @@ const initializeEndpoints = (parentRouter, authService) => {
 
 	parentRouter.post('/testimonials', testimonialController.store);
 
-	parentRouter.get('/testimonials/edit/:id', testimonialController.edit);
+	parentRouter.get('/testimonials/:id/edit', testimonialController.edit);
 
 	parentRouter.put('/testimonials/:id', testimonialController.update);
 

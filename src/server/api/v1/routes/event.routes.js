@@ -11,7 +11,7 @@ const initializeEndpoints = (parentRouter, authService) => {
 
 	parentRouter.post('/events', eventController.store);
 
-	parentRouter.get('/events/edit/:id', eventController.edit);
+	parentRouter.get('/events/:id/edit', eventController.edit);
 
 	parentRouter.put('/events/:id', eventController.update);
 

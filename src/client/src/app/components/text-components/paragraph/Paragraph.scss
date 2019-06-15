@@ -39,7 +39,7 @@
     width: 100%;
     margin-bottom: 35px;
     height: 1px;
-    background: $color-light-grey; 
+    background: $color-light-grey;
 }
 
 .par-pos-1 {
@@ -52,13 +52,8 @@
     right: 4%;
 }
 
-@media only screen and (max-width: 768px) {
-    .standard-text-paragraph {
-        width: 80%;
-    }
-    .paragraph-bottomline {
-        width: 80%;
-    }
+.fw-paragraph {
+    width: 100%;
 }
 
 .news-intro {
@@ -75,4 +70,20 @@
     font-weight: 100;
     text-align: center;
     width: 60%;
+}
+
+@media only screen and (max-width: 800px) {
+    .standard-text-paragraph {
+        font-size: 90%;
+        line-height: 22px;
+        margin-left: inherit;
+    }
+
+    .par-pos-1 {
+        width: 100%;
+    }
+
+    .paragraph-bottomline {
+        width: 80%;
+    }
 }

@@ -16,17 +16,9 @@ import "./StatementDetailPage.scss";
 /*
 Import components
 */
-import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Title from "../../components/text-components/title/Title";
 import Paragraph from "../../components/text-components/paragraph/Paragraph";
-import Quote from "../../components/text-components/quote";
-import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
-import Footer from "../../components/footer";
-import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import TeacherProfile from "../../components/card-components/teacher-profile/TeacherProfile";
-import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 
 class StatementDetailPage extends Component {
@@ -78,7 +70,7 @@ class StatementDetailPage extends Component {
                 <div className="testimonial-detail-img-box">
                   <img
                     className="testimonial-detail-img"
-                    src={require("../../assets/images/bg-image-homepage-2.jpg")}
+                    src={testimonial.image}
                   />
                   <div className="testimonial-detail-square" />
                 </div>

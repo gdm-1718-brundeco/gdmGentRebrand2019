@@ -7,28 +7,19 @@ import React, { Component } from "react";
 Import internal libraries
 */
 import Api from "../../services";
-import PostsListPaged from "../../components/posts-list-paged";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Footer from "../../components/footer";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Title from "../../components/text-components/title/Title";
-import Overlay from "../../components/styled-components/overlay/Overlay";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
-import Paragraph from "../../components/text-components/paragraph/Paragraph";
-import Quote from "../../components/text-components/quote";
-import Featured from "../../components/card-components/featured/Featured";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
-import MainImageComponent from "../../components/image-components/main-image-component";
-import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 import "./ProjectsPage.scss";
 
 class ProjectsPage extends Component {
   state = {
+    quote: `Join GDM. \n Let's build cool things together.`,
     projects: [],
     projectImage: null,
     pagination: {
@@ -102,19 +93,31 @@ class ProjectsPage extends Component {
               toggleMenu={this.toggleMenu}
               menustate={this.getParentState()}
             />
-            <BlankDiv style="blank-div-lg" />
+          </GridWrapper>
+          <BlankDiv style="blank-div-md" />
+          <GridWrapper style="main-page-wrapper">
             <Title style="section-title" text="Projecten" />
             <EasyFlexRow style="row-space-between col-card-width-1 ">
               {this.items}
             </EasyFlexRow>
             <BlankDiv style="blank-div-lg" />
-            <EasyFlexRow style="row-space-between-extra">
-              <Title style="section-title" text="Passie" />
-              <Paragraph
-                text="Wat als je drie studententeams in verschillende landen dezelfde briefing geeft? En ze vervolgens parallel aan hun eigen oplossing laat werken? In het initiatief Parkspot besloten docenten van de Hogeschool van Amsterdam, Hochschulde der Medien (Stuttgart) en Arteveldehogeschool om dat eens uit te testen."
-                style="par-pos-1 paragraph-mb-med paragraph-extra"
-              />
-            </EasyFlexRow>
+          </GridWrapper>
+          <EasyFlexRow style="row-space-between-passion-block">
+            <div className="passion-block">
+              <h2 className="passion-quote">{this.state.quote}</h2>
+              <BlankDiv style="blank-div-sm" />
+            </div>
+          </EasyFlexRow>
+          <BlankDiv style="blank-div-lg" />
+          <GridWrapper style="main-page-wrapper">
+            <a
+              href="/events"
+              className="primary-subtitle row-center primary-button link-to-events"
+            >
+              GDM events
+            </a>
+            <BlankDiv style="blank-div-lg" />
+
             <Footer />
           </GridWrapper>
         </GridWrapper>

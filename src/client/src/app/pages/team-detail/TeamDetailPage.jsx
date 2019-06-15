@@ -11,19 +11,12 @@ import Api from "../../services";
 /*
 Import components
 */
-import HeaderFullscreen from "../../components/header/header-fullscreen/HeaderFullscreen";
 import GridWrapper from "../../components/structural-components/grid-wrapper/GridWrapper";
 import Title from "../../components/text-components/title/Title";
-import Paragraph from "../../components/text-components/paragraph/Paragraph";
-import Quote from "../../components/text-components/quote";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import Featured from "../../components/card-components/featured/Featured";
-import { ParallaxProvider } from "react-scroll-parallax";
-import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import TeacherProfile from "../../components/card-components/teacher-profile/TeacherProfile";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
 import EasyFlexCol from "../../components/structural-components/flexbox/easy-flex-col/EasyFlexCol";
 
@@ -84,17 +77,34 @@ class TeamDetailPage extends Component {
                     src={member.image_path}
                     className="team-detail-full-img"
                   />
-                  <div className="team-detail-block-pos">
-                    <p className="primary-quote-team">{'"' + member.quote + '"'}</p>
-                    <p className="standard-text-paragraph-team">{member.bio}</p>
-                    <BlankDiv style="blank-div-sm" />
-                  </div>
-                  <BlankDiv style="blank-div-sm" />
-                  <div className="team-detail-block-pos-2">
-                    <p className="team-detail-email">{member.email}</p>
-                  </div>
                 </EasyFlexCol>
               </EasyFlexRow>
+              <EasyFlexCol style="col-flex-space-between">
+                <div className="team-detail-block-pos">
+                  <p className="primary-quote-team">
+                    {member.quote}
+                  </p>
+                </div>
+              </EasyFlexCol>
+              <EasyFlexCol style="col-flex-space-between">
+                <div className="team-detail-block-pos-2">
+                  <p className="standard-text-paragraph fw-paragraph">
+                    {member.bio}
+                  </p>
+                </div>
+                <a
+                href={"mailto:"+ member.email}
+                  className="team-detail-email"
+                >
+                {member.email}
+                </a>
+                <a
+                href="/team"
+                  className="primary-button back-to-team"
+                >
+                Terug naar teamleden
+                </a>
+              </EasyFlexCol>
               <EasyFlexRow style="team-general-page-wrapper" />
               <Footer />
             </GridWrapper>

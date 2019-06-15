@@ -1,0 +1,47 @@
+@import './../../_sass/abstracts/variables';
+
+.course-container {
+  margin: 80px 0px;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    padding-left: 1%;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.course-title {
+  background: $primary-color;
+  color: #fff;
+  padding: 15px;
+  margin-top: 0;
+}
+
+.course-description {
+  padding-left: 15px;
+}
+
+.course-points {
+    width: 20%;
+    font-size: 90%;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    margin-top: 30px;
+}
+
+.course-year {
+  width: 20%;
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background: $primary-color;
+  margin-top: 30px;
+  color: #fff;
+}

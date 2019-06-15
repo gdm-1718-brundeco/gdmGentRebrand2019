@@ -11,7 +11,7 @@ const initializeEndpoints = (parentRouter, authService) => {
 
 	parentRouter.post('/projectimages', projectImageController.store);
 
-	parentRouter.get('/projectimages/edit/:id', projectImageController.edit);
+	parentRouter.get('/projectimages/:id/edit', projectImageController.edit);
 
 	parentRouter.put('/projectimages/:id', projectImageController.update);
 

@@ -23,14 +23,13 @@ import Title from "../../components/text-components/title/Title";
 import Paragraph from "../../components/text-components/paragraph/Paragraph";
 import Quote from "../../components/text-components/quote";
 import GeneralNav from "../../components/header/general-nav/GeneralNav";
-import Featured from "../../components/card-components/featured/Featured";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Footer from "../../components/footer";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
-import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 import EasyFlexRow from "../../components/structural-components/flexbox/easy-flex-row/EasyFlexRow";
+import PrimaryButton from "../../components/button-components/primary-button/PrimaryButton";
 
 class HomePage extends Component {
   state = {
@@ -89,7 +88,7 @@ class HomePage extends Component {
 
   render() {
     const { pagination, projects } = this.state;
-
+    console.log(this.state.projects);
     this.items = this.state.projects.map((item, key) => (
       <div key={item.id} className="col-space-between card-wrapper">
         <h2 className="primary-subtitle">{item.title}</h2>
@@ -144,7 +143,7 @@ Bouters, opleidingsdirecteur"
                 <Paragraph style="paragraph-bottomline par-pos-1" />
                 <EasyFlexRow style="row-end">
                   <a
-                    href="/"
+                    href="/courses"
                     className="primary-subtitle row-center primary-button"
                   >
                     Bekijk onze richtingen

@@ -31,6 +31,7 @@ import EventsPage from './pages/events/EventsPage';
 import EventDetailPage from './pages/event-detail/EventDetailPage';
 import StatementPage from './pages/statements/StatementPage';
 import StatementDetailPage from './pages/statements-detail/StatementDetailPage';
+import ServicesPage from './pages/services/ServicesPage'
 
 /*
 Import styling
@@ -125,6 +126,11 @@ class Main extends Component {
             path="/contact"
             layout={PageLayout}
             component={ContactPage}
+          />
+          <RouteWithLayout
+            path="/courses"
+            layout={PageLayout}
+            component={ServicesPage}
           />
         </Switch>
       </div>

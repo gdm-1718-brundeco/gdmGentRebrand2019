@@ -15,7 +15,7 @@ import BlankDiv from "../../components/styled-components/blank-div/BlankDiv";
 import Title from "../../components/text-components/title/Title";
 import OverlayMenu from "../../components/structural-components/overlay-menu/OverlayMenu";
 
-import './NewsPage.scss'
+import "./NewsPage.scss";
 
 class NewsPage extends Component {
   state = {

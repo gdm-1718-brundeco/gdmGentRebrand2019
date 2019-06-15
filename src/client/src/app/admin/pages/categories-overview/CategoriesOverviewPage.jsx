@@ -11,9 +11,8 @@ import { ContentLayout } from '../../layouts';
 
 /*
 Pages
-import CategorieTablePage from '../categories-table';
-
 */
+import CategoriesTablePage from '../categories-table';
 import CategorieFormPage from '../categorie-form';
 
 const tabs = [
@@ -28,6 +27,9 @@ class CategoriesOverviewPage extends Component {
     return (
       <ContentLayout title="Categories Overview" tabs={tabs}>
         { children }
+        <Route exact path="/admin/categories" component={ CategoriesTablePage }></Route>
+        <Route path="/admin/categories/create" component={ CategorieFormPage }></Route>
+        <Route path="/admin/categories/:id/edit" component={ CategorieFormPage }></Route>
       </ContentLayout>
     )
   }

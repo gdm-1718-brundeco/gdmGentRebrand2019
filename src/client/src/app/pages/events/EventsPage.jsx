@@ -74,15 +74,11 @@ class EventsPage extends Component {
         <div className="image-wrapper">
           <div className="event-image-color-layer" />
           <a href={"/events/" + item.id}>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/gdmgent-4f491.appspot.com/o/projects%2Flg_thumbnail.PNG?alt=media&token=804e5513-82ea-4c0f-bbf7-adfcf1081090"
-              alt=""
-              className="event-image"
-            />
+            <img src={item.image} alt="" className="event-image" />
           </a>
         </div>
         <a href={"/events/" + item.id} className="view-event-button">
-          BEKIJK EVENT
+          Bekijk event
         </a>
       </div>
     ));

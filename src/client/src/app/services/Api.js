@@ -36,13 +36,6 @@ class Api {
     const response = await fetch(`${this.URL}/projects/${id}`);
     return await response.json();
   };
-
-  // Enkel voor op de Project Detail Page
-  static findProjectImage = async projectId => {
-    const response = await fetch(`${this.URL}/projectimages/${projectId}`);
-    return await response.json();
-  };
-
   //Events api calls
   static findAllEvents = async (queryParams = null) => {
     let url = `${this.URL}/events`;
@@ -86,6 +79,16 @@ class Api {
   //Testemonial api calls
   static findOneTestimonial = async id => {
     let response = await fetch(`${this.URL}/testimonials/${id}`);
+    return await response.json();
+  };
+  //Events api calls
+  static findAllCourses = async (queryParams = null) => {
+    let url = `${this.URL}/courses`;
+    if (queryParams !== null) {
+      url +=
+        (url.indexOf("?") === -1 ? "?" : "&") + this.queryParams(queryParams);
+    }
+    const response = await fetch(`${url}`);
     return await response.json();
   };
 }

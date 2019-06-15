@@ -51,17 +51,17 @@ class TypeForm extends Component {
     }
     
     state = {
-        type: { name: "", description: "", },
+        post: { name: "", description: "", },
     };
 
     componentWillMount() {
         
-        if (this.props.typeId) {            
-            this.loadPost(this.props.typeId);
+        if (this.props.postId) {            
+            this.loadPost(this.props.postId);
         }
     }
 
-    loadPost = async (typeId) => {
+    loadPost = async (postId) => {
         try {
             const options = {
                 method: 'GET',
@@ -69,7 +69,7 @@ class TypeForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/posts/${typeId}`, options);
+            const response = await fetch(`/api/v1/types/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 this.setState(prevState => ({ 
@@ -83,10 +83,10 @@ class TypeForm extends Component {
     }
 
     submit = (values, actions) => {
-        const { typeId } = this.props;
+        const { postId } = this.props;
 
-        if (typeId) {  
-            this.updatePost(typeId, values);          
+        if (postId) {  
+            this.updatePost(postId, values);          
         } else {
             this.savePost(values);
         }
@@ -116,7 +116,7 @@ class TypeForm extends Component {
         }
     }
 
-    updatePost = async (typeId, postData) => {
+    updatePost = async (postId, postData) => {
         try {
             const options = {
                 method: 'PUT',
@@ -129,7 +129,7 @@ class TypeForm extends Component {
                 cache: 'default'
             };
 
-            const response = await fetch(`/api/v1/types/${typeId}`, options);
+            const response = await fetch(`/api/v1/types/${postId}`, options);
             const responseJson = await response.json();
             if (responseJson) {
                 console.log(responseJson);
@@ -150,7 +150,7 @@ class TypeForm extends Component {
                 <div className={classes.container}>
                     <Paper className={classes.paper}>
                         <Formik
-                            render={props => <Form {...props} categories={this.state.categories} />}
+                            render={props => <Form {...props} types={this.state.types} />}
                             initialValues={values}
                             validationSchema={validationSchema}
                             onSubmit={(values, actions) => this.submit(values, actions)}
