@@ -122,19 +122,7 @@ class TeamsTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadTeams();
-        } else {
-          const team = results.team;
-          const i = this.state.teams.findIndex((obj, index, array) => {
-            return obj._id === team._id;
-          });
-          const teams = this.state.teams;
-          teams[i] = team;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            teams: teams
-          }));
-        }
+        } 
         }
       );
 
@@ -185,10 +173,7 @@ class TeamsTable extends Component {
                       component={Link} to={ `/admin/team/${team.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(team.id, (team.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((team.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                    
                     <IconButton
                       onClick={() => this.handleDialogOpen(team.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />

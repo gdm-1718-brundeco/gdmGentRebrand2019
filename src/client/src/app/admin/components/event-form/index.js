@@ -25,6 +25,7 @@ const validationSchema = Yup.object(
 {
     title: Yup.string("Enter a title").required("Title is required").min(10).max(128),
     body: Yup.string("Enter a story").required(false).min(50),
+    image: Yup.string("Enter a image").required(false).max(1024),
     event_date: Yup.date().required(false),
 });
 
@@ -51,7 +52,7 @@ class EventForm extends Component {
     }
     
     state = {
-        post: { title: "",body: "", event_date: "", },
+        post: { title: "",body: "", event_date: "", image:"",},
     };
 
     componentWillMount() {

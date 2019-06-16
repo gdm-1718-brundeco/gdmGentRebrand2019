@@ -118,7 +118,7 @@ class CategoryController {
 
         try {
             const category = await Category.findOneAndRemove({ _id: id });
-
+            
             if (!category) {
                 throw new APIError(404, `Category with id: ${id} not found!`);
             } else {

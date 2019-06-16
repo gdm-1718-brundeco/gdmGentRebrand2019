@@ -123,6 +123,7 @@ class PostController {
             let post = null;
 
             let { mode } = req.query;
+            
             if (mode) {
                 post = await Post.findByIdAndUpdate({ _id: id }, { deleted_at: (mode === 'softdelete' ? Date.now() : null) }, { new: true });
             } else {

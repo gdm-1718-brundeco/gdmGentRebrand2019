@@ -120,18 +120,6 @@ class CategoriesTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadCategories();
-        } else {
-          const category = results.category;
-          const i = this.state.categories.findIndex((obj, index, array) => {
-            return obj._id === category._id;
-          });
-          const categories = this.state.categories;
-          categories[i] = category;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            categories: categories
-          }));
         }
         }
       );
@@ -174,10 +162,7 @@ class CategoriesTable extends Component {
                       component={Link} to={ `/admin/categories/${category.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(category.id, (category.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((category.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                    
                     <IconButton
                       onClick={() => this.handleDialogOpen(category.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />

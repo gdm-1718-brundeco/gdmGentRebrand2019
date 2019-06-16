@@ -38,7 +38,7 @@ class Form extends Component {
 
     render() {
         const {
-            values: { title, body, event_date, },
+            values: { title, body, event_date, image, },
             errors,
             touched,
             handleChange,
@@ -82,12 +82,23 @@ class Form extends Component {
                 onChange={this.change.bind(null, "body")}
               />
               <TextField
+                id="image"
+                name="image"
+                label="image"
+                helperText={touched.image ? errors.image : ""}
+                error={touched.image && Boolean(errors.image)}
+                value={image}
+                onChange={this.change.bind(null, "image")}
+                fullWidth
+              />
+
+              <TextField
                 id="event_date"
                 name="event_date"
                 helperText={touched.event_date ? errors.event_date : ""}
                 error={touched.event_date && Boolean(errors.event_date)}
-                type="date"
                 value={event_date}
+                type="date"
                 onChange={this.change.bind(null, "event_date")}
                 fullWidth
               />

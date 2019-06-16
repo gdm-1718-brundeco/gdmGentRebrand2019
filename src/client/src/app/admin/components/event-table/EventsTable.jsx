@@ -120,18 +120,6 @@ class EventsTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadEvents();
-        } else {
-          const event = results.event;
-          const i = this.state.events.findIndex((obj, index, array) => {
-            return obj._id === event._id;
-          });
-          const events = this.state.events;
-          events[i] = event;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            events: events
-          }));
         }
         }
       );
@@ -176,10 +164,7 @@ class EventsTable extends Component {
                       component={Link} to={ `/admin/events/${event.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(event.id, (event.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((event.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                    
                     <IconButton
                       onClick={() => this.handleDialogOpen(event.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />
