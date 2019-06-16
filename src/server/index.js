@@ -30,6 +30,7 @@ import path from 'path';
 import mongoose from 'mongoose';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import cookieSession from 'cookie-session';
 import passport from 'passport';
 
 /*
@@ -104,7 +105,12 @@ if (config.nodeEnvironment === 'Production') {
 } else {
     app.use(express.static(path.join(__dirname, '/../client/build')));
 }
+app.use(cookieSession({
+	keys: [config.cookieSession],
+	maxAge: 24 * 60 * 60 * 1000,
+}));
 app.use(passport.initialize());
+app.use(passport.session());
 app.use('/static', express.static(path.join(__dirname, 'assets')));
 app.use('/api/v1', apiV1Router);
 app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));

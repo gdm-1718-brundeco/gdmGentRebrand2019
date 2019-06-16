@@ -12,7 +12,8 @@ const config = {
     nodeEnvironment: process.env.NODE_ENV,
     nodeHostname: process.env.NODE_SERVER_HOSTNAME,
     nodePort: process.env.NODE_SERVER_PORT,
-    mongoDbConnectionstring: process.env.MONGODB_CONNECTION,
+		mongoDbConnectionstring: process.env.MONGODB_CONNECTION,
+		cookieKey: process.env.COOKIE_KEY,
     auth: {
         bcrypt: {
             saltWorkFactor: process.env.AUTH_BCRYPT_SALT,
@@ -24,7 +25,11 @@ const config = {
         facebook: {
             clientID: process.env.AUTH_FACEBOOK_CLIENT_ID,
             clientSecret: process.env.AUTH_FACEBOOK_CLIENT_SECRET,
-        },
+				},
+				github: {
+					clientID: process.env.AUTH_GITHUB_CLIENT_ID,
+					clientSecret: process.env.AUTH_GITHUB_CLIENT_SECRET,
+				},
     },
 };
 

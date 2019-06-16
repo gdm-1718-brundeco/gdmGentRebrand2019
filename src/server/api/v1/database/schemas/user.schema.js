@@ -36,7 +36,11 @@ const UserSchema = new Schema(
         facebookProvider: {
             id: { type: String, required: false },
             token: { type: String, required: false },
-        },
+				},
+				githubProvider: {
+					id: { type: String, required: false },
+					token: { type: String, required: false },
+				},
         published_at: { type: Date, required: false },
         deleted_at: { type: Date, required: false },
     },
@@ -83,7 +87,7 @@ UserSchema.pre('save', function (next) {
 });
 
 UserSchema.methods.comparePassword = function (candidatePassword, cb) {
-    const user = this;
+		const user = this;
     bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
         if (err) return cb(err, null);
         return cb(null, isMatch);
