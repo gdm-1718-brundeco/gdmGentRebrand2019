@@ -2,7 +2,6 @@
 
 .html-wrapper-2 {
     background: #efefef;
-    background-image: linear-gradient(to bottom, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc);
     width: 100%;
 }
 
@@ -10,7 +9,7 @@
     width: 90%;
     height: 100vh;
     margin: 0 auto;
-    background-image: linear-gradient(to bottom, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc);
+    background: #efefef;
 }
 
 .testimonial-detail-img-box {
@@ -19,25 +18,47 @@
     width: 200px;
 }
 
+
+.testimonial-detail-img-box {
+    &:hover .testimonial-detail-img {
+        mix-blend-mode: luminosity;
+        top: 0;
+        transition: 0.2s ease-in-out;
+    }
+
+    &:hover .testimonial-detail-square {
+        transition: 0.2s ease-in-out;
+        background: $primary-color;
+        height: 100%;
+        bottom: 0;
+        left: 0px;
+    }
+}
+
+
 .testimonial-detail-img {
     background-image: url(/static/media/campus.34bdb2b8.jpeg);
     background-size: cover;
     width: 100%;
-    height: 70%;
+    height: 100%;
     position: absolute;
-    top: 0;
-    left: -25px;
+    top: -20px;
     z-index: 100;
     object-fit: cover;
+    transition: 0.3s ease-in-out;
+    mix-blend-mode: normal;
 }
 
 .testimonial-detail-square {
     width: 100%;
     height: 70%;
-    background-color: #2f00ff;
-    bottom: 0;
-    right: -25px;
+    border: 2px solid $primary-color;
+    bottom: -20px;
+    left: -30px;
     position: absolute;
+    transition: 0.3s ease-in-out;
+    mix-blend-mode: normal;
+    box-sizing: border-box;
 }
 
 .testimonial-quotes {
