@@ -9,7 +9,7 @@ import { read } from 'fs';
 
 class AuthController {
     loginLocal = async (authService, req, res, next) => {
-        authService.passport.authenticate('local', config.jwtSession, (err, user, info) => {
+        authService.passport.authenticate('local', config.auth.jwtSession, (err, user, info) => {
             if (err) { return next(err); }
             if (!user) {
                 return next(new Error("kkjkj"));
