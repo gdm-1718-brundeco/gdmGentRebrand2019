@@ -120,7 +120,7 @@ class TeamController {
 			if(!team) {
 				throw new APIError(404, `Project with id: ${id} not found.`);
 			} else {
-				return res.status(200).json({ message: `Successfully deleted the Project with id: ${id}.`, post, mode });
+				return res.status(200).json({ message: `Successfully deleted the Project with id: ${id}.`, team, mode });
 			}
 		} catch (err) {
 			return handleAPIError(err.status || 500, err.message || `Some error occured while deleting Project with id: ${project}.`, next);

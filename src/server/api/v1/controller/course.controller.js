@@ -119,7 +119,7 @@ class CourseController {
 
         try {
             const course = await Course.findOneAndRemove({ _id: id });
-
+            
             if (!course) {
                 throw new APIError(404, `Study with id: ${id} not found!`);
             } else {

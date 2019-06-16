@@ -122,18 +122,6 @@ class TestimonialsTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadTestimonials();
-        } else {
-          const testimonial = results.testimonial;
-          const i = this.state.testimonials.findIndex((obj, index, array) => {
-            return obj._id === testimonial._id;
-          });
-          const testimonials = this.state.testimonials;
-          testimonials[i] = testimonial;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            testimonials: testimonials
-          }));
         }
         }
       );
@@ -179,10 +167,7 @@ class TestimonialsTable extends Component {
                       component={Link} to={ `/admin/testimonials/${testimonial.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(testimonial.id, (testimonial.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((testimonial.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                   
                     <IconButton
                       onClick={() => this.handleDialogOpen(testimonial.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />

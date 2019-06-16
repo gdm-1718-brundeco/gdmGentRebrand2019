@@ -107,7 +107,7 @@ class TypeController {
 
         try {
             const type = await Type.findOneAndRemove({ _id: id });
-
+            
             if (!type) {
                 throw new APIError(404, `Type with id: ${id} not found!`);
             } else {

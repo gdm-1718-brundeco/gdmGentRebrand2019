@@ -38,7 +38,7 @@ class Form extends Component {
 
     render() {
         const {
-            values: { subject,name, body, typeId, },
+            values: { subject,name, body, typeId, image, },
             errors,
             touched,
             handleChange,
@@ -82,7 +82,7 @@ class Form extends Component {
             onChange={this.change.bind(null, "name")}
     
           />
-    
+      
           <TextField
             id="body"
             name="body"
@@ -96,7 +96,16 @@ class Form extends Component {
             onChange={this.change.bind(null, "body")}
     
           />
-    
+          <TextField
+                id="image"
+                name="image"
+                label="image"
+                helperText={touched.image ? errors.image : ""}
+                error={touched.image && Boolean(errors.image)}
+                value={image}
+                onChange={this.change.bind(null, "image")}
+                fullWidth
+              />
           <FormControl>
             <InputLabel htmlFor="typeId">Type</InputLabel>
             <Select
