@@ -45,10 +45,6 @@ class GeneralNav extends Component {
 
     return (
       <EasyFlexRow style="row-space-between header-nav-justify-content nav-fixed">
-        {/* <Link
-          text="arteveldehogeschool"
-          style="header-link-to-home bl small-uppercase-title-pos-3"
-        /> */}
         <a href="/home" className="header-link-to-home bl small-uppercase-title-pos-3">arteveldehogeschool</a>
         <div
           className={this.state.parentElState}
@@ -58,9 +54,6 @@ class GeneralNav extends Component {
           onMouseOver={this.addClass}
           onMouseOut={this.removeClass}
         >
-          {/* <p ref={this.childEl} className={this.state.childElState}>
-            menu
-          </p> */}
           <div
             className={
               menuState

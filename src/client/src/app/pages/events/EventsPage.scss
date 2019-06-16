@@ -9,11 +9,37 @@
 
 .event-image-color-layer {
   position: absolute;
-  width: 80%;
+  width: 30%;
   height: 170px;
   background-color: rgba($color: $primary-color, $alpha: 0);
   transition: 0.4s ease-in-out;
   left: 10%;
+  mix-blend-mode: exclusion;
+  top: 0;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 180px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease-in-out;
+  position: absolute;
+  mix-blend-mode: normal;
+}
+
+.event-border {
+  background-color: $primary-color;
+  height: 1px;
+  margin-bottom: 30px;
+  width: 5%;
+  transition: 1s ease-in-out;
 }
 
 .event-wrapper {
@@ -42,9 +68,11 @@
   &:hover .event-image-color-layer {
     background-color: rgba($color: $primary-color, $alpha: 1);
     transition: 0.3s ease-in-out;
-    width: 80%;
-    height: 100%;
+    width: 30%;
+    height: 110%;
     left: 0;
+    top: -10%;
+    mix-blend-mode: exclusion;
   }
 
   &:hover .event-image {
@@ -52,7 +80,9 @@
     padding-left: 15px;
     position: absolute;
     height: 110%;
+    mix-blend-mode: hard-light;
   }
+
   &:hover .view-event-button {
     top: 85%;
     opacity: 1;
@@ -93,28 +123,4 @@
     color: #fff;
     transition: 0.3s ease-in-out;
   }
-}
-
-.image-wrapper {
-  width: 100%;
-  height: 180px;
-  margin-top: 30px;
-  position: relative;
-}
-
-
-.event-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.4s ease-in-out;
-  position: absolute;
-}
-
-.event-border {
-  background-color: $primary-color;
-  height: 1px;
-  margin-bottom: 30px;
-  width: 5%;
-  transition: 1s ease-in-out;
 }

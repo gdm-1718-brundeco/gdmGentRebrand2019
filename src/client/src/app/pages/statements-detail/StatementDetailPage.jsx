@@ -58,7 +58,7 @@ class StatementDetailPage extends Component {
       console.log(testimonial);
       return (
         <React.Fragment>
-          <GridWrapper style="html-wrapper">
+          <GridWrapper style="html-wrapper-2">
             <GridWrapper style="statement-detail-page-wrapper">
               <EasyFlexCol style="col-space-evenly">
                 <Title text={testimonial.name} style="testimonial-person" />

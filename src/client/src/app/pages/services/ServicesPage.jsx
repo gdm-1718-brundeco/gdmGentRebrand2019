@@ -37,9 +37,8 @@ class ServicesPage extends Component {
 
   loadCourses = pageIndex => {
     // console.log(pageIndex);
-    Api.findAllCourses({ limit: 4, skip: pageIndex })
+    Api.findAllCourses({ limit: 100, skip: pageIndex })
       .then(data => {
-        console.log(data);
         const prevCourses = this.state.courses;
         const newCourses = [...prevCourses, ...data.docs];
         this.setState(prevState => ({
@@ -78,11 +77,14 @@ class ServicesPage extends Component {
             <p className="course-points">{item.points + " studiepunten"}</p>
             <p className="course-year">{"schijf " + item.year}</p>
           </EasyFlexRow>
+          <EasyFlexRow style="row-flex-start course-btn-wrapper">
+            <a href="/home" className="course-info-btn">
+              Lees meer
+            </a>
+          </EasyFlexRow>
         </div>
       </a>
     ));
-    const { post } = this.state;
-    console.log(post);
     return (
       <React.Fragment>
         <OverlayMenu menustate={this.state.showMenu} />

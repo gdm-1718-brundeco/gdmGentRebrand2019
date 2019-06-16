@@ -15,7 +15,6 @@ class HeaderFullscreen extends Component {
     return (
         <div className="custom-class project-fullscreen-image">
           <img src={this.props.src} className="fullscreen-header-image" />
-          {/* <Overlay style="header-overlay"> */}
             <GridWrapper style="header-dynamic-grid">
               <Overlay style="header-overlay" />
               <Title
@@ -33,7 +32,6 @@ class HeaderFullscreen extends Component {
                 />
               </EasyFlexRow>
             </GridWrapper>
-          {/* </Overlay> */}
         </div>
     );
   }
