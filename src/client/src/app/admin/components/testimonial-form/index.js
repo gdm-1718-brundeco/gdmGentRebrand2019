@@ -53,7 +53,7 @@ class TestimonialForm extends Component {
     
     state = {
         types: [],
-        post: { subject: "",synopsis: "", body: "",  typeId: "", },
+        post: { subject: "",synopsis: "", body: "",  typeId: "", image:"",},
     };
 
     componentWillMount() {

@@ -121,18 +121,6 @@ class CoursesTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadCourses();
-        } else {
-          const course = results.course;
-          const i = this.state.courses.findIndex((obj, index, array) => {
-            return obj._id === course._id;
-          });
-          const courses = this.state.courses;
-          courses[i] = course;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            courses: courses
-          }));
         }
         }
       );
@@ -178,10 +166,7 @@ class CoursesTable extends Component {
                       component={Link} to={ `/admin/courses/${course.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(course.id, (course.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((course.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                    
                     <IconButton
                       onClick={() => this.handleDialogOpen(course.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />

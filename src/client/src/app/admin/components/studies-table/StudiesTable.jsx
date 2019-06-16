@@ -122,18 +122,6 @@ class StudiesTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadStudies();
-        } else {
-          const study = results.study;
-          const i = this.state.studies.findIndex((obj, index, array) => {
-            return obj._id === study._id;
-          });
-          const studies = this.state.studies;
-          studies[i] = study;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            studies: studies
-          }));
         }
         }
       );
@@ -175,10 +163,7 @@ class StudiesTable extends Component {
                       component={Link} to={ `/admin/studies/${study.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(study.id, (study.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((study.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                    
                     <IconButton
                       onClick={() => this.handleDialogOpen(study.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />

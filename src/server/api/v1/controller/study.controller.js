@@ -108,7 +108,7 @@ class StudyController {
 
         try {
             const study = await Study.findOneAndRemove({ _id: id });
-
+            
             if (!study) {
                 throw new APIError(404, `Study with id: ${id} not found!`);
             } else {

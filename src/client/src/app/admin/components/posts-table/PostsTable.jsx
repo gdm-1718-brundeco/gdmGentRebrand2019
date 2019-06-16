@@ -122,6 +122,7 @@ class PostsTable extends Component {
           this.loadPosts();
         } else {
           const post = results.post;
+          console.log(results.post);
           const i = this.state.posts.findIndex((obj, index, array) => {
             return obj._id === post._id;
           });

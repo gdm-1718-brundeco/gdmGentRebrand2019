@@ -122,18 +122,6 @@ class TypesTable extends Component {
       .then(results => {
         if(results.mode && results.mode === 'delete') {
           this.loadTypes();
-        } else {
-          const type = results.type;
-          const i = this.state.types.findIndex((obj, index, array) => {
-            return obj._id === type._id;
-          });
-          const types = this.state.types;
-          types[i] = type;
-  
-          this.setState(prevState => ({
-            ...prevState,
-            types: types
-          }));
         }
         }
       );
@@ -175,10 +163,7 @@ class TypesTable extends Component {
                       component={Link} to={ `/admin/types/${type.id}/edit`}>
                       <IconCreate />
                     </IconButton>
-                    <IconButton
-                      onClick={() => this.handleDialogOpen(type.id, (type.deleted_at)?POSTACTIONSENUM.SOFTUNDELETE:POSTACTIONSENUM.SOFTDELETE)} style={{ opacity: ((type.deleted_at)?0.3:1) }}>
-                      <IconDelete/>
-                    </IconButton>
+                    
                     <IconButton
                       onClick={() => this.handleDialogOpen(type.id, POSTACTIONSENUM.DELETE)}>
                       <IconDeleteForever />

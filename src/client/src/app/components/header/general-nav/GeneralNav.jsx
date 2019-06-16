@@ -49,7 +49,7 @@ class GeneralNav extends Component {
         <div
           className={this.state.parentElState}
           onClick={this.props.toggleMenu}
-          menustate={this.props.menustate}
+          menustate={toString(this.props.menustate)}
           ref={this.parentEl}
           onMouseOver={this.addClass}
           onMouseOut={this.removeClass}
