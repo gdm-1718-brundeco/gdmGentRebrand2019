@@ -62,6 +62,7 @@
     "rimraf": "^2.6.3"
   },
   "scripts": {
+    "start": "node index.js",
     "build:clean": "rimraf ./dist/*",
     "build:all": "yarn build:clean && yarn client:build && yarn server:build",
     "client:build": "cd ./src/client && yarn build && cross-env cp -r ./build ../../dist/client",
