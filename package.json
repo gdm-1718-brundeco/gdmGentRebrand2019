@@ -6,6 +6,9 @@
   "repository": "https://github.com/gdmgent-1819-mobdev2/nmd-mern-template.git",
   "author": "Philippe De Pauw - Waterschoot",
   "license": "MIT",
+  "engines": {
+    "node": "11.14.0"
+  },
   "dependencies": {
     "@babel/register": "^7.4.0",
     "@material-ui/pickers": "^3.1.0",
