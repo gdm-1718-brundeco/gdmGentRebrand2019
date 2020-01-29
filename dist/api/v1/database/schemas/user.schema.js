@@ -55,6 +55,16 @@ var UserSchema = new Schema({
       required: false
     }
   },
+  githubProvider: {
+    id: {
+      type: String,
+      required: false
+    },
+    token: {
+      type: String,
+      required: false
+    }
+  },
   published_at: {
     type: Date,
     required: false
@@ -96,6 +106,7 @@ UserSchema.pre('save', function (next) {
     return _bcrypt["default"].genSalt(_config["default"].auth.bcrypt.SALT_WORK_FACTOR, function (errSalt, salt) {
       if (errSalt) throw errSalt;
       return _bcrypt["default"].hash(user.localProvider.password, salt, function (errHash, hash) {
+        console.log(user.localProvider.password);
         if (errHash) throw errHash;
         user.localProvider.password = hash;
         return next();

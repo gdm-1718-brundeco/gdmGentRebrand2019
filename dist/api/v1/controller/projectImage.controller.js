@@ -118,9 +118,7 @@ var ProjectImageController = function ProjectImageController() {
               _context2.prev = 0;
               id = req.params.id;
               _context2.next = 4;
-              return _database.ProjectImage.find({
-                'projectId': id
-              }).exec();
+              return _database.ProjectImage.findById(id).exec();
 
             case 4:
               item = _context2.sent;

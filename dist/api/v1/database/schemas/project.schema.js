@@ -37,7 +37,6 @@ var ProjectSchema = new Schema({
   },
   creator: {
     type: String,
-    required: true,
     max: 128
   },
   published_at: {
@@ -52,12 +51,7 @@ var ProjectSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: false
-  },
-  images: [{
-    type: Schema.Types.ObjectId,
-    ref: 'ProjectImage',
-    required: true
-  }]
+  }
 }, {
   toJSON: {
     virtuals: true
@@ -91,6 +85,12 @@ ProjectSchema.virtual('category', {
   localField: 'categoryId',
   foreignField: '_id',
   justOne: true
+});
+ProjectSchema.virtual('images', {
+  ref: 'ProjectImage',
+  localField: '_id',
+  foreignField: 'projectId',
+  justOne: false
 });
 ProjectSchema.plugin(_mongoosePaginate["default"]);
 

@@ -171,7 +171,8 @@ var EventController = function EventController() {
               eventCreate = new _database.Event({
                 title: req.body.title,
                 body: req.body.body,
-                event_date: req.body.event_date
+                event_date: req.body.event_date,
+                image: req.body.image
               });
               _context3.next = 4;
               return eventCreate.save();

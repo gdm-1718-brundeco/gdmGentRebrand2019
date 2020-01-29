@@ -169,9 +169,8 @@ var CategoryController = function CategoryController() {
             case 0:
               _context3.prev = 0;
               categoryCreate = new _database.Category({
-                title: req.body.title,
-                synopsis: req.body.synopsis,
-                body: req.body.body
+                name: req.body.name,
+                description: req.body.description
               });
               _context3.next = 4;
               return categoryCreate.save();

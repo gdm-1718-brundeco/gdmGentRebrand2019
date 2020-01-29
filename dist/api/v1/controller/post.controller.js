@@ -173,7 +173,8 @@ var PostController = function PostController() {
                 title: req.body.title,
                 synopsis: req.body.synopsis,
                 body: req.body.body,
-                categoryId: req.body.categoryId
+                categoryId: req.body.categoryId,
+                image: req.body.image
               });
               _context3.next = 4;
               return postCreate.save();

@@ -21,6 +21,10 @@ var ProjectImageSchema = new Schema({
   path: {
     type: String,
     required: true
+  },
+  projectId: {
+    type: String,
+    required: true
   }
 }, {
   toJSON: {

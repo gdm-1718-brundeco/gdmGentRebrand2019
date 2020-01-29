@@ -35,6 +35,10 @@ var PostSchema = new Schema({
     unique: true,
     required: true
   },
+  image: {
+    type: String,
+    required: false
+  },
   published_at: {
     type: Date,
     required: false

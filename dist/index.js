@@ -29,6 +29,8 @@ var _swaggerJsdoc = _interopRequireDefault(require("swagger-jsdoc"));
 
 var _swaggerUiExpress = _interopRequireDefault(require("swagger-ui-express"));
 
+var _cookieSession = _interopRequireDefault(require("cookie-session"));
+
 var _passport = _interopRequireDefault(require("passport"));
 
 var _routes = _interopRequireDefault(require("./api/v1/routes"));
@@ -137,7 +139,12 @@ if (_config["default"].nodeEnvironment === 'Production') {
   app.use(_express["default"]["static"](_path["default"].join(__dirname, '/../client/build')));
 }
 
+app.use((0, _cookieSession["default"])({
+  keys: [_config["default"].cookieSession],
+  maxAge: 24 * 60 * 60 * 1000
+}));
 app.use(_passport["default"].initialize());
+app.use(_passport["default"].session());
 app.use('/static', _express["default"]["static"](_path["default"].join(__dirname, 'assets')));
 app.use('/api/v1', _routes["default"]);
 app.use('/api/v1/docs', _swaggerUiExpress["default"].serve, _swaggerUiExpress["default"].setup(swaggerSpecs));

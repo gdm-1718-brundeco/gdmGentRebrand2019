@@ -28,6 +28,10 @@ var EventSchema = new Schema({
     type: Date,
     required: true
   },
+  image: {
+    type: String,
+    required: true
+  },
   slug: {
     type: String,
     lowercarse: true,

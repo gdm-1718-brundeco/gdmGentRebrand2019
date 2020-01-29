@@ -26,6 +26,7 @@ class ProjectDetailPage extends Component {
   componentWillMount() {
     this.Project(this.props.match.params.id);
   }
+  
   Project = id => {
     Api.findOneProject(id)
       .then(data => {
@@ -64,12 +65,12 @@ class ProjectDetailPage extends Component {
           }
           <GridWrapper style="html-wrapper">
             <GridWrapper style="main-page-wrapper">
-              <div className="provide-white">
+              {/* <div className="provide-white"> */}
                 <GeneralNav
                   toggleMenu={this.toggleMenu}
                   menustate={this.getParentState()}
                 />
-              </div>
+              {/* </div> */}
               <BlankDiv style="blank-div-md" />
               <h1 className="section-title">{project.title}</h1>
               <h3 className="primary-quote quote-pos-1">{project.slug}</h3>

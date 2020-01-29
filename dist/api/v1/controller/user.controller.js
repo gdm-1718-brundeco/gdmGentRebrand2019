@@ -170,10 +170,10 @@ var UserController = function UserController() {
             case 0:
               _context3.prev = 0;
               postCreate = new _database.User({
-                title: req.body.title,
-                synopsis: req.body.synopsis,
-                body: req.body.body,
-                categoryId: req.body.categoryId
+                email: req.body.email,
+                localProvider: {
+                  password: req.body.localProvider.password
+                }
               });
               _context3.next = 4;
               return postCreate.save();
